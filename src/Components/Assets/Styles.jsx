@@ -26,9 +26,6 @@ export const HeaderStyle = styled.div`
     background-color: #232f40;
     display:flex;
     align-items: center;
-    position:fixed;
-  
-  
     
     img {
         height: 60px;
@@ -102,5 +99,77 @@ export const Button = styled.button`
     margin-bottom:20px;
 
 `
+
+export const Container = styled.div`
+    display: flex;
+		width: 1300px;
+
+`
+
+export const FilterStyle = styled.div`
+    height:620px;
+    width:300px;
+    background-color:#f7f6ee;
+    border-right: 2px solid #CCC;
+
+    button{
+        width:200px;
+        margin:10px 40px;
+        font-size:1.5em;
+        border:none;
+    }
+
+    button.btn-grafico {
+        margin-top:200px;
+        border-radius: 20%;
+        border: solid #CCC;
+        height:100px;
+    }
+` 
+
+export const StatsStyle = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+		margin-left: 80px;
+		margin-top: 100px;
+		max-width: 100%;
+		
+		overflow: auto;
+		
+	
+	
+    
+		table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      border-bottom: 1px solid #dddddd;
+      width: 100%;
+		}
+	
+ 		th {
+  		border: 1px solid #dddddd;
+			background-color:#232f40;
+			color: #f7f6ee;
+			min-width: 200px;
+			height: 50px;
+  		text-align: center;
+  		padding: 8px;
+		}
+
+		th.nome {
+			background-color: red;
+		}
+				
+		td {
+			border-left: 1px solid #dddddd; 
+    	padding: 20px;
+    	text-align: left;
+			
+}
+
+`
+
 
 export default GlobalStyle;

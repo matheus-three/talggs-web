@@ -9,20 +9,19 @@ import { BrowserRouter,
 import { Button, Title } from './Assets/Styles';
 import SaveReports from './Pages/Main/SaveReports';
 import Header from './Pages/Header';
+import CreateReport from './Pages/CreateReport';
 
 
 
 function Routes (){
     return(
         <BrowserRouter>
-            <Link to="/">a lo </Link> 
-   
         <Switch>  
             <Route exact={true} path="/" component={Main}> 
             
             </Route>
             <Route path ="/createReport" >
-                <Main></Main>
+                <CreateReport></CreateReport>
             </Route>
             
         </Switch>
