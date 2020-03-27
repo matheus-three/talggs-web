@@ -7,9 +7,8 @@ interface Iprops {
 
 function SaveReports (props: Iprops) {
     return (
-			
-          <SaveReportsStyle>    
-          	<span>{props.name}</span>
+            <SaveReportsStyle>    
+          	    <span>{props.name}</span>
         	</SaveReportsStyle>
      
 

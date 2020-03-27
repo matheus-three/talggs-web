@@ -5,7 +5,7 @@ import { FilterStyle } from "../../../Assets/Styles";
 function Filter () {
     return(
         <FilterStyle>
-            <h1>Filtrar por:</h1>
+            <span>Filtrar por:</span>
             <button>Dta Lançamento</button>
             <button>Dta Vencimento</button>
             <button>CPF</button>
