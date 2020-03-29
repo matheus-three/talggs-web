@@ -104,6 +104,10 @@ export const MainStyle = styled.div`
     flex-wrap: wrap;
     margin-top:50px; 
 
+		@media only screen and (max-width: 600px) {
+	  margin-top: 20px;
+	}
+
 `
 //Posicionamento do Titulo dos relatórios
 export const TitleMainStyle = styled.div`
@@ -112,6 +116,10 @@ export const TitleMainStyle = styled.div`
   margin-top: 100px;
   margin-left: 60px;
   font-size: 1.4em;    
+
+	@media only screen and (max-width: 600px) {
+	  margin-top: 30px;
+	}
 `
 //Estilo de cada relatório salvo.
 export const SaveReportsStyle = styled.div`
@@ -125,6 +133,14 @@ export const SaveReportsStyle = styled.div`
   justify-content: center;
   color:#f7f6ee;
   margin-bottom:50px;
+
+	@media only screen and (max-width: 600px) {
+		width:120px;
+		height:50px;
+		margin:0px 30px;
+		margin-bottom:30px;
+		font-size:0.7em;
+	}
 `
 //Posicionamento do Botão de criar relatórios.
 export const ButtonCreateStyle = styled.div`
@@ -140,6 +156,13 @@ export const ButtonCreateStyle = styled.div`
       display:flex;
       align-items:center;
   }
+
+	@media only screen and (max-width: 600px) {
+			font-size:1em;
+			span {
+				margin-bottom: 20px;
+			}
+	}
 `
 //Botão redondo de criar relatórios.
 export const Button = styled.button`
@@ -153,6 +176,12 @@ export const Button = styled.button`
   justify-content:center;
   align-items: center;
   margin-bottom:20px;
+
+	@media only screen and (max-width: 600px) {
+	  width:40px;
+		height:40px;
+		font-size:1.5em;
+	}
 `
 
 //Tela Criar Relatório
@@ -215,18 +244,20 @@ export const FilterStyle = styled.div`
 	font-size:0.7em; 
 	display:flex;
 	flex-direction:column;
-	align-items:flex-start;
+	
 	height:260px;
 	border-right:none;
 	
   button {
 		width:100px;
     margin:5px 10px;
+		text-align:left;
 	}
 
 	button.btn-grafico {
 		height:50px;
 		margin-top:20px;
+		text-align:center;
 	}
 }
 `
@@ -244,7 +275,7 @@ export const ReportStyle = styled.div`
 
 	@media only screen and (max-width: 600px){
 		margin-left: 20px;
-		width:75%;
+		width:100%;
 		
 	}
 `
@@ -325,26 +356,26 @@ export const StatsStyle = styled.div`
 
 	@media only screen and (max-width: 600px){
 		margin-left:20px;
-		height:150px;
+		height:200px;
 
 		table {
-			width:150px;
+			width:250px;
 		}
 
 		th {
 			min-width:90px;
-			font-size:0.4em;
+			font-size:0.6em;
 			height:20px;
 			padding:3px;
 		}
 
 		th.nome,th.cpf{
-			min-width:90px;
+			min-width:120px;
 		}
 
 		td{
-			font-size:0.4em;
-			padding:3px;
+			font-size:0.6em;
+			padding:8px;
 		}
 	}
 
@@ -381,13 +412,18 @@ export const ButtonStyle = styled.div`
 //Fundo cinza do pop-up para salvar o relatório.
 export const SaveReportBehind = styled.div`
 	width:100%;
-	height:90%;
+	height:100%;
 	background-color:rgba(0, 0, 0, 0.8);
 	position: absolute;
 	left:0px;
+	top:0px;
 	display:flex;
 	justify-content: center;
 	align-items: center;
+
+	@media only screen and (max-width: 600px) {
+			top:0px;
+	}
 `
 
 //Pop-up para salvar Relatório
@@ -421,6 +457,24 @@ export const SaveReportStyle = styled.div`
 		color:#f7f6ee;
 		border:none;
 		border-radius:25px;
+	}
+
+	
+	@media only screen and (max-width: 1200px) {
+		width:30%;
+	}
+
+	
+	@media only screen and (max-width: 900px) {
+		width:40%;
+	}
+
+	@media only screen and (max-width: 600px) {
+		width: 70%;
+
+		span {
+			margin-right:50px;
+		}
 	}
 
 `
