@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Title, MainStyle, SaveReportsStyle, Button } from '../../Assets/Styles'
+import { MainStyle, SaveReportsStyle, Button, ButtonCreateStyle, TitleMainStyle } from '../../Assets/Styles'
 import SaveReports from './SaveReports'
 import { Link } from 'react-router-dom'
 
@@ -27,25 +27,31 @@ function Main() {
  
   return (
     <Fragment>
-      <Title top={"130px"} left={"40px"}>
-        <span>Relatórios da Empresa</span>
-      </Title>
+         <TitleMainStyle>
+          <span>Relatórios da Empresa</span>
+         </TitleMainStyle>
+         
       <MainStyle>
         {
           array.map((batata) => {
               return(
+                <div><SaveReports name= {batata.name}/>
                 <SaveReports name= {batata.name}/>
+                <SaveReports name= {batata.name}/></div>
+                
               )
           })
         }
-      
       </MainStyle>
+
+      <ButtonCreateStyle>
+        <span>Criar Relatório</span>
+        <Link to='/createReport' style = {{textDecoration: 'none'} }><Button>+</Button></Link>
+      </ButtonCreateStyle>
       
-      <Title top={"80px"} left={"1140px"}>
-        <span>Criar novo Relatório</span>
-      </Title>
       
-      <Link to='/createReport' style = {{textDecoration: 'none'} }><Button>+</Button></Link>
+     
+
     </Fragment>
   )
 }
