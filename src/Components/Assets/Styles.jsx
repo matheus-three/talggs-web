@@ -124,22 +124,34 @@ export const TitleMainStyle = styled.div`
 //Estilo de cada relatório salvo.
 export const SaveReportsStyle = styled.div`
   background-color:#232f40;
-  width:250px;
-  height: 80px;
+  width:300px;
+  height: 100px;
   margin: 0px 60px;
+	margin-left:100px;
   border-radius:25px;
   display:flex;
   align-items:center;
   justify-content: center;
-  color:#f7f6ee;
   margin-bottom:50px;
+  border:none;
 
-	@media only screen and (max-width: 600px) {
-		width:120px;
-		height:50px;
+  button {
+	  border: none;
+	  background-color:#232f40;
+	  color:#f7f6ee;
+  }
+
+	@media only screen and (max-width: 1200px) {
+		width:180px;
+		height:70px;
 		margin:0px 30px;
+		margin-left:80px;
 		margin-bottom:30px;
 		font-size:0.7em;
+
+		button {
+			font-size:0.8em;
+		}
 	}
 `
 //Posicionamento do Botão de criar relatórios.
@@ -203,7 +215,7 @@ export const FilterStyle = styled.div`
   background-color:#f7f6ee;
   border-right: 2px solid #CCC;
   padding:10px;
-   
+
   span {
     font-size: 1.6em;
   }
@@ -211,16 +223,26 @@ export const FilterStyle = styled.div`
   button {
     width:200px;
     margin:10px 40px;
+		margin-left:30px;
     font-size:1.2em;
     border:none;
     background-color:#f7f6ee;
+		text-align:left;
   }
 
+	input {
+		border:none;
+		margin-left:30px;
+		background-color:#f7f6ee;
+		width:150px;
+	}
+
   button.btn-grafico {
-    margin-top:200px;
+    margin-top:140px;
     border-radius: 25px;
     border: solid #CCC;
     height:100px;
+		text-align:center;
   }
 	
 /* Responsivo 1200px */
@@ -261,6 +283,31 @@ export const FilterStyle = styled.div`
 	}
 }
 `
+//Estilo do campo filtro.
+export const FilterStatusStyle = styled.div`
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items:center;
+	margin-left:50px;
+	width: 180px;
+	height:100px;
+	border: 2px solid #ccc;
+	position:relative;
+`
+
+export const OptionFilterStatusStyle = styled.div`
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	width:120px;
+	margin:5px;
+	font-size: 1em;
+
+	input {
+		width:20px;
+	}
+`
 //Estilo que engloba titulo, stats e botões.
 export const ReportStyle = styled.div`
   display:flex;
@@ -288,18 +335,18 @@ export const TitleReportStyle = styled.div`
   font-size:1.4em; 
 
 		@media only screen and (max-width: 600px){
-		margin-top: 0px;
-		margin-left:60px;
-		font-size:1em;
-		width:150px;
-		height:25px;
+			margin-top: 0px;
+			margin-left:60px;
+			font-size:1em;
+			width:150px;
+			height:25px;
 	}               
 `
 //Estilo da tabela de status do relatório.
 export const StatsStyle = styled.div`
   align-items: center;
   height: 400px;
-	max-width: 100%;
+  max-width:${props => props.width};
   overflow: scroll;
          
 	table {
@@ -412,22 +459,18 @@ export const ButtonStyle = styled.div`
 //Fundo cinza do pop-up para salvar o relatório.
 export const SaveReportBehind = styled.div`
 	width:100%;
-	height:100%;
+	height:${props => props.height};
 	background-color:rgba(0, 0, 0, 0.8);
 	position: absolute;
-	left:0px;
-	top:0px;
+	left:${props => props.left};
+	top:${props => props.top};
 	display:flex;
 	justify-content: center;
 	align-items: center;
-
-	@media only screen and (max-width: 600px) {
-			top:0px;
-	}
 `
 
 //Pop-up para salvar Relatório
-export const SaveReportStyle = styled.div`
+export const SaveNameReportStyle = styled.div`
 	width:25%;
 	height:25%;
 	background-color:white;
@@ -478,7 +521,35 @@ export const SaveReportStyle = styled.div`
 	}
 
 `
+//Tela para visualização do relatório salvo.
+export const ShowReportStyle = styled.div`
+	width: 100%;
+	height:100%;
+	background-color:#f7f6ee;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
 
+	span{
+		margin:10px;
+		font-size:1.2em;
+	}
+`
 
+export const ButtonSaveReport = styled.div`
+	display:flex;
+	margin-bottom:100px;
+
+	button{
+		margin:20px;
+		background-color:#232f40;
+		color:#f7f6ee;
+		width: 100px;
+		height:50px;
+		border-radius:25px;
+		border:none;
+	}
+`
 
 export default GlobalStyle;

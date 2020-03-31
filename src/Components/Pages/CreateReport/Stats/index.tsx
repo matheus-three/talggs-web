@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react'
-import { StatsStyle, ButtonStyle, TitleReportStyle, ReportStyle, SaveReportBehind, SaveReportStyle } from '../../../Assets/Styles';
-import SaveReport from './SaveReport';
+import { StatsStyle, ButtonStyle, TitleReportStyle, ReportStyle, SaveReportBehind, SaveNameReportStyle } from '../../../Assets/Styles';
+
 
 
 function Stats() {
@@ -92,7 +92,7 @@ function handleSave (e) {
 					<span>Criar novo Relatório</span>
 				</TitleReportStyle>
 
-				<StatsStyle>
+				<StatsStyle width = {"100%"}>
 					<table>
 						<tr>
 							<th className="cpf">CPF</th>
@@ -126,12 +126,12 @@ function handleSave (e) {
 				</ButtonStyle>
 
 				{saveState?
-					<SaveReportBehind>
-						<SaveReportStyle>
+					<SaveReportBehind top = {"0px"} left = {"0px"} height = {"100%"}>
+						<SaveNameReportStyle>
 							<span>Nome do Relatório:</span>
 							<input type="text" placeholder="Digite o nome do Relatório" onChange = {handleSave}/>
 							<button onClick = {handleClick}>Salvar</button>
-						</SaveReportStyle>
+						</SaveNameReportStyle>
 					</SaveReportBehind>
 					:
 					undefined}

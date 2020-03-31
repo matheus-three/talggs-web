@@ -6,19 +6,19 @@ import { Link } from 'react-router-dom'
 function Main() {
   
   const array = [{
-   name: "Gabriel",
+   name: "Data de Lançamento 12/03/2020",
    cpf: 121313,
    data: "aushahus"
   },{
-    name: "Beny",
+    name: "Contas de Gabriel de Andrade Nunes",
     cpf: 21212,
     data: "aiaisj"
   },{
-    name: "Amanda",
+    name: "Contas com status pago",
     cpf: 23113,
     data: "ashauhs"
   },{
-    name: "lindsay",
+    name: "Contas com valor maior que R$ 500,00",
     cpf: "aushauhs",
     data:"ashuash"
   }
@@ -35,9 +35,9 @@ function Main() {
         {
           array.map((batata) => {
               return(
-                <div><SaveReports name= {batata.name}/>
+                <div>
                 <SaveReports name= {batata.name}/>
-                <SaveReports name= {batata.name}/></div>
+                </div>
                 
               )
           })
