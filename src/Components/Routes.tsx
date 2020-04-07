@@ -5,7 +5,6 @@ import {
     BrowserRouter,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 
 import CreateReport from './Pages/CreateReport';

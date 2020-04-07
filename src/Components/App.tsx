@@ -1,13 +1,19 @@
 import React from 'react';
-import GlobalStyle from './Assets/Styles';
+import GlobalStyle from './Assets/StylesMainComponent';
 import Routes from './Routes';
-
+import AppContextProvider from './ContextApi/Context'
+import FilterContextProvider from './ContextApi/ContextFilterState'
 
 function App() {
   return (
     <div>
-      <GlobalStyle/>
-      <Routes/>
+      <FilterContextProvider>
+      <AppContextProvider>
+        <GlobalStyle/>
+        <Routes/>
+      </AppContextProvider>
+      </FilterContextProvider>
+      
     </div>
   );
 }

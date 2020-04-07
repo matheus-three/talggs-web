@@ -1,30 +1,14 @@
-import React, { Fragment } from 'react'
-import { MainStyle, SaveReportsStyle, Button, ButtonCreateStyle, TitleMainStyle } from '../../Assets/Styles'
-import SaveReports from './SaveReports'
+import React, { Fragment, useContext } from 'react'
+import { MainStyle, ButtonCreateStyle, TitleMainStyle, ButtonCreateReport } from '../../Assets/StylesMainComponent'
+import SavedReports from './SavedReports'
 import { Link } from 'react-router-dom'
+import { AppContext } from '../../ContextApi/Context';
 
 function Main() {
   
-  const array = [{
-   name: "Data de Lançamento 12/03/2020",
-   cpf: 121313,
-   data: "aushahus"
-  },{
-    name: "Contas de Gabriel de Andrade Nunes",
-    cpf: 21212,
-    data: "aiaisj"
-  },{
-    name: "Contas com status pago",
-    cpf: 23113,
-    data: "ashauhs"
-  },{
-    name: "Contas com valor maior que R$ 500,00",
-    cpf: "aushauhs",
-    data:"ashuash"
-  }
-    ]
+  const {report} = useContext(AppContext);
+  const length = report.length;
   
- 
   return (
     <Fragment>
          <TitleMainStyle>
@@ -32,25 +16,19 @@ function Main() {
          </TitleMainStyle>
          
       <MainStyle>
-        {
-          array.map((batata) => {
-              return(
-                <div>
-                <SaveReports name= {batata.name}/>
-                </div>
-                
-              )
-          })
+        {length === 0?
+            <span>Não há relatórios disponíveis</span>
+          :
+            report.map((report) => {
+              return <SavedReports name = {report.name} id = {report.id}/>
+            })
         }
       </MainStyle>
 
       <ButtonCreateStyle>
         <span>Criar Relatório</span>
-        <Link to='/createReport' style = {{textDecoration: 'none'} }><Button>+</Button></Link>
+        <Link to='/createReport' style = {{textDecoration: 'none'} }><ButtonCreateReport>+</ButtonCreateReport></Link>
       </ButtonCreateStyle>
-      
-      
-     
 
     </Fragment>
   )

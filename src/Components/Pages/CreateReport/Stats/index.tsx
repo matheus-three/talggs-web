@@ -1,90 +1,45 @@
-import React, { Fragment, useState } from 'react'
-import { StatsStyle, ButtonStyle, TitleReportStyle, ReportStyle, SaveReportBehind, SaveNameReportStyle } from '../../../Assets/Styles';
-
-
+import React, { Fragment, useContext, useState, useEffect } from 'react'
+import { StatsStyle, ButtonStyle, TitleReportStyle, ReportStyle } from '../../../Assets/StylesCreateReportComponent';
+import { AppContext } from '../../../ContextApi/Context';
+import SaveReport from './SaveReport';
+import { reportStats } from './ReportStats/index'
+import { FilterContext } from '../../../ContextApi/ContextFilterState';
 
 function Stats() {
 
-	const reportStats = [{
-		cpf: "512.607.178-52",
-		name: "Gabriel de Andrade Nunes",
-		accountNumber: "21211212121",
-		fiscalNote: "3453312312",
-		dateDue: "12/03/2020",
-		dateLaunch: "02/03/2020",
-		value: "R$ 500,00",
-		state: "Pendente"
-	}, {
-		cpf: "512.124.228-52",
-		name: "Jorge Wagner",
-		accountNumber: "21211212121",
-		fiscalNote: "3453312312",
-		dateDue: "15/04/2020",
-		dateLaunch: "13/05/2020",
-		value: "R$ 1.200,00",
-		state: "Vencido"
-	}, {
-		cpf: "332.124.658-12",
-		name: "Ariane Matarazzo",
-		accountNumber: "33113332121",
-		fiscalNote: "3f52415512",
-		dateDue: "08/02/2020",
-		dateLaunch: "20/03/2020",
-		value: "R$ 700,00",
-		state: "Pago"
-	}, {
-		cpf: "332.124.658-12",
-		name: "Ariane Matarazzo",
-		accountNumber: "33113332121",
-		fiscalNote: "3f52415512",
-		dateDue: "08/02/2020",
-		dateLaunch: "20/03/2020",
-		value: "R$ 700,00",
-		state: "Pago"
-	}, {
-		cpf: "332.124.658-12",
-		name: "Ariane Matarazzo",
-		accountNumber: "33113332121",
-		fiscalNote: "3f52415512",
-		dateDue: "08/02/2020",
-		dateLaunch: "20/03/2020",
-		value: "R$ 700,00",
-		state: "Pago"
-	}, {
-		cpf: "332.124.658-12",
-		name: "Ariane Matarazzo",
-		accountNumber: "33113332121",
-		fiscalNote: "3f52415512",
-		dateDue: "08/02/2020",
-		dateLaunch: "20/03/2020",
-		value: "R$ 700,00",
-		state: "Pago"
-	}, {
-		cpf: "332.124.658-12",
-		name: "Ariane Matarazzo",
-		accountNumber: "33113332121",
-		fiscalNote: "3f52415512",
-		dateDue: "08/02/2020",
-		dateLaunch: "20/03/2020",
-		value: "R$ 700,00",
-		state: "Pago"
-	}]
+	const { setSaveNameReportState } = useContext(AppContext);
+	const { values } = useContext(FilterContext)
+	const [filterReport, setFilterReport] = useState(reportStats);
 
-	const [saveState,setSaveState] = useState(false);
-	
 
- function handleClick () {
-		saveState?
-		 setSaveState(false)
-	 :
-		 setSaveState(true)
-}
+	function handleClick() {
+		setSaveNameReportState(true)
+	}
 
-function handleSave (e) {
-	const name = e.target.value;
-	console.log("name",name)
-	
-}
+	useEffect(() => {
+		if (values !== "") {
+			const reportName = reportStats.filter((report) => {
+				return report.cpf.substr(0, values.cpf.length) === values.cpf &&
+					report.name.substr(0, values.name.length) === values.name
+			})
+
+			if (values !== false) {
+				const reportStatus = reportName.filter((report) => {
+					return values.paid ? report.state === "Pago" :
+						values.pending ? report.state === "Pendente" :
+							values.overdues ? report.state === "Vencido" :
+								report.state === "Pago" || report.state === "Pendente" || report.state === "Vencido"
+				})
+
+				setFilterReport(reportStatus)
+			} else {
+				setFilterReport(reportStats)
+			}
+		}
+
+	}, [values])
+
+
 	return (
 		<Fragment>
 			<ReportStyle>
@@ -92,7 +47,7 @@ function handleSave (e) {
 					<span>Criar novo Relatório</span>
 				</TitleReportStyle>
 
-				<StatsStyle width = {"100%"}>
+				<StatsStyle width={"100%"}>
 					<table>
 						<tr>
 							<th className="cpf">CPF</th>
@@ -104,9 +59,9 @@ function handleSave (e) {
 							<th className="valor">Valor</th>
 							<th className="status">Status</th>
 						</tr>
-						{reportStats.map((stats) => {
+						{filterReport.map((stats) => {
 							return (
-								<tr>
+								<tr key={stats.id}>
 									<td>{stats.cpf}</td>
 									<td>{stats.name}</td>
 									<td>{stats.accountNumber}</td>
@@ -121,20 +76,11 @@ function handleSave (e) {
 					</table>
 				</StatsStyle>
 				<ButtonStyle>
-						<button>Imprimir</button>
-						<button onClick = {handleClick}>Salvar</button>
+					<button>Imprimir</button>
+					<button onClick={handleClick}>Salvar</button>
 				</ButtonStyle>
 
-				{saveState?
-					<SaveReportBehind top = {"0px"} left = {"0px"} height = {"100%"}>
-						<SaveNameReportStyle>
-							<span>Nome do Relatório:</span>
-							<input type="text" placeholder="Digite o nome do Relatório" onChange = {handleSave}/>
-							<button onClick = {handleClick}>Salvar</button>
-						</SaveNameReportStyle>
-					</SaveReportBehind>
-					:
-					undefined}
+				<SaveReport reportStats={filterReport}></SaveReport>
 
 			</ReportStyle>
 		</Fragment>
