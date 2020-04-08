@@ -8,7 +8,7 @@ function Main() {
   
   const {report} = useContext(AppContext);
   const length = report.length;
-  
+    
   return (
     <Fragment>
          <TitleMainStyle>

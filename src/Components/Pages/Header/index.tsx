@@ -11,7 +11,7 @@ function Header() {
 				<ul>
 					<li>Histórico</li>
 					<Link to='/' style={{ textDecoration: 'none', color: 'white' }}><li>Relatórios</li></Link>
-					<li>Gráficos</li>
+					<Link to='/savedGraphics' style = {{textDecoration: 'none', color: 'white'}}><li>Gráficos</li></Link>
 
 				</ul>
 				<IconEdit />

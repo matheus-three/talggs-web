@@ -9,6 +9,8 @@ import {
 
 import CreateReport from './Pages/CreateReport';
 import Header from './Pages/Header';
+import Graphics from './Pages/Graphics';
+import CreateGraphics from './Pages/CreateGraphics';
 
 
 
@@ -24,6 +26,15 @@ function Routes() {
                     <Header/>
                     <CreateReport/>
                 </Route>
+                <Route path = "/savedGraphics">
+                    <Header/>
+                    <Graphics/>
+                </Route>  
+                <Route path = "/createGraphics">
+                    <Header/>  
+                    <CreateGraphics/>  
+                </Route>  
+
             </Switch>
         </BrowserRouter>
     );
