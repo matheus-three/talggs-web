@@ -1,4 +1,5 @@
 import React from 'react';
+import Reports from './Pages/Reports'
 import Main from './Pages/Main'
 
 import {
@@ -12,16 +13,18 @@ import Header from './Pages/Header';
 import Graphics from './Pages/Graphics';
 import CreateGraphics from './Pages/CreateGraphics';
 
-
-
 function Routes() {
     return (
         <BrowserRouter>
             <Switch>
                 <Route exact={true} path='/'>
                     <Header/>
-                    <Main />
+                    <Main/>
                 </Route>
+                <Route path='/savedReports'>
+                    <Header/>
+                    <Reports/>
+                 </Route>   
                 <Route path="/createReport" >
                     <Header/>
                     <CreateReport/>

@@ -22,11 +22,19 @@ export const ButtonsTopStyle = styled.div`
 			background-color:#f7f6ee;
 			border:none;
 			margin:10px;
+			opacity:0.9;
 			font-size:1.5em;
     }
 
+		span:hover {
+		opacity:1;
+		border-bottom:2px solid #ccc;
+	}
+
 		span {
-			border-bottom: 2px solid #ccc;
+			opacity:0.9;
+			border-bottom: 1px solid #ccc;
+			cursor: pointer;
 		}
   
 `
@@ -36,6 +44,9 @@ export const GraphicsStyle = styled.div`
 	height:400px;
 	background-color:#f7f6ee;
 	border: 1px solid #ccc;
+	display:flex;
+	align-items:center;
+	justify-content:center;
 
 `
 export const BottomPositionStyle = styled.div`
