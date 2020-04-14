@@ -11,6 +11,7 @@ function Filter() {
 
 	function handleClick (e) {
 		filterState(e.target.id)
+		console.log("a",e.target.id)
 	}
 
 	function handleChange(e) {
@@ -55,8 +56,6 @@ function Filter() {
 				</OptionFilterStatusStyle>
 			</FilterStatusStyle>
 			:undefined}
-
-			<button className="btn-grafico">Acrescentar Gráfico</button>
 		</FilterStyle>
 	);
 }

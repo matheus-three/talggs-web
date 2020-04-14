@@ -32,7 +32,7 @@ function SaveReport(props: Iprops) {
 	return (
 		<Fragment>
 			{saveNameReportState ?
-				<SaveReportBehind top={"0px"} left={"0px"} height={"100%"}>
+				<SaveReportBehind top={"0px"} left={"0px"} height={"100%"} back = {"rgba(0,0,0,0.8)"}>
 					<SaveNameReportStyle>
 						<span>Nome do Relatório:</span>
 						<input type="text" placeholder="Digite o nome do Relatório" onChange={handleSave} />

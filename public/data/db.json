@@ -1,0 +1,273 @@
+
+
+{ "reportStats": [{
+  "id": 1,
+  "cpf": "512.607.178-52",
+  "name": "Gabriel de Andrade Nunes",
+  "accountNumber": "21211212121",
+  "fiscalNote": "3453312312",
+  "dateDue": "12/03/2020",
+  "dateLaunch": "02/03/2020",
+  "value": "R$ 500,00",
+  "state": "Pendente",
+  "Details": [
+      {
+        "id":"1", 
+        "product":"Caneta",
+        "description": "Caneta do Homem Aranha",
+        "quantity": "2",
+        "valUnit": "R$ 9.99",
+        "valTot": "R$ 19.98"
+      },
+      { "id": "2",
+        "product":"Livro",
+        "description": "Harry Poter e a Ordem da Fenix",
+        "quantity": "1",
+        "valUnit": "R$ 45.90",
+        "valTot": "R$ 45.90"
+      },{
+        "id": "3",
+        "product":"Caderno",
+        "description": "Caderno do Homem Aranha Vermelho",
+        "quantity": "3",
+        "valUnit": "R$ 3.00",
+        "valTot": "R$ 9.00"
+      },{
+        "id":"4", 
+        "product":"Caneta",
+        "description": "Caneta do Homem Aranha",
+        "quantity": "2",
+        "valUnit": "R$ 9.99",
+        "valTot": "R$ 19.98"
+      },{
+        "id":"5", 
+        "product":"Caneta",
+        "description": "Caneta do Homem Aranha",
+        "quantity": "2",
+        "valUnit": "R$ 9.99",
+        "valTot": "R$ 19.98"
+      },{
+        "id":"6", 
+        "product":"Caneta",
+        "description": "Caneta do Homem Aranha",
+        "quantity": "2",
+        "valUnit": "R$ 9.99",
+        "valTot": "R$ 19.98"
+      }
+  ]
+}, {
+  "id": 2,
+  "cpf": "512.124.228-52",
+  "name": "Jorge Wagner",
+  "accountNumber": "21211212121",
+  "fiscalNote": "3453312312",
+  "dateDue": "15/04/2020",
+  "dateLaunch": "13/05/2020",
+  "value": "R$ 1.200,00",
+  "state": "Vencido",
+  "Details": [
+    {
+      "id":"1", 
+      "product":"Caneta",
+      "description": "Caneta do Homem Aranha",
+      "quantity": "2",
+      "valUnit": "R$ 9.99",
+      "valTot": "R$ 19.98"
+    },
+    { "id": "2",
+      "product":"Livro",
+      "description": "Harry Poter e a Ordem da Fenix",
+      "quantity": "1",
+      "valUnit": "R$ 45.90",
+      "valTot": "R$ 45.90"
+    },{
+      "id": "3",
+      "product":"Caderno",
+      "description": "Caderno do Homem Aranha Vermelho",
+      "quantity": "3",
+      "valUnit": "R$ 3.00",
+      "valTot": "R$ 9.00"
+    }
+]
+}, {
+  "id": 3,
+  "cpf": "332.124.658-12",
+  "name": "Ariane Matarazzo",
+  "accountNumber": "33113332121",
+  "fiscalNote": "3f52415512",
+  "dateDue": "08/02/2020",
+  "dateLaunch": "20/03/2020",
+  "value": "R$ 700,00",
+  "state": "Pago",
+  "Details": [
+    {
+      "id":"1", 
+      "product":"Caneta",
+      "description": "Caneta do Homem Aranha",
+      "quantity": "2",
+      "valUnit": "R$ 9.99",
+      "valTot": "R$ 19.98"
+    },
+    { "id": "2",
+      "product":"Livro",
+      "description": "Harry Poter e a Ordem da Fenix",
+      "quantity": "1",
+      "valUnit": "R$ 45.90",
+      "valTot": "R$ 45.90"
+    },{
+      "id": "3",
+      "product":"Caderno",
+      "description": "Caderno do Homem Aranha Vermelho",
+      "quantity": "3",
+      "valUnit": "R$ 3.00",
+      "valTot": "R$ 9.00"
+    }
+]
+}, {
+  "id": 4,
+  "cpf": "332.124.658-12",
+  "name": "Ariane Matarazzo",
+  "accountNumber": "33113332121",
+  "fiscalNote": "3f52415512",
+  "dateDue": "08/02/2020",
+  "dateLaunch": "20/03/2020",
+  "value": "R$ 700,00",
+  "state": "Pago",
+  "Details": [
+    {
+      "id":"1", 
+      "product":"Caneta",
+      "description": "Caneta do Homem Aranha",
+      "quantity": "2",
+      "valUnit": "R$ 9.99",
+      "valTot": "R$ 19.98"
+    },
+    { "id": "2",
+      "product":"Livro",
+      "description": "Harry Poter e a Ordem da Fenix",
+      "quantity": "1",
+      "valUnit": "R$ 45.90",
+      "valTot": "R$ 45.90"
+    },{
+      "id": "3",
+      "product":"Caderno",
+      "description": "Caderno do Homem Aranha Vermelho",
+      "quantity": "3",
+      "valUnit": "R$ 3.00",
+      "valTot": "R$ 9.00"
+    }
+]
+}, {
+  "id": 5,
+  "cpf": "332.124.658-12",
+  "name": "Ariane Matarazzo",
+  "accountNumber": "33113332121",
+  "fiscalNote": "3f52415512",
+  "dateDue": "08/02/2020",
+  "dateLaunch": "20/03/2020",
+  "value": "R$ 700,00",
+  "state": "Pago",
+  "Details": [
+    {
+      "id":"1", 
+      "product":"Caneta",
+      "description": "Caneta do Homem Aranha",
+      "quantity": "2",
+      "valUnit": "R$ 9.99",
+      "valTot": "R$ 19.98"
+    },
+    { "id": "2",
+      "product":"Livro",
+      "description": "Harry Poter e a Ordem da Fenix",
+      "quantity": "1",
+      "valUnit": "R$ 45.90",
+      "valTot": "R$ 45.90"
+    },{
+      "id": "3",
+      "product":"Caderno",
+      "description": "Caderno do Homem Aranha Vermelho",
+      "quantity": "3",
+      "valUnit": "R$ 3.00",
+      "valTot": "R$ 9.00"
+    }
+]
+}, {
+  "id": 6,
+  "cpf": "332.124.658-12",
+  "name": "Ariane Matarazzo",
+  "accountNumber": "33113332121",
+  "fiscalNote": "3f52415512",
+  "dateDue": "08/02/2020",
+  "dateLaunch": "20/03/2020",
+  "value": "R$700,00",
+  "state": "Pago",
+  "Details": [
+    {
+      "id":"1", 
+      "product":"Caneta",
+      "description": "Caneta do Homem Aranha",
+      "quantity": "2",
+      "valUnit": "R$ 9.99",
+      "valTot": "R$ 19.98"
+    },
+    { "id": "2",
+      "product":"Livro",
+      "description": "Harry Poter e a Ordem da Fenix",
+      "quantity": "1",
+      "valUnit": "R$ 45.90",
+      "valTot": "R$ 45.90"
+    },{
+      "id": "3",
+      "product":"Caderno",
+      "description": "Caderno do Homem Aranha Vermelho",
+      "quantity": "3",
+      "valUnit": "R$ 3.00",
+      "valTot": "R$ 9.00"
+    }
+]
+}, {
+  "id": 7,
+  "cpf": "332.124.658-12",
+  "name": "Ariane Matarazzo",
+  "accountNumber": "33113332121",
+  "fiscalNote": "3f52415512",
+  "dateDue": "08/02/2020",
+  "dateLaunch": "20/03/2020",
+  "value": "R$ 700,00",
+  "state": "Pago"
+},{
+  "id": 8,
+  "cpf": "132.174.158-02",
+  "name": "Giovana Antunes",
+  "accountNumber": "33111132121",
+  "fiscalNote": "3f52489792",
+  "dateDue": "08/02/2020",
+  "dateLaunch": "20/03/2020",
+  "value": "R$ 700,00",
+  "state": "Vencido",
+  "Details": [
+    {
+      "id":"1", 
+      "product":"Caneta",
+      "description": "Caneta do Homem Aranha",
+      "quantity": "2",
+      "valUnit": "R$ 9.99",
+      "valTot": "R$ 19.98"
+    },
+    { "id": "2",
+      "product":"Livro",
+      "description": "Harry Poter e a Ordem da Fenix",
+      "quantity": "1",
+      "valUnit": "R$ 45.90",
+      "valTot": "R$ 45.90"
+    },{
+      "id": "3",
+      "product":"Caderno",
+      "description": "Caderno do Homem Aranha Vermelho",
+      "quantity": "3",
+      "valUnit": "R$ 3.00",
+      "valTot": "R$ 9.00"
+    }
+]
+}]
+}

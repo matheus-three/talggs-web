@@ -36,21 +36,19 @@ export const FilterStyle = styled.div`
 		cursor:pointer;
   }
 
+	button:hover {
+		opacity: 0.5;
+	}
+
 	input {
 		border:none;
 		margin-left:30px;
 		background-color:#f7f6ee;
 		width:150px;
+		padding: 5px;
 		cursor:text;
 	}
 
-  button.btn-grafico {
-    margin:100px 20px;
-    border-radius: 25px;
-    border: solid #CCC;
-    height:100px;
-		text-align:center;
-  }
 	
 /* Responsivo 1200px */
 @media only screen and (max-width: 1200px){
@@ -176,22 +174,40 @@ export const StatsStyle = styled.div`
   height: 400px;
   max-width:${props => props.width};
   overflow: scroll;
+	box-shadow: 4px 4px 4px 4px #ccc;
+	cursor:pointer;
+	
+	::-webkit-scrollbar-track {
+			background-color: #f7f6ee;
+	}
+
+	::-webkit-scrollbar {
+			width: 6px;
+			background: #f7f6ee;
+	}
+
+	::-webkit-scrollbar-thumb {
+			background: #ccc;
+	}
+
          
 	table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 2px solid #dddddd;
     width:600px; 
+		border-left: 2px solid #dddddd;
+		padding:10px;
 	}
-	
+
  	th {
-  	border: 1px solid #dddddd;
-		background-color:#232f40;
-		color: #f7f6ee;
+		border-bottom: 1px solid #ccc;
+		border-top: 1px solid #ccc;
 		min-width: 200px;
-		height: 50px;
   	text-align: center;
-  	padding: 8px;    
+  	padding: 8px;  
+		background-color:#232f40; 
+		color: #f7f6ee; 
 	}
 
 	th.nome {
@@ -199,8 +215,8 @@ export const StatsStyle = styled.div`
 	}
 				
 	td {
-		border-left: 1px solid #dddddd; 
-    padding: 20px;
+		border-bottom: 1px solid #dddddd; 
+    padding: 15px;
     text-align: center;			
   }
 
@@ -271,7 +287,12 @@ export const ButtonStyle = styled.div`
     margin: 0px 40px;
     border-radius:25px;
     color: #f7f6ee;
+		opacity:0.9;
 		cursor:pointer;
+	}
+
+	button:hover {
+		opacity:1;
 	}
 	@media only screen and (max-width: 700px){
 		margin-top:10px;
@@ -290,7 +311,7 @@ export const ButtonStyle = styled.div`
 export const SaveReportBehind = styled.div`
 	width:100%;
 	height:${props => props.height};
-	background-color:rgba(0, 0, 0, 0.8);
+	background-color:${props => props.back};
 	position: absolute;
 	left:${props => props.left};
 	top:${props => props.top};
@@ -321,6 +342,7 @@ export const SaveNameReportStyle = styled.div`
 		border:none;
 		border-bottom:1px solid #ccc;
 		margin-bottom:20px;
+		padding:10px;
 	}
 
 	button {

@@ -2,14 +2,13 @@ import React, { Fragment, useContext, useState, useEffect } from 'react'
 import { StatsStyle, ButtonStyle, TitleReportStyle, ReportStyle } from '../../../Assets/StylesCreateReportComponent';
 import { AppContext } from '../../../ContextApi/Context';
 import SaveReport from './SaveReport';
-import { reportStats } from './ReportStats/index'
 import { FilterContext } from '../../../ContextApi/ContextFilterState';
 
 function Stats() {
 
-	const { setSaveNameReportState } = useContext(AppContext);
+	const { setSaveNameReportState,api} = useContext(AppContext);
 	const { values } = useContext(FilterContext)
-	const [filterReport, setFilterReport] = useState(reportStats);
+	const [filterReport, setFilterReport] = useState(api);
 
 
 	function handleClick() {
@@ -18,9 +17,9 @@ function Stats() {
 
 	useEffect(() => {
 		if (values !== "") {
-			const reportName = reportStats.filter((report) => {
+			const reportName = api.filter((report) => {
 				return report.cpf.substr(0, values.cpf.length) === values.cpf &&
-					report.name.substr(0, values.name.length) === values.name
+					report.name.substr(0, values.name.length).toLowerCase() === values.name.toLowerCase();
 			})
 
 			if (values !== false) {
@@ -33,7 +32,7 @@ function Stats() {
 
 				setFilterReport(reportStatus)
 			} else {
-				setFilterReport(reportStats)
+				setFilterReport(api)
 			}
 		}
 

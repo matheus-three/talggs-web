@@ -29,8 +29,8 @@ export const HeaderStyle = styled.div`
   align-items: center;
     
   img {
-    height: 60px;
-    width: 60px;
+    height: 90px;
+    width: 90px;
     margin-left: 30px;
 	}
 
