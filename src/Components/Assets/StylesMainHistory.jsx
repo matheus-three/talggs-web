@@ -7,12 +7,17 @@ export const TopBarStyle = styled.div`
     width:100%;
     height:100px;
     margin-left: 100px;
-    font-size: 1.2em;
+    font-size: 1em;
     
     select {
       width: 250px;
       margin:0px 10px;
       height:40px;
+    }
+
+    span {
+      margin-bottom: 40px;
+      font-size: 1.2em;
     }
 `
 

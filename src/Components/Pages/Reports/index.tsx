@@ -3,6 +3,8 @@ import { MainStyle, ButtonCreateStyle, TitleMainStyle, ButtonCreateReport } from
 import SavedReports from './SavedReports'
 import { Link } from 'react-router-dom'
 import { AppContext } from '../../ContextApi/Context';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 function Reports() {
   
@@ -31,7 +33,11 @@ function Reports() {
 
       <ButtonCreateStyle>
         <span>Criar Relatório</span>
-        <Link to='/createReport' style = {{textDecoration: 'none'} }><ButtonCreateReport>+</ButtonCreateReport></Link>
+        <Link to='/createReport' style = {{textDecoration: 'none'} }>
+        <Fab color="primary" aria-label="add">
+            <AddIcon/>
+        </Fab>
+        </Link>
       </ButtonCreateStyle>
 
     </Fragment>

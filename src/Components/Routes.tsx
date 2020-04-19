@@ -12,6 +12,7 @@ import CreateReport from './Pages/CreateReport';
 import Header from './Pages/Header';
 import Graphics from './Pages/Graphics';
 import CreateGraphics from './Pages/CreateGraphics';
+import EditCupons from './Pages/editCupons';
 
 function Routes() {
     return (
@@ -37,6 +38,10 @@ function Routes() {
                     <Header/>  
                     <CreateGraphics/>  
                 </Route>  
+                <Route path = "/editCupons">
+                    <Header/>
+                    <EditCupons/>
+                </Route>
 
             </Switch>
         </BrowserRouter>

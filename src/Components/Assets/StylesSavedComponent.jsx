@@ -29,9 +29,7 @@ export const HeaderStyle = styled.div`
   align-items: center;
     
   img {
-    height: 90px;
-    width: 90px;
-    margin-left: 30px;
+    margin-left: 0px;
 	}
 
   ul {
@@ -48,9 +46,8 @@ export const HeaderStyle = styled.div`
 		font-size: 1em;
 
 		img {
-			width: 40px;
-			height:40px;
-			margin-left:25px;
+			width: 80px;
+			height:80px;
 		}
 
 		ul {
@@ -168,6 +165,10 @@ export const ButtonCreateStyle = styled.div`
   margin-bottom:30px;
 	padding:20px;
 
+	.MuiFab-primary{
+		background-color:#232f40;
+
+	}
   span{
       font-size:1.3em;
       margin:10px;
