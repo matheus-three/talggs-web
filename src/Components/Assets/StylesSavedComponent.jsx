@@ -13,7 +13,8 @@ const GlobalStyle = createGlobalStyle`
     background: #f7f6ee;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
-    font-family: sans-serif;;
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
   }
 `;
 
@@ -21,25 +22,36 @@ const GlobalStyle = createGlobalStyle`
 
 //Header Genérico 
 export const HeaderStyle = styled.div`
-  height: 80px;
-  width:100%;
-  font-size: 1.4em;
-  background-color: #232f40;
+  height: 11vh;
+  width: 100vw;
+  font-size: 1.6vw;
+  background-color: #2D9AA6;
   display:flex;
   align-items: center;
     
   img {
-    height: 90px;
-    width: 90px;
+    height: 90%;
+    width: 12%;
     margin-left: 30px;
 	}
 
   ul {
-    display:flex;
-    width:80%;
+    display: flex;
+    width: 50vw;
     color: #f7f6ee;
-    justify-content: space-around;
-    list-style: none;    
+    justify-content: space-evenly;
+	list-style: none;
+	margin: auto;
+	
+	li {
+		transition: .3s all;
+	}
+
+	li:hover,
+	li:active {
+		color: #A7E4F2;
+    	text-decoration: underline;
+	}
   }
     
 		/* Responsivo até 800px */
@@ -78,11 +90,12 @@ export const HeaderStyle = styled.div`
 
 //Icone no menu superior do Header para abrir as opções de editar
 export const IconEdit = styled.div`
-  background-color:#f7f6ee;
-  border-radius:2em 5em;
-  height:30px;
-  width: 50px;
-  margin-left: 60px;
+  background-color: #F7F6EE;
+  border-radius: 15px;
+  height: 85px;
+  width: 85px;
+  margin-right: 3vw;
+  
 
   @media only screen and (max-width: 1200px){
     margin-right: 100px;   

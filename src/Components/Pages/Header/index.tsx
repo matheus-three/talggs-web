@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { HeaderStyle, IconEdit } from '../../Assets/StylesSavedComponent';
-import logo from '../../Assets/Icons/Logo1V - Web.svg'
+import logo from '../../Assets/Icons/LogoMobile.svg'
 import { Link } from 'react-router-dom'
 
 function Header() {
