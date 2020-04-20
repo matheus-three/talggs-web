@@ -6,7 +6,6 @@ import styled from 'styled-components'
 //engloba o componente de filtro com o de stats do relatórios
 export const Container = styled.div`
     display: flex;
-		width: 90%;
 		
 @media only screen and (max-width: 600px) {
 	  flex-direction: column;
@@ -15,38 +14,45 @@ export const Container = styled.div`
 
 //Estilo do componente Filtro
 export const FilterStyle = styled.div`
-  height:620px;
-  width:300px;
-  background-color:#f7f6ee;
+  height: 89vh;
+  width: 20vw;
+  background-color: #f7f6ee;
   border-right: 2px solid #CCC;
-  padding:20px;
+  padding: 30px 20px;
 
   span {
-    font-size: 1.6em;
+	font-size: 2.6em;
+	color: #BEBCBC;
+	font-weight: 700;
   }
 
   button {
-    width:200px;
-    margin:10px 40px;
-		margin-left:30px;
-    font-size:1.2em;
-    border:none;
-    background-color:#f7f6ee;
-		text-align:left;
-		cursor:pointer;
+    width: 100%;
+    margin: 30px 0px;
+    font-size: 1.8em;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    cursor: pointer;
+    display: block;
+    color: #2D4F6C;
+    font-weight: bold;
   }
 
-	button:hover {
-		opacity: 0.5;
+	button:hover, button:focus {
+		color: #2D9AA6;
+		border: 0;
+		outline: 0;
 	}
 
 	input {
-		border:none;
-		margin-left:30px;
-		background-color:#f7f6ee;
-		width:150px;
+		border: 1px solid #CCC;
+		border-radius: 10px;
+		width: 100%;
 		padding: 5px;
-		cursor:text;
+		cursor: text;
+		font-size: 1.8em;
+		color: #2D4F6C;
 	}
 
 	
@@ -95,70 +101,77 @@ export const FilterStyle = styled.div`
 	}
 }
 `
-//Estilo do campo filtro.
+//Estilo do campo filtro (Status).
 export const FilterStatusStyle = styled.div`
-	display:flex;
+	display: flex;
 	flex-direction: column;
-	justify-content:center;
-	align-items:center;
-	margin-left:50px;
-	width: 180px;
-	height:100px;
-	border: 2px solid #ccc;
-	position:relative;
+	justify-content: space-evenly;
+	-webkit-box-align: start;
+	align-items: flex-start;
+	padding: 5px;
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	position: relative;
+	font-size: 1.8em;
+	color: #2D4F6C;
 
 	@media only screen and (max-width: 1200px){
-		width:120px;
-		height:80px;
-		font-size:0.8em;
-		margin-left:30px;
+		width: 120px;
+		height: 80px;
+		font-size: 0.8em;
+		margin-left: 30px;
 	}
 
 	
 `
 
 export const OptionFilterStatusStyle = styled.div`
-	display:flex;
-	justify-content:space-between;
-	align-items:center;
-	width:120px;
-	margin:5px;
-	font-size: 1em;
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+	width: 100%;
+	padding: 5px;
 
 	input {
-		width:20px;
+		width: 50px;
 		cursor: pointer;
+		height: 30px;
 	}
 
 	@media only screen and (max-width: 1200px){
-		width:100px;
+		width: 100px;
 	}
 `
 //Estilo que engloba titulo, stats e botões.
 export const ReportStyle = styled.div`
-  display:flex;
-  flex-direction:column;
-  margin-left:100px;
-  width:75%;
+  margin-left: 3vw;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
 	@media only screen and (max-width: 1200px){
 		margin-left: 50px;
-		width:100%;
+		width: 100%;
 	}
 
 	@media only screen and (max-width: 600px){
 		margin-left: 20px;
-		width:100%;
+		width: 100%;
 		
 	}
 `
 //Titulo do relatório
 export const TitleReportStyle = styled.div`
-  margin-top:40px;
-  margin-left:10px;
-  width:350px;
-  height:50px;
-  font-size:1.4em; 
+	height:auto;
+	margin-top: 10vh;
+	font-size: 3.5em;
+	color: #101D25;
+	letter-spacing: 2px;
+	font-weight: bold; 
 
 		@media only screen and (max-width: 600px){
 			margin-top: 0px;
@@ -170,54 +183,51 @@ export const TitleReportStyle = styled.div`
 `
 //Estilo da tabela de status do relatório.
 export const StatsStyle = styled.div`
-  align-items: center;
-  height: 400px;
-  max-width:${props => props.width};
-  overflow: scroll;
-	box-shadow: 4px 4px 4px 4px #ccc;
-	cursor:pointer;
+	align-items: start;
+	height: 50vh;
+	max-width:${props => props.width};
+	overflow: scroll;
+	box-shadow: 0px 0px 1px;
+	font-size: 1.5em;
 	
 	::-webkit-scrollbar-track {
-			background-color: #f7f6ee;
+		background-color: #f7f6ee;
 	}
 
 	::-webkit-scrollbar {
-			width: 6px;
-			background: #f7f6ee;
+		width: 6px;
+		background: #f7f6ee;
 	}
 
 	::-webkit-scrollbar-thumb {
-			background: #ccc;
+		background: #ccc;
 	}
 
          
 	table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    border-bottom: 2px solid #dddddd;
-    width:600px; 
-		border-left: 2px solid #dddddd;
-		padding:10px;
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		/*width:600px; 
+		padding:10px;*/
 	}
 
  	th {
 		border-bottom: 1px solid #ccc;
-		border-top: 1px solid #ccc;
 		min-width: 200px;
-  	text-align: center;
-  	padding: 8px;  
-		background-color:#232f40; 
-		color: #f7f6ee; 
+		text-align: justify;
+		padding: 8px;
+		color: #BEBCBC;
+		font-size: 1.2em;
 	}
 
 	th.nome {
-    min-width: 250px;
+    	min-width: 250px;
 	}
 				
-	td {
-		border-bottom: 1px solid #dddddd; 
-    padding: 15px;
-    text-align: center;			
+	td { 
+		padding: 15px 8px;
+		color: #232F40;
+    	text-align: justify;			
   }
 
 	/* responsivo até 1200px */
@@ -275,24 +285,26 @@ export const StatsStyle = styled.div`
 
 //Estilo dos botões da tela de criar relatório
 export const ButtonStyle = styled.div`
-  display:flex;
-  justify-content:center;
-  margin-top: 20px;
+  display: flex;
+  justify-content: center;
     
 	button {
-    background-color:#232f40;
-    width: 100px;
-    height: 50px;
-    border:none;
-    margin: 0px 40px;
-    border-radius:25px;
-    color: #f7f6ee;
-		opacity:0.9;
-		cursor:pointer;
+		background-color: #F2A950;
+		width: 12vw;
+		height: 7.5vh;
+		border: none;
+		margin: 0px 40px;
+		border-radius: 50px;
+		color: #f7f6ee;
+		opacity: 0.8;
+		cursor: pointer;
+		font-size: 2.3em;
+		font-weight: bold;
+		transition: all .5s ease-out;
 	}
 
 	button:hover {
-		opacity:1;
+		opacity: 1;
 	}
 	@media only screen and (max-width: 700px){
 		margin-top:10px;
@@ -309,50 +321,68 @@ export const ButtonStyle = styled.div`
 `
 //Fundo cinza do pop-up para salvar o relatório.
 export const SaveReportBehind = styled.div`
-	width:100%;
+	width: 100vw;
 	height:${props => props.height};
 	background-color:${props => props.back};
 	position: absolute;
 	left:${props => props.left};
 	top:${props => props.top};
-	display:flex;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 `
 
 //Pop-up para salvar Relatório
 export const SaveNameReportStyle = styled.div`
-	width:25%;
-	height:25%;
-	background-color:white;
-	display:flex;
-	flex-direction:column;
-	justify-content:center;
-	align-items:center;
-	border-radius:4px;
+	width: 40vw;
+	height: 30vh;
+	padding: 30px;
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	justify-content: space-around;
+	-webkit-box-align: center;
+	align-items: center;
+	border-radius: 10px;
 	
 	span {
-		font-size:1.2em;
-		margin-right:100px;
+		width: 100%;
+		margin-bottom: 30px;
+		font-size: 2em;
+		border: none;
+		background-color: transparent;
+		text-align: left;
+		cursor: pointer;
+		display: block;
+		color: #101D25;
+		font-weight: bold;
 	}
 
 	input{
-		width:70%;
-		height:30px;
-		border:none;
-		border-bottom:1px solid #ccc;
-		margin-bottom:20px;
-		padding:10px;
+		width: 85%;
+		font-size: 1.8em;
+		color: #2D4F6C;
+		border: none;
+		border-bottom: 1px solid #A4A4A7;
+		margin-bottom: 20px;
+		padding: 10px;
+
+		:focus {
+			outline: 0;
+		}
 	}
 
 	button {
-		width:90px;
-		height:30px;
-		background-color:#232f40;
-		color:#f7f6ee;
-		border:none;
-		border-radius:25px;
-		cursor:pointer;
+		width: 8vw;
+		height: 6vh;
+		font-size: 1.8em;
+		font-weight: bold;
+		background-color: #F2A950;
+		color: #ffffff;
+		border: none;
+		border-radius: 30px;
+		cursor: pointer;
 	}
 
 	

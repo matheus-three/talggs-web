@@ -131,11 +131,11 @@ export const MainStyle = styled.div`
 `
 //Posicionamento do Titulo dos relatórios
 export const TitleMainStyle = styled.div`
-  height:auto;
+  height: auto;
   margin-top: 10vh;
   margin-left: 6vw;
   font-size: 3.5em;
-  color: #F2A950;
+  color: #101D25;
   letter-spacing: 2px;
   font-weight: bold;    
 
@@ -145,17 +145,17 @@ export const TitleMainStyle = styled.div`
 `
 //Estilo de cada relatório salvo.
 export const SaveReportsStyle = styled.button`
-	background-color: #232f40;
+	background-color: #8abecb52;
 	width: 22vw;
 	height: 13vh;
-	color: #BEBCBC;
+	color: #232f40;
 	font-size: 2.2em;
-	border: none;
+	border: 1px solid #232f40;
 	border-radius: 25px;
-	box-shadow: 5px 5px 17px #808080a6;
+	box-shadow: 1px 3px 6px #00000045;
 	padding: 15px 25px;
 	margin-left: 130px;
-    margin-bottom: 100px;
+	margin-bottom: 100px;
 	cursor: pointer;
 	display: flex;
 	align-items: flex-start;
@@ -178,14 +178,13 @@ export const SaveReportsStyle = styled.button`
 `
 //Posicionamento do Botão de criar relatórios.
 export const ButtonCreateStyle = styled.div`
-display: flex;
-align-items: center;
-position: fixed;
-bottom: 50px;
-right: 60px;
-transition: .3s all;
+	display: flex;
+	align-items: center;
+	position: fixed;
+	bottom: 50px;
+	right: 60px;
 
-	&:hover span {
+	:hover span {
 		visibility: visible;
 	}
 
@@ -197,6 +196,7 @@ transition: .3s all;
 	  color: #F2A950;
 	  text-transform: uppercase;
 	  visibility: hidden;
+	  transition: all .3s ease-out;
   	}
 
 	@media only screen and (max-width: 600px) {
@@ -208,23 +208,28 @@ transition: .3s all;
 `
 //Botão redondo de criar relatórios.
 export const ButtonCreateReport = styled.button`
-background-color: #F2A950;
-width: 100px;
-height: 100px;
-font-size: 5em;
-border-radius: 100%;
-border: 1px solid #F2A950;
-opacity: .7;
-color: #F7F6EE;
-display: flex;
--webkit-box-pack: center;
-justify-content: center;
--webkit-box-align: center;
-align-items: center;
-cursor: pointer;
+	background-color: #F2A950;
+	width: 100px;
+	height: 100px;
+	font-size: 5em;
+	border-radius: 100%;
+	border: 1px solid #F2A950;
+	opacity: .7;
+	color: #F7F6EE;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	cursor: pointer;
+	transition: all .3s ease-out;
 
-	&:hover {
+	:hover {
 		opacity: 1;
+	}
+
+	:focus {
+		outline: 0;
 	}
 
 
@@ -238,22 +243,22 @@ cursor: pointer;
 //Tela para visualização do relatório salvo.
 export const ShowReportStyle = styled.div`
 	width: 100%;
-	height:100%;
-	background-color:#f7f6ee;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	flex-direction:column;
+	height: 100%;
+	background-color: #f7f6ee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 
-	span{
-		margin:10px;
-		font-size:1.2em;
+	span {
+		margin: 10px;
+		font-size: 1.2em;
 	}
 `
 
 export const ButtonSaveReport = styled.div`
-	display:flex;
-	margin-top:100px;
+	display: flex;
+	margin-top: 100px;
 
 	button{
 		background-color: #F2A950;
@@ -265,9 +270,13 @@ export const ButtonSaveReport = styled.div`
 		color: #f7f6ee;
 		opacity: 0.8;
 		cursor: pointer;
-		transition: .5s all;
+		transition: all .5s ease-out;
 		font-size: 2.3em;
 		font-weight: bold;
+
+		:focus {
+			outline: 0;
+		}
 	}
 `
 
