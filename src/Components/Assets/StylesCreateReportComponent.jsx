@@ -128,17 +128,15 @@ export const FilterStatusStyle = styled.div`
 
 export const OptionFilterStatusStyle = styled.div`
 	display: flex;
-	-webkit-box-pack: justify;
-	justify-content: space-between;
-	-webkit-box-align: center;
 	align-items: center;
 	width: 100%;
 	padding: 5px;
 
 	input {
-		width: 50px;
-		cursor: pointer;
+		
+		width: 50px;		
 		height: 30px;
+		cursor: pointer;
 	}
 
 	@media only screen and (max-width: 1200px){
@@ -383,6 +381,10 @@ export const SaveNameReportStyle = styled.div`
 		border: none;
 		border-radius: 30px;
 		cursor: pointer;
+
+		:focus {
+			outline: 0;
+		}
 	}
 
 	
