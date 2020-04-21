@@ -2,36 +2,64 @@ import styled from 'styled-components'
 
 
 export const TopBarStyle = styled.div`
-    display: flex;
-    align-items:flex-end;
-    width:100%;
-    height:100px;
-    margin-left: 100px;
-    font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100vw;
+  height: 22vh;
+  border-bottom: 1px solid #CCC;
     
-    select {
-      width: 250px;
-      margin:0px 10px;
-      height:40px;
+  label {
+    width: 100%;
+    margin: 30px 0px;
+    font-size: 2em;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    cursor: pointer;
+    color: #2D4F6C;
+    font-weight: bold;
+  }
+
+  select {
+    width: 14vw;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 2em;
+    color: #2D4F6C;
+
+    :focus {
+      outline: 0;
     }
+  }
 `
 
 export const InputDateStyle = styled.div `
-  display:flex;
-  flex-direction:column;
-  width:600px;
-  align-items:center;
-  justify-content:flex-end;
-  text-align:justify;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  -webkit-box-pack: end;
 
+  div {
+    margin-bottom: 15px;
+  }
 
   input {
-   margin:0px 8px;
-   margin-top:20px;
-   border:none;
-   border-bottom: 1px solid #ddd;
-   text-align:center;
-   background-color:#f7f6ee
+    width: 14vw;
+    font-size: 1.6em;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #2D4F6C;
+
+    :focus {
+      outline: 0;
+    }
   }
 
   label {
@@ -40,9 +68,9 @@ export const InputDateStyle = styled.div `
 `
 
 export const HistoryStyle = styled.div`
-  margin:20px;
   margin-top:50px;
-  margin-left:100px;
+  display: flex;
+  justify-content: center;
 
 `
 
