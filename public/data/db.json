@@ -269,5 +269,11 @@
       "valTot": "R$ 9.00"
     }
 ]
-}]
+}],
+  "users": [{
+    "user": "admin",
+    "password": "1234"
+  }]
+
 }
+

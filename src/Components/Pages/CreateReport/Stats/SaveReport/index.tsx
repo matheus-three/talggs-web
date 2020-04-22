@@ -21,7 +21,6 @@ function SaveReport(props: Iprops) {
 			name: saveName,
 			stats: props.reportStats
 		}
-		console.log("array",array)
 		saveReport(array)
 	}
 

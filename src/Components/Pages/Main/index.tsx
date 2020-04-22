@@ -5,7 +5,7 @@ import TopBar from './TopBar';
 
 
 function Main () {
-  const {api,getReportStats} = useContext(AppContext)
+  const {getReportStats} = useContext(AppContext)
   
   useEffect (() =>  {
     getReportStats();

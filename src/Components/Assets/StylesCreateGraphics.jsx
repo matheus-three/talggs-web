@@ -40,7 +40,7 @@ export const ButtonsTopStyle = styled.div`
 `
 
 export const GraphicsStyle = styled.div`
-	width:60%;
+	width:70%;
 	height:400px;
 	background-color:#f7f6ee;
 	border: 1px solid #ccc;

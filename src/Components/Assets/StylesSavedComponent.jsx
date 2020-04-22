@@ -6,13 +6,10 @@ const GlobalStyle = createGlobalStyle`
   *{
     margin:0;
     padding:0;
-    box-sizing:border-box;
   }
 
   body{
     background: #f7f6ee;
-    text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
     font-family: sans-serif;;
   }
 `;

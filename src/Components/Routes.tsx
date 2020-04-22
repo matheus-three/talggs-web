@@ -13,12 +13,26 @@ import Header from './Pages/Header';
 import Graphics from './Pages/Graphics';
 import CreateGraphics from './Pages/CreateGraphics';
 import EditCupons from './Pages/editCupons';
+import Login from './Pages/Login';
+import PreRegister from './Pages/Login/PreRegister';
+import Register from './Pages/Login/Register';
+
 
 function Routes() {
-    return (
+	
+	return (
         <BrowserRouter>
             <Switch>
-                <Route exact={true} path='/'>
+                <Route exact = {true} path ='/'>
+                    <Login/>
+                </Route>
+                <Route path = '/preRegister'>
+                    <PreRegister/>
+                </Route>
+                <Route path = '/register'>
+                    <Register/>
+                </Route>
+                <Route path='/Home'>
                     <Header/>
                     <Main/>
                 </Route>

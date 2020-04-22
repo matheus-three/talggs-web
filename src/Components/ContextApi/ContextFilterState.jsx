@@ -69,15 +69,48 @@ const FilterContextProvider = ({ children }) => {
 
 				default: console.log("fail")
 			}
+		}
+			
+		const [mainFilter,setMainFilter] = useState({
+				state: '',
+				launch: { 
+					init:'', 
+					until: ''
+				},
+				due: {
+					init: '',
+					due: ''
+				}
+			});
 		
-	}
+
+			const filterMain = (value,id) => {
+				switch(id){
+					case "1" : setMainFilter({...mainFilter,state:value})
+					break;
+
+					case "2" : setMainFilter({...mainFilter,launch:{...mainFilter.launch,init: value}})
+					break;
+
+					case "3" : setMainFilter({...mainFilter,launch:{...mainFilter.launch,until: value}})
+					break;
+
+					case "4" : setMainFilter({...mainFilter,due:{...mainFilter.launch,init: value}})
+					break;
+
+					case "5" : setMainFilter({...mainFilter,due:{...mainFilter.launch,until: value}})
+					break;
+
+					default: console.log("error")
+				}
+			}
+	
 	
 	return (
-    <FilterContext.Provider value={{filterState,filterValues,values,filterStatus,nameStatus,cpfStatus,dateDueStatus,dateLaunchStatus}}>
+		<FilterContext.Provider value={{filterState,filterValues,filterMain,values,filterStatus,
+			nameStatus,cpfStatus,dateDueStatus,dateLaunchStatus,mainFilter}}>
 			{children}
 		</FilterContext.Provider>
 	)
-
 }
-
 export default FilterContextProvider;

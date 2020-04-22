@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const TopBarStyle = styled.div`
     display: flex;
     align-items:flex-end;
-    width:100%;
+    width:80%;
     height:100px;
     margin-left: 100px;
     font-size: 1em;
@@ -56,7 +56,7 @@ export const ShowDetailsStyle = styled.div`
   position:relative;
   top:-40px;
   width:60%;
-  height: 60vh;
+  height: 70vh;
   background-color: #fff;
   margin-bottom:50px;
   box-shadow: 2px 1px 2px 1px  #ccc;
@@ -67,7 +67,7 @@ export const ShowDetailsStyle = styled.div`
 export const CardDetailsStyle = styled.div`
   display:flex;
   flex-direction:column;
-  font-size:1.5em;
+  font-size:1em;
  
   img {
     height:80px;
@@ -82,6 +82,9 @@ export const TitleStyle = styled.div `
   justify-content:space-around;
   .value {
    align-self: flex-end;
+   margin-right:100px;
+   width:200px;
+   font-size:1.5em;
   }
 `
 export const NameStyle = styled.div`
@@ -89,7 +92,7 @@ export const NameStyle = styled.div`
   width:300px;
   flex-direction:column;
   justify-content:center;
-  margin-right: 200px;
+  margin-right: 100px;
 `
 
 export const DateStyle = styled.div`
@@ -97,7 +100,6 @@ export const DateStyle = styled.div`
   justify-content:space-around;
   align-items:center;
   margin-top:50px;
-   
    span {
      margin:10px;
    }
@@ -122,16 +124,16 @@ export const DetailsStyle = styled.div`
   cursor:pointer;
 	
 	::-webkit-scrollbar-track {
-			background-color: #f7f6ee;
+			background-color: #ddd;
 	}
 
 	::-webkit-scrollbar {
 			width: 6px;
-			background: #f7f6ee;
+			background: #ddd;
 	}
 
 	::-webkit-scrollbar-thumb {
-			background: #f7f6ee;
+			background: #ddd;
 	}
 
   table {

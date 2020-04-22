@@ -178,16 +178,16 @@ export const StatsStyle = styled.div`
 	cursor:pointer;
 	
 	::-webkit-scrollbar-track {
-			background-color: #f7f6ee;
+			background-color: #ddd;
 	}
 
 	::-webkit-scrollbar {
 			width: 6px;
-			background: #f7f6ee;
+			background: #ddd;
 	}
 
 	::-webkit-scrollbar-thumb {
-			background: #ccc;
+			background: #ddd;
 	}
 
          

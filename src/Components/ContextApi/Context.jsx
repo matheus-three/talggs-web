@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect} from 'react'
+import React, { createContext, useState} from 'react'
 
 
 export const AppContext = createContext();
@@ -9,7 +9,7 @@ const AppContextProvider = ({ children }) => {
 	const[api,setApi] = useState([])
 	const [showDetails,setShowDetails] = useState(false)
 	const [saveNameReportState,setSaveNameReportState] = useState(false);
-	
+	console.log("api",api)
 	const saveReport = save => {
 		const newReport = {
 				id: report.length+ 1,
@@ -26,7 +26,8 @@ const AppContextProvider = ({ children }) => {
 			setApi(api)
 		}
 	return (
-		<AppContext.Provider value={{ report, saveReport,saveNameReportState,setSaveNameReportState,getReportStats,api,setShowDetails,showDetails}}>
+		<AppContext.Provider value={{ report, saveReport,saveNameReportState,
+		setSaveNameReportState,getReportStats,api,setShowDetails,showDetails}}>
 			{children}
 		</AppContext.Provider>
 	)

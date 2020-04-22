@@ -10,7 +10,6 @@ import {
 } from "../../../../Assets/StylesMainHistory";
 import {
   SaveReportBehind,
-  StatsStyle,
 } from "../../../../Assets/StylesCreateReportComponent";
 import { AppContext } from "../../../../ContextApi/Context";
 import Logo from "../../../../Assets/Icons/Logo1V - Web.svg";
@@ -33,14 +32,14 @@ function ShowDetails(props: Iprops) {
     <SaveReportBehind top={"80px"} left={"0px"} height={"90%"} back={"#f7f6ee"}>
       <button onClick={handleClick}>Voltar</button>
       <ShowDetailsStyle>
-        {api.map((stats) => {
-          console.log("sta", stats.id);
-          if (stats.id == props.id) {
+        {api.map((stats,index) => {
+
+          if (stats.id === Number(props.id)) {
             return (
-              <CardDetailsStyle>
+              <CardDetailsStyle key = {index}>
                 <TitleStyle>
                   <img src={Logo} alt="Logo" />
-                  <NameStyle>
+                  <NameStyle >
                     <span>{stats.name}</span>
                     <span>{stats.cpf}</span>
                   </NameStyle>
@@ -60,30 +59,37 @@ function ShowDetails(props: Iprops) {
 
               <DetailsStyle>
                 <table>
-                    <tbody>
-                      <th>Produto</th>
-                      <th className = "descr">Descrição</th>
-                      <th>Qtde</th>
-                      <th>ValUnit</th>
-                      <th>ValTotal</th>
-                    </tbody>
+                    <thead>
+                      <tr>
+                        <th>Produto</th>
+                        <th className = "descr">Descrição</th>
+                        <th>Qtde</th>
+                        <th>ValUnit</th>
+                        <th>ValTotal</th>
+                      </tr>
+                    </thead>
                     {stats.Details.map((prod) => {
                       return ( 
-                      <tbody>
-                        <td>{prod.product}</td>
-                        <td>{prod.description}</td>
-                        <td>{prod.quantity}</td>
-                        <td>{prod.valUnit}</td>
-                        <td>{prod.valTot}</td>
-                      </tbody>)
+                      <tbody key = {prod.id}>
+                        <tr>
+                          <td>{prod.product}</td>
+                          <td>{prod.description}</td>
+                          <td>{prod.quantity}</td>
+                          <td>{prod.valUnit}</td>
+                          <td>{prod.valTot}</td>
+                        </tr>
+                      </tbody>
+                     )
                     })
                   }
-                  </table>
+                </table>
               </DetailsStyle>
                 
                 
               </CardDetailsStyle>
             );
+          }else{
+            return undefined
           }
         })}
       </ShowDetailsStyle>

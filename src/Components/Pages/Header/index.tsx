@@ -27,7 +27,7 @@ function Header() {
 					<Link to='/savedGraphics' style={{ textDecoration: 'none', color: 'white' }}><li>Gráficos</li></Link>
 				</ul>
 				<IconEdit>
-					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>a
 					</Button>
 				</IconEdit>
 

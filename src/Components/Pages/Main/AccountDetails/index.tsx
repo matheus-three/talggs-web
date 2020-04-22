@@ -3,23 +3,49 @@ import { HistoryStyle } from '../../../Assets/StylesMainHistory';
 import { StatsStyle } from '../../../Assets/StylesCreateReportComponent';
 import { AppContext } from '../../../ContextApi/Context';
 import ShowDetails from './ShowDetails';
+import { FilterContext } from '../../../ContextApi/ContextFilterState';
+import Filter from '../../CreateReport/Filter';
+import { useEffect } from 'react';
+import { parseISO, isAfter, format } from 'date-fns';
+
 
 
 function AccountDetails () {
   const {api,setShowDetails,showDetails} = useContext(AppContext)
+  const {mainFilter} = useContext(FilterContext)
   const [id,setId] = useState();
- 
+  const[apiFilter,setApiFilter] = useState(api);
+  
+  const datazo = mainFilter.launch.init;
+
+  console.log("datazo",datazo);
+  const data = format(10-15-2020, 'dd/MM/yyyy')
+
+  console.log("data",data)
   function handleClick (element) {
     setId(element.target.id)
     setShowDetails(true);
   }
+  useEffect(() => {
+    if(mainFilter !== "" && mainFilter.state !== "todas"){
+      const apiFilter = api.filter((ap) => {
+        return mainFilter.state === ap.state
+      })
 
+      
+      setApiFilter(apiFilter)
+    }else{
+      setApiFilter(api);
+    }
+  },[mainFilter])
+ 
+  
   
   return (
     <HistoryStyle>
     <StatsStyle width={"80%"}>
         <table>
-          <tbody>
+          <thead>
             <tr>
               <th className="cpf">CPF</th>
               <th className="nome">Nome</th>
@@ -30,11 +56,11 @@ function AccountDetails () {
               <th className="valor">Valor</th>
               <th className="status">Status</th>
             </tr>
-          </tbody>
-          {api.map((stats,index) => {
+          </thead>
+          {apiFilter.map((stats) => {
             return (
-              <tbody>
-                <tr key={stats.id} onClick = {handleClick}>
+              <tbody key={stats.id}>
+                <tr onClick = {handleClick}>
                   <td id = {stats.id}>{stats.cpf}</td>
                   <td id = {stats.id}>{stats.name}</td>
                   <td id = {stats.id}>{stats.accountNumber}</td>

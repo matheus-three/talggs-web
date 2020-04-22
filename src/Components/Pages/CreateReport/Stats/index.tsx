@@ -48,28 +48,34 @@ function Stats() {
 
 				<StatsStyle width={"100%"}>
 					<table>
-						<tr>
-							<th className="cpf">CPF</th>
-							<th className="nome">Nome</th>
-							<th className="nBoleto">N° Boleto</th>
-							<th className="nf">N° NF</th>
-							<th className="dtaVenc">Dta Vencimento</th>
-							<th className="dtaLanc">Dta Lançamento</th>
-							<th className="valor">Valor</th>
-							<th className="status">Status</th>
-						</tr>
+						<thead>
+							<tr>
+								<th className="cpf">CPF</th>
+								<th className="nome">Nome</th>
+								<th className="nBoleto">N° Boleto</th>
+								<th className="nf">N° NF</th>
+								<th className="dtaVenc">Dta Vencimento</th>
+								<th className="dtaLanc">Dta Lançamento</th>
+								<th className="valor">Valor</th>
+								<th className="status">Status</th>
+							</tr>
+						</thead>
+					
 						{filterReport.map((stats) => {
 							return (
-								<tr key={stats.id}>
-									<td>{stats.cpf}</td>
-									<td>{stats.name}</td>
-									<td>{stats.accountNumber}</td>
-									<td>{stats.fiscalNote}</td>
-									<td>{stats.dateDue}</td>
-									<td>{stats.dateLaunch}</td>
-									<td>{stats.value}</td>
-									<td>{stats.state}</td>
-								</tr>
+								<tbody>
+									<tr key={stats.id}>
+										<td>{stats.cpf}</td>
+										<td>{stats.name}</td>
+										<td>{stats.accountNumber}</td>
+										<td>{stats.fiscalNote}</td>
+										<td>{stats.dateDue}</td>
+										<td>{stats.dateLaunch}</td>
+										<td>{stats.value}</td>
+										<td>{stats.state}</td>
+									</tr>
+								</tbody>
+								
 							)
 						})}
 					</table>

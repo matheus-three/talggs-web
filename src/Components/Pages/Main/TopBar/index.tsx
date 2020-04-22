@@ -3,9 +3,14 @@ import { InputDateStyle, TopBarStyle } from '../../../Assets/StylesMainHistory';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import TextField from '@material-ui/core/TextField';
+
+import 'date-fns';
+import { useContext } from 'react';
+import { FilterContext } from '../../../ContextApi/ContextFilterState';
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -15,50 +20,99 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     selectEmpty: {
       marginTop: theme.spacing(2),
+    },container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    textField: {
+      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(1),
+      marginTop: theme.spacing(3),
+      marginBottom: theme.spacing(1),
+      width: 200,
+      height:20
     },
   }),
 );
 
 function TopBar () {
   const classes = useStyles();
-  const [status, setStatus] = React.useState('');
-
-  const handleChange = (event) => {
-    setStatus(event.target.value as string);
+  const {filterMain,mainFilter} = useContext(FilterContext)
+  
+  const handleChange = (e) => {
+      filterMain(e.target.value,e.target.name)
   };
+
+  
   return (
       <Fragment>
-      
       <TopBarStyle> 
-      <span>Filtro</span>   
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">Status</InputLabel>
-        <Select
+        <span>Filtro</span>   
+        <FormControl className={classes.formControl}>
+          <InputLabel id="demo-simple-select-label">Status</InputLabel>
+          <Select
           labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={status}
+          name = "1"
+          defaultValue = "todas"
           onChange={handleChange}
         >
-          <MenuItem value={10}>Pago</MenuItem>
-          <MenuItem value={20}>Pendente</MenuItem>
-          <MenuItem value={30}>Vencidas</MenuItem>
+          <MenuItem value="todas">Todas</MenuItem>
+          <MenuItem value="Pago">Pago</MenuItem>
+          <MenuItem value="Pendente">Pendente</MenuItem>
+          <MenuItem value="Vencido">Vencidas</MenuItem>
         </Select>
       </FormControl>
-       <InputDateStyle>
       
         <div>
-          <label>Lançamento</label>
-          <input type = "date"></input>
-          <label>até</label>
-          <input type = "date"></input>
-        </div>
-        <div>
-          <label>Vencimento</label>
-          <input type = "date"></input>
-          <label>até</label>
-          <input type = "date"></input>
-        </div>
-        </InputDateStyle>
+          <form className={classes.container} noValidate>
+            <TextField
+              name="2"
+              label="Lancamento"
+              type="date"
+              defaultValue= "2020-01-01"
+              className={classes.textField}
+              onChange = {handleChange}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+            <TextField
+              name="3"
+              label="ate"
+              type="date"
+              defaultValue= "2020-01-01"
+              className={classes.textField}
+              onChange = {handleChange}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+             <TextField
+              name="4"
+              label="Vencimento"
+              type="date"
+              defaultValue= "2020-01-01"
+              className={classes.textField}
+              onChange = {handleChange}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+            <TextField
+              name="5"
+              label="ate"
+              type="date"
+              defaultValue= "2020-01-01"
+              className={classes.textField}
+              onChange = {handleChange}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+          </form>
+             
+    </div>
+       
       </TopBarStyle> 
       </Fragment>
       
