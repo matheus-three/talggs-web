@@ -35,7 +35,13 @@ height: 11vh;
 			border-bottom: 3px solid #F2A950;
 		}
 
-	}  
+	} 
+
+	@media only screen and (max-width: 1200px) {
+		button {
+			width: auto;
+		}
+	}
 	
 `
 
@@ -45,7 +51,23 @@ export const GraphicsStyle = styled.div`
 	height: 46vh;
     width: 38vw;
     margin-bottom: 45px;
-    border: 1px solid #CCC;
+	border: 1px solid #CCC;
+	border-radius: 20px;
+	
+	@media only screen and (max-width: 1200px) {
+		width: 75vw;
+		border: 2px solid #CCC;
+	}
+
+	@media only screen and (max-width: 850px) {
+		width: 88vw;
+
+		/***** HERE!
+		 * PieChart {
+			width: auto;
+		}
+		******/
+	}
 
 `
 export const BottomPositionStyle = styled.div`
@@ -78,6 +100,14 @@ export const CheckBoxStyle = styled.div`
 		font-weight: bold;
 	}
 
+	@media only screen and (max-width: 1200px) {
+		font-size: 1.8em;
+	}
+
+	@media only screen and (max-width: 850px) {
+		font-size: 1.5em;
+	}
+
 `
 
 export const BoxPositionStyle = styled.div`
@@ -94,6 +124,12 @@ export const BoxPositionStyle = styled.div`
 		width: 50px;		
 		height: 30px;
 		cursor: pointer;
+	}
+
+	@media only screen and (max-width: 850px) {
+		input {
+			width: 22px;		
+		}
 	}
 
 `

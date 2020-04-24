@@ -5,7 +5,8 @@ import styled from 'styled-components'
 
 //engloba o componente de filtro com o de stats do relatórios
 export const Container = styled.div`
-    display: flex;
+	display: flex;
+	height: 89vh;
 		
 @media only screen and (max-width: 600px) {
 	  flex-direction: column;
@@ -14,7 +15,7 @@ export const Container = styled.div`
 
 //Estilo do componente Filtro
 export const FilterStyle = styled.div`
-  height: 89vh;
+  height: auto;
   width: 20vw;
   background-color: #f7f6ee;
   border-right: 2px solid #CCC;
@@ -56,50 +57,50 @@ export const FilterStyle = styled.div`
 	}
 
 	
-/* Responsivo 1200px */
-@media only screen and (max-width: 1200px){
-	width:300px; 
-	font-size:0.7em; 
-	
-  button {
-		width:100px;
-    margin:5px 10px;
+
+	@media only screen and (max-width: 1200px){
+		width: 26vw; 
+
+		input {
+			font-size: 1.5em;
+		}
 	}
 
-	input {
-		width:120px;
-		margin-left:10px;
-		font-size:1em;
+	@media only screen and (max-width: 850px){
+		width: 27vw;
+		border-right: 1px solid #CCC;
+
+		span {
+			font-size: 1.8em;
+		}
+		
+		button {
+			font-size: 1.5em;
+		}
+
+		input {
+			font-size: 1.2em;
+		}
+
+		/*button.btn-grafico {
+			height: 50px;
+			margin-top: 20px;
+			text-align: center;
+		}*/ 
 	}
 
-	button.btn-grafico {
-		height:50px;
-		margin-top:260px;
+	@media only  screen and (max-width: 600px) {
+		width: 100vw;
+		height: auto;
+		border-right: none;
+		border-bottom: 1px solid #CCC;
+
+		span {
+			display: block;
+			font-size: 1.2em;
+		}
 	}
 
-}
-
-@media only screen and (max-width: 600px){
-	width:300px; 
-	font-size:0.7em; 
-	display:flex;
-	flex-direction:column;
-	
-	height:260px;
-	border-right:none;
-	
-  button {
-		width:100px;
-    margin:5px 10px;
-		text-align:left;
-	}
-
-	button.btn-grafico {
-		height:50px;
-		margin-top:20px;
-		text-align:center;
-	}
-}
 `
 //Estilo do campo filtro (Status).
 export const FilterStatusStyle = styled.div`
@@ -115,14 +116,6 @@ export const FilterStatusStyle = styled.div`
 	position: relative;
 	font-size: 1.8em;
 	color: #2D4F6C;
-
-	@media only screen and (max-width: 1200px){
-		width: 120px;
-		height: 80px;
-		font-size: 0.8em;
-		margin-left: 30px;
-	}
-
 	
 `
 
@@ -133,15 +126,28 @@ export const OptionFilterStatusStyle = styled.div`
 	padding: 5px;
 
 	input {
-		
 		width: 50px;		
 		height: 30px;
 		cursor: pointer;
 	}
 
 	@media only screen and (max-width: 1200px){
-		width: 100px;
+		input {
+			width: 25px;
+		}
 	}
+
+	@media only screen and (max-width: 850px) {
+		input {
+			width: 20px;
+		}
+
+		label {
+			font-size: .8em;
+    		margin-left: 10px;
+		}
+	}
+
 `
 //Estilo que engloba titulo, stats e botões.
 export const ReportStyle = styled.div`
@@ -151,15 +157,9 @@ export const ReportStyle = styled.div`
   flex-direction: column;
   justify-content: space-around;
 
-	@media only screen and (max-width: 1200px){
-		margin-left: 50px;
-		width: 100%;
-	}
 
 	@media only screen and (max-width: 600px){
-		margin-left: 20px;
 		width: 100%;
-		
 	}
 `
 //Titulo do relatório
@@ -171,13 +171,14 @@ export const TitleReportStyle = styled.div`
 	letter-spacing: 2px;
 	font-weight: bold; 
 
-		@media only screen and (max-width: 600px){
-			margin-top: 0px;
-			margin-left:60px;
-			font-size:1em;
-			width:150px;
-			height:25px;
-	}               
+	@media only screen and (max-width: 850px) {
+		font-size: 2.5em;
+		margin-top: 5vh;
+	} 
+
+	@media only screen and (max-width: 600px) {
+		font-size: 2em;
+	}
 `
 //Estilo da tabela de status do relatório.
 export const StatsStyle = styled.div`
@@ -228,20 +229,16 @@ export const StatsStyle = styled.div`
     	text-align: justify;			
   }
 
-	/* responsivo até 1200px */
-	@media only screen and (max-width: 1200px){
-		margin-right:30px;
-		height:300px;
-		width:80%;
-
+	@media only screen and (max-width: 850px){
+		margin-right: 15px;
+		
 		table {
 		width:200px;
 		}
 
 		th {
 			min-width:180px;
-			font-size:0.7em;
-			height:20px;
+			font-size: 1em;
 		}
 
 		th.nome,th.cpf{
@@ -251,31 +248,6 @@ export const StatsStyle = styled.div`
 		td{
 			font-size:0.8em;
 			padding:13px;
-		}
-	}
-
-	@media only screen and (max-width: 600px){
-		margin-left:20px;
-		height:200px;
-
-		table {
-			width:250px;
-		}
-
-		th {
-			min-width:90px;
-			font-size:0.6em;
-			height:20px;
-			padding:3px;
-		}
-
-		th.nome,th.cpf{
-			min-width:120px;
-		}
-
-		td{
-			font-size:0.6em;
-			padding:8px;
 		}
 	}
 
@@ -304,18 +276,24 @@ export const ButtonStyle = styled.div`
 	button:hover {
 		opacity: 1;
 	}
-	@media only screen and (max-width: 700px){
-		margin-top:10px;
-		
-		justify-content:none;
+
+	@media only screen and (max-width: 1200px) {
+		button {
+			margin-top: 50px;
+			width: 20vw;
+			height: 6vh;
+			font-size: 2em;
+			opacity: 1;
+		}
+	}
+
+	@media only screen and (max-width: 850px){
 		button{
-			width:50px;
-			height:30px;
-			font-size:0.5em;
-			margin:0px 10px;
-			padding:5px;
+			width: 18vw;
+			font-size: 1.5em;
+			margin-top: 0px;
 		} 
-	}   
+	}  
 `
 //Fundo cinza do pop-up para salvar o relatório.
 export const SaveReportBehind = styled.div`
@@ -379,7 +357,7 @@ export const SaveNameReportStyle = styled.div`
 		background-color: #F2A950;
 		color: #ffffff;
 		border: none;
-		border-radius: 30px;
+		border-radius: 50px;
 		cursor: pointer;
 
 		:focus {
@@ -389,19 +367,12 @@ export const SaveNameReportStyle = styled.div`
 
 	
 	@media only screen and (max-width: 1200px) {
-		width:30%;
-	}
+		width: 65vw;
+		height: 25vh;
 
-	
-	@media only screen and (max-width: 900px) {
-		width:40%;
-	}
-
-	@media only screen and (max-width: 600px) {
-		width: 70%;
-
-		span {
-			margin-right:50px;
+		button {
+			width: 16vw;
+			height: 5vh;
 		}
 	}
 
