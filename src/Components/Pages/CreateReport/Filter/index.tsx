@@ -25,34 +25,34 @@ function Filter() {
 	return (
 		<FilterStyle>
 			<span>Filtrar por:</span>
-			<button id = "1" onClick = {handleClick}>Dta Lançamento</button>
-			{dateLaunchStatus ? <input type="date" id = "1" onChange = {handleChange}></input> : undefined}
-
-			<button id = "2" onClick = {handleClick}>Dta Vencimento</button>
-			{dateDueStatus ? <input type="date" id = "2" onChange = {handleChange}></input> : undefined}
+			<button id = "4" onClick = {handleClick}>Nome do Cliente</button>
+			{nameStatus?<input type="text" placeholder="Digite o Nome" id = "4" onChange = {handleChange}></input>:undefined}
 
 			<button id = "3" onClick = {handleClick}>CPF</button>
 			{cpfStatus?<input type="text" placeholder="Digite o CPF" id = "3"  onChange = {handleChange}></input>:undefined}
+			
+			<button id = "1" onClick = {handleClick}>Data de Lançamento</button>
+			{dateLaunchStatus ? <input type="date" id = "1" onChange = {handleChange}></input> : undefined}
 
-			<button id = "4" onClick = {handleClick}>Nome</button>
-			{nameStatus?<input type="text" placeholder="Digite o Nome" id = "4" onChange = {handleChange}></input>:undefined}
+			<button id = "2" onClick = {handleClick}>Data de Vencimento</button>
+			{dateDueStatus ? <input type="date" id = "2" onChange = {handleChange}></input> : undefined}		
 
 			<button id = "5" onClick = {handleClick}>Status</button>
 			{filterStatus?
 			<FilterStatusStyle>
 				<OptionFilterStatusStyle>
-					<label>Pago</label>
 					<input type="checkbox" id="5"  onClick = {handleChange} disabled = {values.pending || values.overdues} />
+					<label>Pago</label>
 				</OptionFilterStatusStyle>
 
 				<OptionFilterStatusStyle>
-					<label>Pendente</label>
 					<input type="checkbox" id="6" onClick = {handleChange} disabled = {values.paid || values.overdues} />
+					<label>Pendente</label>
 				</OptionFilterStatusStyle>
 
 				<OptionFilterStatusStyle>
-					<label>Vencido</label>
 					<input type="checkbox" id ="7" onClick = {handleChange} disabled = {values.paid || values.pending}/>
+					<label>Vencido</label>
 				</OptionFilterStatusStyle>
 			</FilterStatusStyle>
 			:undefined}

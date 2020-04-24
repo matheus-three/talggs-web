@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import {Container } from '../../Assets/StylesCreateReportComponent';
+import {Container} from '../../Assets/StylesCreateReportComponent';
 import Filter from './Filter';
 import Stats from './Stats';
 
