@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react'
-import { HistoryStyle } from '../../../Assets/StylesMainHistory';
-import { StatsStyle } from '../../../Assets/StylesCreateReportComponent';
+import { HistoryStyle } from '../../../Assets/styled-components/StylesMainHistory';
+import { StatsStyle } from '../../../Assets/styled-components/StylesCreateReportComponent';
 import { AppContext } from '../../../ContextApi/Context';
 import ShowDetails from './ShowDetails';
 import { FilterContext } from '../../../ContextApi/ContextFilterState';
-import Filter from '../../CreateReport/Filter';
 import { useEffect } from 'react';
 import { parseISO, isAfter, format } from 'date-fns';
 
@@ -26,6 +25,7 @@ function AccountDetails () {
     setId(element.target.id)
     setShowDetails(true);
   }
+  
   useEffect(() => {
     if(mainFilter !== "" && mainFilter.state !== "todas"){
       const apiFilter = api.filter((ap) => {
@@ -57,7 +57,7 @@ function AccountDetails () {
               <th className="status">Status</th>
             </tr>
           </thead>
-          {apiFilter.map((stats) => {
+          {api.map((stats) => {
             return (
               <tbody key={stats.id}>
                 <tr onClick = {handleClick}>

@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useContext } from 'react';
-import { SaveReportsStyle,ButtonSaveReport, ShowReportStyle } from '../../../Assets/StylesSavedComponent';
-import { SaveReportBehind, StatsStyle} from '../../../Assets/StylesCreateReportComponent'
+import { SaveReportsStyle,ButtonSaveReport, ShowReportStyle } from '../../../Assets/styled-components/StylesSavedComponent';
+import { SaveReportBehind, StatsStyle} from '../../../Assets/styled-components/StylesCreateReportComponent'
 import { AppContext } from '../../../ContextApi/Context';
 
 

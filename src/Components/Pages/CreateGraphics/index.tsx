@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import { GraphicsStyle, ButtonsTopStyle, PositionStyle, CheckBoxStyle, BoxPositionStyle, BottomPositionStyle } from '../../Assets/StylesCreateGraphics';
-import { ButtonStyle } from '../../Assets/StylesCreateReportComponent';
+import { GraphicsStyle, ButtonsTopStyle, PositionStyle, CheckBoxStyle, BoxPositionStyle, BottomPositionStyle } from '../../Assets/styled-components/StylesCreateGraphics';
+import { ButtonStyle } from '../../Assets/styled-components/StylesCreateReportComponent';
 import {BarChart,XAxis,YAxis,Tooltip,Legend,Bar,PieChart,Pie} from 'recharts'
 
 function CreateGraphics () {
@@ -108,23 +108,22 @@ function CreateGraphics () {
         		<ButtonsTopStyle>
 							<button id = "1" onClick = {handleClick}>Barra</button>
 							<button id = "2" onClick = {handleClick}> Donnuts</button>
-							<button><span>Salvos</span></button>
 						</ButtonsTopStyle>
 						<GraphicsStyle>
 							{graphic === "1"?
-							<BarChart width={730} height={250} data={data}>
+							<BarChart width={730} height={250} fontSize={"1.5em"} data={data}>
 									<XAxis dataKey="name"  />
 									<YAxis />
 									<Tooltip />
 									<Legend />
-									<Bar dataKey="pagas" fill="#8884d8" />
-									<Bar dataKey="vencidas" fill="#82ca9d" />
+									<Bar dataKey="pagas" fill="#A7E4F2" />
+									<Bar dataKey="vencidas" fill="#2D9AA6" />
 							</BarChart>: undefined 
 							}
 			      {graphic === "2"?
 							<PieChart width={1030} height={450}>
-								<Pie data={data01} dataKey="value"  nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
-								<Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
+								<Pie data={data01} dataKey="value"  nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#A7E4F2" />
+								<Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#2D9AA6" label />
 							</PieChart>: undefined
 							}
 						
@@ -135,7 +134,7 @@ function CreateGraphics () {
 						
 						{graphic === "2"?
 							<CheckBoxStyle>
-							<span>Donnuts</span>
+								<span>Filtrar Donnuts:</span>
 							<BoxPositionStyle>
 								<input type = "checkbox" id = "1"/>
 								<label htmlFor="1"> Sexo</label>
@@ -148,7 +147,7 @@ function CreateGraphics () {
 							
 							<BoxPositionStyle>
 								<input type = "checkbox" id = "3"/>
-								<label htmlFor="3"> localidade</label>
+								<label htmlFor="3"> Localidade</label>
 							</BoxPositionStyle>
 						</CheckBoxStyle>: undefined}
 						

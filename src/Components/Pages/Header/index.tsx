@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { HeaderStyle, IconEdit } from '../../Assets/StylesSavedComponent';
+import { HeaderStyle, IconEdit } from '../../Assets/styled-components/StylesSavedComponent';
 import logo from '../../Assets/Icons/Logo1V - Web.svg'
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -22,16 +22,14 @@ function Header() {
 			<HeaderStyle>
 				<img src={logo} alt={"logo"}></img>
 				<ul>
-					<Link to='/' style={{ textDecoration: 'none', color: 'white' }}><li>Histórico</li></Link>
+					<Link to='/home' style={{ textDecoration: 'none', color: 'white' }}><li>Histórico</li></Link>
 					<Link to='/savedReports' style={{ textDecoration: 'none', color: 'white' }}><li>Relatórios</li></Link>
 					<Link to='/savedGraphics' style={{ textDecoration: 'none', color: 'white' }}><li>Gráficos</li></Link>
 				</ul>
 				<IconEdit>
-					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>a
+					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
 					</Button>
-				</IconEdit>
-
-				<Menu
+					<Menu
 					id="simple-menu"
 					anchorEl={anchorEl}
 					keepMounted
@@ -41,11 +39,14 @@ function Header() {
 				>
 					<MenuItem onClick={handleClose}>Empresa Tal</MenuItem>
 					<MenuItem onClick={handleClose}>21212121221</MenuItem>
-				<Link to = '/editCupons' style = {{ textDecoration: 'none', color: 'black'}}>
-					<MenuItem onClick={handleClose}>Editar Cupons</MenuItem>
-				</Link>	
+					<Link to = '/editCupons' style = {{ textDecoration: 'none', color: 'black'}}>
+						<MenuItem onClick={handleClose}>Editar Cupons</MenuItem>
+					</Link>	
 					<MenuItem onClick={handleClose}>Sair</MenuItem>
 				</Menu>
+				</IconEdit>
+
+				
 			</HeaderStyle>
 		</Fragment>
 	);

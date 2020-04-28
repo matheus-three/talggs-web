@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useState } from 'react'
-import { SaveReportBehind, SaveNameReportStyle } from '../../../../Assets/StylesCreateReportComponent';
+import { SaveReportBehind, SaveNameReportStyle } from '../../../../Assets/styled-components/StylesCreateReportComponent';
 import { AppContext } from '../../../../ContextApi/Context';
 
 interface Iprops {

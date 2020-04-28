@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useEffect } from 'react'
-import { MainStyle, ButtonCreateStyle, TitleMainStyle} from '../../Assets/StylesSavedComponent'
+import { MainStyle, ButtonCreateStyle, TitleMainStyle, ButtonCreateReport} from '../../Assets/styled-components/StylesSavedComponent'
 import SavedReports from './SavedReports'
 import { Link } from 'react-router-dom'
 import { AppContext } from '../../ContextApi/Context';
@@ -34,9 +34,7 @@ function Reports() {
       <ButtonCreateStyle>
         <span>Criar Relatório</span>
         <Link to='/createReport' style = {{textDecoration: 'none'} }>
-        <Fab color="primary" aria-label="add">
-            <AddIcon />
-        </Fab>
+        <ButtonCreateReport>+</ButtonCreateReport>
         </Link>
       </ButtonCreateStyle>
 
