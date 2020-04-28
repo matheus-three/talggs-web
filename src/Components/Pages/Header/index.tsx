@@ -22,7 +22,7 @@ function Header() {
 			<HeaderStyle>
 				<img src={logo} alt={"logo"}></img>
 				<ul>
-					<Link to='/' style={{ textDecoration: 'none', color: 'white' }}><li>Histórico</li></Link>
+					<Link to='/home' style={{ textDecoration: 'none', color: 'white' }}><li>Histórico</li></Link>
 					<Link to='/savedReports' style={{ textDecoration: 'none', color: 'white' }}><li>Relatórios</li></Link>
 					<Link to='/savedGraphics' style={{ textDecoration: 'none', color: 'white' }}><li>Gráficos</li></Link>
 				</ul>
