@@ -1,6 +1,6 @@
 import React from 'react'
-import { CreatePromoStyle, ListPromoStyle, ItemPromoStyle, PositionItemStyle, ButtonPromoStyle } from '../../Assets/StylesEditCupons';
-import { PositionStyle } from '../../Assets/StylesEditCupons';
+import { CreatePromoStyle, ListPromoStyle, ItemPromoStyle, PositionItemStyle, ButtonPromoStyle } from '../../Assets/styled-components/StylesEditCupons';
+import { PositionStyle } from '../../Assets/styled-components/StylesEditCupons';
 import TextField from '@material-ui/core/TextField';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 

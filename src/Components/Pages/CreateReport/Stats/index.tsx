@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useState, useEffect } from 'react'
-import { StatsStyle, ButtonStyle, TitleReportStyle, ReportStyle } from '../../../Assets/StylesCreateReportComponent';
+import { StatsStyle, ButtonStyle, TitleReportStyle, ReportStyle } from '../../../Assets/styled-components/StylesCreateReportComponent';
 import { AppContext } from '../../../ContextApi/Context';
 import SaveReport from './SaveReport';
 import { FilterContext } from '../../../ContextApi/ContextFilterState';

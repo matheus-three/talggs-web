@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from 'react'
-import { TitleMainStyle, MainStyle, ButtonCreateStyle, ButtonCreateReport } from '../../Assets/StylesSavedComponent';
+import { TitleMainStyle, MainStyle, ButtonCreateStyle, ButtonCreateReport } from '../../Assets/styled-components/StylesSavedComponent';
 import { AppContext } from '../../ContextApi/Context';
 import {Link} from 'react-router-dom'
 import SavedGraphics from './SavedGraphics';

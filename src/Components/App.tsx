@@ -1,5 +1,5 @@
 import React from 'react';
-import GlobalStyle from './Assets/StylesSavedComponent';
+import GlobalStyle from './Assets/styled-components/StylesSavedComponent';
 import Routes from './Routes';
 import AppContextProvider from './ContextApi/Context'
 import FilterContextProvider from './ContextApi/ContextFilterState'

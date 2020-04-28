@@ -7,10 +7,10 @@ import {
   NameStyle,
   DatePositionStyle,
   DetailsStyle,
-} from "../../../../Assets/StylesMainHistory";
+} from "../../../../Assets/styled-components/StylesMainHistory";
 import {
   SaveReportBehind,
-} from "../../../../Assets/StylesCreateReportComponent";
+} from "../../../../Assets/styled-components/StylesCreateReportComponent";
 import { AppContext } from "../../../../ContextApi/Context";
 import Logo from "../../../../Assets/Icons/Logo1V - Web.svg";
 

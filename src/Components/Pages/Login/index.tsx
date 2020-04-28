@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles'
 import {Field, Form, Formik,ErrorMessage } from 'formik';
 import Logo from '../../Assets/Icons/Logo1V - Web.svg';
-import styles from '../../Assets/StylesLogin'
+import styles from '../../Assets/useStyles/StylesLogin'
 import { Card, CardContent } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import * as yup from 'yup'
@@ -37,7 +37,7 @@ console.log(values)
                         alert(JSON.stringify(values, null, 2));
                         actions.setSubmitting(false);
                         setValue(JSON.stringify(values,null,2))
-                    }, 3000);
+                    }, 2000);
                 }}
                 validationSchema={validations}
             >
