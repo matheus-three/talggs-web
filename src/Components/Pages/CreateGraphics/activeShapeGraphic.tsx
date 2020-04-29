@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 import {Sector} from 'recharts'
 
@@ -6,7 +6,7 @@ export const renderActiveShape = (props) => {
     const RADIAN = Math.PI / 180;
     const {
       cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
-      fill, payload, percent, value,
+      fill, payload, percent, amountPeople,
     } = props;
     const sin = Math.sin(-RADIAN * midAngle);
     const cos = Math.cos(-RADIAN * midAngle);
@@ -20,7 +20,7 @@ export const renderActiveShape = (props) => {
   
     return (
       <g>
-        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>{payload.name}</text>
+        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>{payload.group}</text>
         <Sector
           cx={cx}
           cy={cy}
@@ -41,7 +41,7 @@ export const renderActiveShape = (props) => {
         />
         <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
         <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`Total: ${value}`}</text>
+        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`Total: ${amountPeople}`}</text>
         <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
           {`(${(percent * 100).toFixed(2)}%)`}
         </text>
