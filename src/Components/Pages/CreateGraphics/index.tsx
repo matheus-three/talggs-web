@@ -137,8 +137,8 @@ function CreateGraphics () {
       <div>
           <PositionStyle>
         		<ButtonsTopStyle>
-					<button id = "1" onClick = {handleClick}>Barra</button>
-					<button id = "2" onClick = {handleClick}> Donnuts</button>
+					<button id = "1" onClick = {handleClick}>Contas</button>
+					<button id = "2" onClick = {handleClick}>Clientes</button>
 				</ButtonsTopStyle>
 				<GraphicsStyle>
 					{graphic === "1"?
@@ -190,7 +190,6 @@ function CreateGraphics () {
 					:undefined
 					}
 
-
 					{graphic === "2" && value === "sexo"?
 					<PieChart width={600} height={400}>
 					<Pie
@@ -206,16 +205,13 @@ function CreateGraphics () {
 						onMouseEnter={onPieEnter}
 					/>
 					</PieChart>
-
 					:undefined
 					}
-	
 				</GraphicsStyle>	
 					
-					<BottomPositionStyle>
-						
-					{graphic === "2"?
-						<CheckBoxStyle>
+				<BottomPositionStyle>	
+				{graphic === "2"?
+					<CheckBoxStyle>
 						<FormControl component="fieldset">
 						<FormLabel component="legend">Filtro</FormLabel>
 						<RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
@@ -224,16 +220,14 @@ function CreateGraphics () {
 							<FormControlLabel id="3" value="sexo" control={<Radio />} label="Sexo" />
 						</RadioGroup>
 						</FormControl>
-
-					</CheckBoxStyle>: undefined}
-						
+					</CheckBoxStyle>
+				:undefined
+				}
 					<ButtonStyle>
 						<button>Salvar</button>
-					</ButtonStyle>
-						
-					</BottomPositionStyle>
-
-				</PositionStyle>
+					</ButtonStyle>		
+				</BottomPositionStyle>
+			</PositionStyle>
       </div>
     )
 }

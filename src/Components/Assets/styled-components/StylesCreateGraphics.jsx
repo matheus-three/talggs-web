@@ -10,12 +10,11 @@ export const PositionStyle = styled.div`
 
 export const ButtonsTopStyle = styled.div`
     display: flex;
-    justify-content:space-around;
-		align-items: center;
+    justify-content: space-around;
+	align-items: center;
     width: 300px;
     height: 100px;
-    margin-right: 150px;
-  
+
 		button {
 			width:200px;
 			height:20px;
