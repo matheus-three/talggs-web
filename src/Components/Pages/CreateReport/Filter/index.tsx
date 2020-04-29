@@ -42,18 +42,18 @@ function Filter() {
 			{filterStatus?
 			<FilterStatusStyle>
 				<OptionFilterStatusStyle>
-					<label>Pago</label>
 					<input type="checkbox" id="5"  onClick = {handleChange} disabled = {values.pending || values.overdues} />
+					<label>Pago</label>
 				</OptionFilterStatusStyle>
 
 				<OptionFilterStatusStyle>
-					<label>Pendente</label>
 					<input type="checkbox" id="6" onClick = {handleChange} disabled = {values.paid || values.overdues} />
+					<label>Pendente</label>
 				</OptionFilterStatusStyle>
 
 				<OptionFilterStatusStyle>
-					<label>Vencido</label>
 					<input type="checkbox" id ="7" onClick = {handleChange} disabled = {values.paid || values.pending}/>
+					<label>Vencido</label>
 				</OptionFilterStatusStyle>
 			</FilterStatusStyle>
 			:undefined}

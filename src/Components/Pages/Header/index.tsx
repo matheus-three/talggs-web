@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { HeaderStyle, IconEdit } from '../../Assets/styled-components/StylesSavedComponent';
-import logo from '../../Assets/Icons/Logo1V - Web.svg'
+import logo from '../../Assets/Icons/Logo1V.svg'
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
