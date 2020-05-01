@@ -54,8 +54,8 @@ function Stats() {
 								<th className="nome">Nome</th>
 								<th className="nBoleto">N° Boleto</th>
 								<th className="nf">N° NF</th>
-								<th className="dtaVenc">Dta Vencimento</th>
-								<th className="dtaLanc">Dta Lançamento</th>
+								<th className="dtaVenc">Vencimento</th>
+								<th className="dtaLanc">Lançamento</th>
 								<th className="valor">Valor</th>
 								<th className="status">Status</th>
 							</tr>

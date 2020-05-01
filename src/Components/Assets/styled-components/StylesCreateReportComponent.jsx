@@ -18,19 +18,19 @@ export const FilterStyle = styled.div`
   height: auto;
   width: 20vw;
   background-color: #f7f6ee;
-  border-right: 2px solid #CCC;
-  padding: 30px 20px;
+  border-right: 1px solid #CCC;
+  padding: 10px;
 
   span {
-	font-size: 2.6em;
+	font-size: 1.9em;
 	color: #BEBCBC;
 	font-weight: 700;
   }
 
   button {
     width: 100%;
-    margin: 30px 0px;
-    font-size: 1.8em;
+    margin: 15px 0px;
+    font-size: 1.3em;
     border: none;
     background-color: transparent;
     text-align: left;
@@ -48,18 +48,22 @@ export const FilterStyle = styled.div`
 
 	input {
 		border: 1px solid #CCC;
-		border-radius: 10px;
-		width: 100%;
+		border-radius: 7px;
+		width: 95%;
+		height: 24px;
 		padding: 5px;
 		cursor: text;
-		font-size: 1.8em;
+		font-size: 1.3em;
 		color: #2D4F6C;
 	}
 
-	
+	input:focus {
+		outline: 0;
+	}
 
 	@media only screen and (max-width: 1200px){
-		width: 26vw; 
+		width: 26vw;
+		height: auto;
 
 		input {
 			font-size: 1.5em;
@@ -110,11 +114,10 @@ export const FilterStatusStyle = styled.div`
 	-webkit-box-align: start;
 	align-items: flex-start;
 	padding: 5px;
-	width: 100%;
 	border: 1px solid #ccc;
-	border-radius: 10px;
+	border-radius: 7px;
 	position: relative;
-	font-size: 1.8em;
+	font-size: 1.3em;
 	color: #2D4F6C;
 	
 `
@@ -126,8 +129,8 @@ export const OptionFilterStatusStyle = styled.div`
 	padding: 5px;
 
 	input {
-		width: 50px;		
-		height: 30px;
+		width: 40px;		
+		height: 20px;
 		cursor: pointer;
 	}
 
@@ -165,10 +168,10 @@ export const ReportStyle = styled.div`
 //Titulo do relatório
 export const TitleReportStyle = styled.div`
 	height:auto;
-	margin-top: 10vh;
-	font-size: 3.5em;
+	margin-top: 5vh;
+	font-size: 2.5em;
 	color: #101D25;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	font-weight: bold; 
 
 	@media only screen and (max-width: 850px) {
@@ -212,11 +215,10 @@ export const StatsStyle = styled.div`
 
  	th {
 		border-bottom: 1px solid #ccc;
-		min-width: 200px;
+		min-width: 160px;
 		text-align: justify;
-		padding: 8px;
+		padding: 5px;
 		color: #BEBCBC;
-		font-size: 1.2em;
 	}
 
 	th.nome {
@@ -263,25 +265,29 @@ export const ButtonStyle = styled.div`
 		width: 12vw;
 		height: 7.5vh;
 		border: none;
-		margin: 0px 40px;
+		margin: 0px 30px;
 		border-radius: 50px;
 		color: #f7f6ee;
 		opacity: 0.8;
 		cursor: pointer;
-		font-size: 2.3em;
+		font-size: 1.5em;
 		font-weight: bold;
 		transition: all .5s ease-out;
-	}
 
-	button:hover {
-		opacity: 1;
+		:hover {
+			opacity: 1;
+		}
+
+		:focus {
+			outline: 0;
+		}
 	}
 
 	@media only screen and (max-width: 1200px) {
 		button {
 			margin-top: 50px;
 			width: 20vw;
-			height: 6vh;
+			height: 5vh;
 			font-size: 2em;
 			opacity: 1;
 		}
@@ -300,7 +306,7 @@ export const SaveReportBehind = styled.div`
 	width: 100vw;
 	height:${props => props.height};
 	background-color:${props => props.back};
-	position: absolute;
+	position: fixed;
 	left:${props => props.left};
 	top:${props => props.top};
 	display: flex;
@@ -310,9 +316,9 @@ export const SaveReportBehind = styled.div`
 
 //Pop-up para salvar Relatório
 export const SaveNameReportStyle = styled.div`
-	width: 40vw;
+	width: 38vw;
 	height: 30vh;
-	padding: 30px;
+	padding: 25px;
 	background-color: #ffffff;
 	display: flex;
 	flex-direction: column;
@@ -324,8 +330,8 @@ export const SaveNameReportStyle = styled.div`
 	
 	span {
 		width: 100%;
-		margin-bottom: 30px;
-		font-size: 2em;
+		margin-bottom: 20px;
+		font-size: 1.7em;
 		border: none;
 		background-color: transparent;
 		text-align: left;
@@ -337,7 +343,7 @@ export const SaveNameReportStyle = styled.div`
 
 	input{
 		width: 85%;
-		font-size: 1.8em;
+		font-size: 1.5em;
 		color: #2D4F6C;
 		border: none;
 		border-bottom: 1px solid #A4A4A7;
@@ -350,9 +356,9 @@ export const SaveNameReportStyle = styled.div`
 	}
 
 	button {
-		width: 8vw;
+		width: 9vw;
 		height: 6vh;
-		font-size: 1.8em;
+		font-size: 1.3em;
 		font-weight: bold;
 		background-color: #F2A950;
 		color: #ffffff;
@@ -373,6 +379,7 @@ export const SaveNameReportStyle = styled.div`
 		button {
 			width: 16vw;
 			height: 5vh;
+			font-size: 1.5em;
 		}
 	}
 

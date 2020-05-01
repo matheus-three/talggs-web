@@ -10,14 +10,13 @@ const GlobalStyle = createGlobalStyle`
 
   body{
 		width: 100vw;
-		height: 100vh
+		height: 89vh;
 		background: #F7F6EE;
 		font-family: Helvetica, sans-serif;
 		font-size: 14px;
+		padding-top: 11vh;
   }
 `;
-
-
 
 //Header Genérico 
 export const HeaderStyle = styled.div`
@@ -27,11 +26,13 @@ export const HeaderStyle = styled.div`
   background-color: #101D25;
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
     
   img {
     height: 100%;
     width: 12%;
-    margin-left: 30px;
+    margin-left: 20px;
 	}
 
   ul {
@@ -57,6 +58,7 @@ export const HeaderStyle = styled.div`
 	@media only screen and (max-width: 1200px){
 		width:100%;
 		font-size: 2em;
+		height: 8vh;
 
 		img {
 			width: 15%;
@@ -80,10 +82,6 @@ export const HeaderStyle = styled.div`
 			width: 10%;
 			margin-left: 5px;
 		}
-
-		/*ul {
-			display: none;
-		}*/
 	}
 `
 
@@ -91,11 +89,19 @@ export const HeaderStyle = styled.div`
 export const IconEdit = styled.div`
   background-color: #F7F6EE;
   border-radius: 100%;
-  height: 85px;
-  width: 85px;
+  height: 60px;
+  width: 60px;
   margin-right: 3vw;
-  
-  
+  top: 10vh;
+  color: #101D25;
+
+  button {
+	width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    padding: 0;
+  }
+
   @media only screen and (max-width: 1200px){
     height: 60px;
     width: 60px;
@@ -138,38 +144,37 @@ export const TitleMainStyle = styled.div`
   height: auto;
   margin-top: 10vh;
   margin-left: 6vw;
-  font-size: 3.5em;
+  font-size: 2.3em;
   color: #101D25;
   letter-spacing: 2px;
   font-weight: bold;    
 
-	@media only screen and (max-width: 850px) {
+	@media only screen and (max-width: 1200px) {
 		font-size: 2.5em;
+		margin-top: 5vh;
 	}
 
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: 850px) {
 		font-size: 2em;
-		margin-top: 7vh;
 	}
 `
 //Estilo de cada relatório salvo.
 export const SaveReportsStyle = styled.button`
 	background-color: #8abecb52;
-	width: 22vw;
-	height: 13vh;
-	color: #232f40;
-	font-size: 2.2em;
-	border: 1px solid #232f40;
-	border-radius: 25px;
-	box-shadow: 1px 3px 6px #00000045;
-	padding: 15px 25px;
-	margin-left: 130px;
-	margin-bottom: 100px;
-	cursor: pointer;
-	display: flex;
-	align-items: flex-start;
-	-webkit-box-pack: start;
-	justify-content: left;
+    width: 22vw;
+    height: 13vh;
+    color: #232f40;
+    font-size: 1.8em;
+    border: 1px solid #232f40;
+    border-radius: 20px;
+    box-shadow: 1px 3px 6px #00000045;
+    padding: 10px 15px;
+    margin-left: 90px;
+    margin-bottom: 65px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
 	
 	
 	@media only screen and (max-width: 1200px) {
@@ -198,15 +203,15 @@ export const ButtonCreateStyle = styled.div`
 	display: flex;
 	align-items: center;
 	position: fixed;
-	bottom: 50px;
-	right: 60px;
+	bottom: 30px;
+    right: 40px;
 
 	:hover span {
 		visibility: visible;
 	}
 
 	span {
-      font-size: 1.7em;
+      font-size: 1.2em;
       margin: 10px;
       display: flex;
 	  align-items: center;
@@ -216,11 +221,7 @@ export const ButtonCreateStyle = styled.div`
 	  transition: all .3s ease-out;
   	}
 
-	
 	@media only screen and (max-width: 850px) {
-		bottom: 30px;
-		right: 40px;
-
 		span {
 			margin-bottom: 20px;
 		}
@@ -229,9 +230,9 @@ export const ButtonCreateStyle = styled.div`
 //Botão redondo de criar relatórios.
 export const ButtonCreateReport = styled.button`
 	background-color: #F2A950;
-	width: 100px;
-	height: 100px;
-	font-size: 5em;
+	width: 65px;
+    height: 65px;
+    font-size: 3.5em;
 	border-radius: 100%;
 	border: 1px solid #F2A950;
 	opacity: .7;
@@ -252,10 +253,15 @@ export const ButtonCreateReport = styled.button`
 		outline: 0;
 	}
 
-	@media only screen and (max-width: 850px) {
+	@media only screen and (max-width: 1200px) {
 		width: 85px;
 		height: 85px;
 		font-size: 4em;
+	}
+
+	@media only screen and (max-width: 850px) {
+		width: 75px;
+		height: 75px;
 	}
 `
 
@@ -279,34 +285,48 @@ export const ShowReportStyle = styled.div`
 
 export const ButtonSaveReport = styled.div`
 	display: flex;
-	margin-top: 100px;
+	margin-top: 50px;
 
 	button{
 		background-color: #F2A950;
-    	width: 15vw;
+		width: 12vw;
 		height: 7.5vh;
 		border: none;
-		margin: 0px 40px;
+		margin: 0px 30px;
 		border-radius: 50px;
 		color: #f7f6ee;
 		opacity: 0.8;
 		cursor: pointer;
-		transition: all .5s ease-out;
-		font-size: 2.3em;
+		font-size: 1.5em;
 		font-weight: bold;
+		transition: all .5s ease-out;
+
+		:hover {
+			opacity: 1;
+		}
 
 		:focus {
 			outline: 0;
-		
+		}
 	}
 
 	@media only screen and (max-width: 1200px) {
-		margin-top: 50px;
-		width: 20vw;
-		height: 6vh;
-		font-size: 2em;
-		opacity: 1;
+		button {
+			margin-top: 50px;
+			width: 20vw;
+			height: 5vh;
+			font-size: 2em;
+			opacity: 1;
+		}
 	}
+
+	@media only screen and (max-width: 850px){
+		button{
+			width: 18vw;
+			font-size: 1.5em;
+			margin-top: 0px;
+		} 
+	} 
 `
 
 export default GlobalStyle;

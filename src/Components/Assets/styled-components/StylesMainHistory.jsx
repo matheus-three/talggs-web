@@ -11,12 +11,10 @@ export const TopBarStyle = styled.div`
     
   label {
     width: 100%;
-    margin: 30px 0px;
-    font-size: 1.8em;
+    margin: 20px 0px;
+    font-size: 1.2em;
     border: none;
-    background-color: transparent;
     text-align: left;
-    cursor: pointer;
     color: #2D4F6C;
     font-weight: bold;
   }
@@ -24,11 +22,11 @@ export const TopBarStyle = styled.div`
   select {
     width: 14vw;
     border: 1px solid #CCC;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 7px;
+    padding: 8px;
     margin-left: 10px;
     cursor: pointer;
-    font-size: 1.8em;
+    font-size: 1.2em;
     color: #2D4F6C;
 
     :focus {
@@ -73,11 +71,10 @@ export const InputDateStyle = styled.div `
 
   input {
     width: 14vw;
-    font-size: 1.6em;
+    font-size: 1em;
     border: 1px solid #CCC;
-    border-radius: 10px;
-    padding: 10px;
-    margin-left: 10px;
+    border-radius: 7px;
+    padding: 8px;
     cursor: pointer;
     color: #2D4F6C;
 
@@ -108,7 +105,7 @@ export const InputDateStyle = styled.div `
 `
 
 export const HistoryStyle = styled.div`
-  margin-top: 50px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
 

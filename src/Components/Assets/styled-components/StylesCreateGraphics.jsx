@@ -5,7 +5,7 @@ export const PositionStyle = styled.div`
 	height: 89vh;
     display: flex;
 	flex-direction: column;
-    align-items:center;  
+	align-items:center;
 `
 
 export const ButtonsTopStyle = styled.div`
@@ -17,13 +17,13 @@ export const ButtonsTopStyle = styled.div`
 	height: 11vh;
   
 	button {
-		width: 6vw;
 		background-color: transparent;
 		border: none;
 		margin: 15px;
-		font-size: 2.2em;
+		font-size: 1.8em;
 		color: #F2A950;
-		transition: all 0.2s ease-out;
+		cursor: pointer;
+		transition: all 0.2s ease-out;	
 
 		:hover {
 			opacity: 0.6;
@@ -34,7 +34,6 @@ export const ButtonsTopStyle = styled.div`
 			outline: 0;
 			border-bottom: 3px solid #F2A950;
 		}
-
 	} 
 
 	@media only screen and (max-width: 1200px) {
@@ -48,11 +47,11 @@ export const ButtonsTopStyle = styled.div`
 export const GraphicsStyle = styled.div`
 	display: flex;
 	align-items: center;
-	height: 46vh;
-    width: 38vw;
-    margin-bottom: 45px;
+	height: 52vh;
+	width: 56vw;
 	border: 1px solid #CCC;
-	border-radius: 20px;
+	border-radius: 15px;
+	font-size: .8em;
 	
 	@media only screen and (max-width: 1200px) {
 		width: 75vw;
@@ -74,23 +73,20 @@ export const BottomPositionStyle = styled.div`
 	button:focus {
 		outline: 0;
 	}
-
 `
 export const CheckBoxStyle = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
-	-webkit-box-align: start;
 	align-items: flex-start;
-	padding: 15px;
+	padding: 5px;
 	width: 100%;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	position: relative;
-	font-size: 2em;
 	color: #2D4F6C;
 
-	span {
+	legend {
 		font-weight: bold;
 	}
 
@@ -106,12 +102,14 @@ export const CheckBoxStyle = styled.div`
 
 export const BoxPositionStyle = styled.div`
 	display: flex;
-	align-items: center;
+	flex-wrap: inherit;
+	flex-direction: row;
 	width: 100%;
 	padding: 5px;
 
 	label {
 		margin-left:5px;
+		color: #2D4F6C;
 	}
 	
 	input {
