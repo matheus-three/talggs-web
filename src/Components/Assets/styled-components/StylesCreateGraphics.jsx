@@ -87,6 +87,7 @@ export const CheckBoxStyle = styled.div`
 	align-items: flex-start;
 	padding: 5px;
 	width: 100%;
+	margin-top: 70px;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	position: relative;
@@ -97,10 +98,12 @@ export const CheckBoxStyle = styled.div`
 	}
 
 	@media only screen and (max-width: 1200px) {
+		margin-top: 0;
 		font-size: 1.8em;
 	}
 
 	@media only screen and (max-width: 850px) {
+		margin-top: 0;
 		font-size: 1.5em;
 	}
 

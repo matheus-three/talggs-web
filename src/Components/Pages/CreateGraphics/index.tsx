@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { GraphicsStyle, ButtonsTopStyle, PositionStyle, CheckBoxStyle, BottomPositionStyle } from '../../Assets/styled-components/StylesCreateGraphics';
 import { ButtonStyle } from '../../Assets/styled-components/StylesCreateReportComponent';
-import {BarChart,XAxis,YAxis,Tooltip,Legend,Bar,PieChart,Pie} from 'recharts'
+import {BarChart,XAxis,YAxis,Tooltip,Legend,Bar,PieChart,Pie, Cell, LineChart} from 'recharts'
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -83,32 +83,32 @@ function CreateGraphics () {
 	//Graphic 2
 	//LOCATION
 	const dataLocation = [
-		{ group: 'AC', amountPeople: 0 },
-		{ group: 'AL', amountPeople: 20 },
-		{ group: 'AP', amountPeople: 10 },
-		{ group: 'AM', amountPeople: 0 },
-		{ group: 'BA', amountPeople: 220 },
-		{ group: 'CE', amountPeople: 137 },
-		{ group: 'ES', amountPeople: 20 },
+		{ group: 'AC', amountPeople: 100 },
+		{ group: 'AL', amountPeople: 2310 },
+		{ group: 'AP', amountPeople: 120 },
+		{ group: 'AM', amountPeople: 320 },
+		{ group: 'BA', amountPeople: 120 },
+		{ group: 'CE', amountPeople: 3130 },
+		{ group: 'ES', amountPeople: 320 },
 		{ group: 'GO', amountPeople: 0 },
-		{ group: 'MA', amountPeople: 10 },
-		{ group: 'MT', amountPeople: 935 },
-		{ group: 'MS', amountPeople: 20 },
+		{ group: 'MA', amountPeople: 0 },
+		{ group: 'MT', amountPeople: 0 },
+		{ group: 'MS', amountPeople: 0 },
 		{ group: 'MG', amountPeople: 1210 },
-		{ group: 'PA', amountPeople: 120 },
-		{ group: 'PB', amountPeople: 130 },
-		{ group: 'PR', amountPeople: 430 },
+		{ group: 'PA', amountPeople: 0 },
+		{ group: 'PB', amountPeople: 0 },
+		{ group: 'PR', amountPeople: 0 },
 		{ group: 'PE', amountPeople: 0 },
-		{ group: 'PI', amountPeople: 220 },
-		{ group: 'RJ', amountPeople: 770 },
-		{ group: 'RN', amountPeople: 230 },
-		{ group: 'RS', amountPeople: 203 },
-		{ group: 'RO', amountPeople: 123 },
-		{ group: 'RR', amountPeople: 32 },
-		{ group: 'SC', amountPeople: 89 },
-		{ group: 'SP', amountPeople: 2930 },
-		{ group: 'SE', amountPeople: 220 },
-		{ group: 'TO', amountPeople: 320 },
+		{ group: 'PI', amountPeople: 320 },
+		{ group: 'RJ', amountPeople: 10 },
+		{ group: 'RN', amountPeople: 0 },
+		{ group: 'RS', amountPeople: 3210 },
+		{ group: 'RO', amountPeople: 0 },
+		{ group: 'RR', amountPeople: 0 },
+		{ group: 'SC', amountPeople: 0 },
+		{ group: 'SP', amountPeople: 20 },
+		{ group: 'SE', amountPeople: 0 },
+		{ group: 'TO', amountPeople: 0 },
 		{ group: 'DF', amountPeople: 1020 },
 	];	  
 
@@ -137,11 +137,17 @@ function CreateGraphics () {
 	};
 
 	//RADIO
-	const [value, setValue] = React.useState('idade');
+	const [value, setValue] = React.useState('sexo');
 
 	const handleChange = (event) => {
 	  setValue(event.target.value);
 	};
+
+	//COLORS CHART
+	const colorsGender = ["#2D9AA6", "#F2A950"];
+	const colorsAge = ["rgb(45,79,108,1)", "rgb(45,79,108,0.9)", "rgb(45,79,108,0.8)", "rgb(45,79,108,0.7)", "rgb(45,79,108,0.6)",
+						"rgb(45,79,108,0.5)", "rgb(45,79,108,0.4)", "rgb(45,79,108,0.3)", "rgb(45,79,108,0.2)"];
+
 
 	return (
       <div>
@@ -153,19 +159,42 @@ function CreateGraphics () {
 				<GraphicsStyle>
 					{graphic === "1" &&
 					<BarChart className="BarChart" width={690} height={300} fontSize={"1.3em"} data={data}>
-						<XAxis dataKey="name"  />
+						<XAxis dataKey="name"/>
 						<YAxis />
 						<Tooltip />
 						<Legend />
-						<Bar dataKey="pagas" fill="#A7E4F2" />
-						<Bar dataKey="pendentes" fill="#ff1d92" />
-						<Bar dataKey="vencidas" fill="#2D9AA6" />
+						<Bar dataKey="pagas" fill="#2D9AA6" />
+						<Bar dataKey="pendentes" fill="#F2A950" />
+						<Bar dataKey="vencidas" fill="#FF6347" />
 					</BarChart>
 					}
 
+					{graphic === "2" && value === "sexo" &&
+					<PieChart width={600} height={400} style={{fontSize: "15px"}}>
+						<Pie
+							activeIndex={state}
+							activeShape={renderActiveShape}
+							data={dataGender}
+							cx={290}
+							text={20}
+							cy={200}
+							innerRadius={60}
+							outerRadius={80}
+							dataKey="amountPeople"
+							onMouseEnter={onPieEnter}
+						>
+						{
+							data.map((entry, index) => (	
+								<Cell key={`cell-${index}`} fill={colorsGender[index]}/>
+							))
+						}
+						</Pie>
+						
+					</PieChart>
+					}
 
 					{graphic === "2" && value === "idade" &&
-					<PieChart width={600} height={400}>
+					<PieChart width={600} height={400} style={{fontSize: "15px"}}>
 					<Pie
 					  activeIndex={state}
 					  activeShape={renderActiveShape}
@@ -174,44 +203,32 @@ function CreateGraphics () {
 					  cy={200}
 					  innerRadius={60}
 					  outerRadius={80}
-					  fill="#8884d8"
 					  dataKey="amountPeople"
 					  onMouseEnter={onPieEnter}
-					/>
+					  >
+					  {
+						  data.map((entry, index) => (	
+							  <Cell key={`cell-${index}`} fill={colorsAge[index]}/>
+						  ))
+					  }
+					  </Pie>
 					</PieChart>
 					}
 
-					{graphic === "2" && value === "localidade" && //pie 1 = meio, pie 2 = fora
-					<PieChart width={600} height={400}>
-					<Pie
-						activeIndex={state}
-						activeShape={renderActiveShape}
-						data={dataLocation}
-						cx={290}
-						cy={200}
-						innerRadius={60}
-						outerRadius={80}
-						fill="#8884d8"
-						dataKey="amountPeople"
-						onMouseEnter={onPieEnter}
-					/>
-					</PieChart>
-					}
-
-					{graphic === "2" && value === "sexo" &&
-					<PieChart width={600} height={400}>
-					<Pie
-						activeIndex={state}
-						activeShape={renderActiveShape}
-						data={dataGender}
-						cx={290}
-						cy={200}
-						innerRadius={60}
-						outerRadius={80}
-						fill="#8884d8"
-						dataKey="amountPeople"
-						onMouseEnter={onPieEnter}
-					/>
+					{graphic === "2" && value === "localidade" &&
+					<PieChart width={600} height={400} style={{fontSize: "15px"}}>
+						<Pie
+							activeIndex={state}
+							activeShape={renderActiveShape}
+							data={dataLocation}
+							cx={290}
+							cy={200}
+							innerRadius={60}
+							outerRadius={80}
+							dataKey="amountPeople"
+							onMouseEnter={onPieEnter}
+					  		fill="#FF6347"
+						/>
 					</PieChart>
 					}
 				</GraphicsStyle>	
@@ -220,11 +237,11 @@ function CreateGraphics () {
 				{graphic === "2" &&
 					<CheckBoxStyle>
 						<FormControl component="fieldset">
-						<FormLabel component="legend">Filtro</FormLabel>
-						<RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-							<FormControlLabel id="1" value="idade" control={<Radio />} label="Idade" />
-							<FormControlLabel id="2" value="localidade" control={<Radio />} label="Localidade" />
-							<FormControlLabel id="3" value="sexo" control={<Radio />} label="Sexo" />
+						<FormLabel component="legend" style={{marginLeft: "5px", color: "#707070"}}>Filtro</FormLabel>
+						<RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange} style={{marginLeft: "5px"}}>
+							<FormControlLabel id="1" value="sexo" control={<Radio style={{color: "#2D9AA6"}}/>} label="Sexo" />
+							<FormControlLabel id="2" value="idade" control={<Radio style={{color: "#2D9AA6"}}/>} label="Idade"/>	
+							<FormControlLabel id="3" value="localidade" control={<Radio style={{color: "#2D9AA6"}}/>} label="Localidade" />
 						</RadioGroup>
 						</FormControl>
 					</CheckBoxStyle>
