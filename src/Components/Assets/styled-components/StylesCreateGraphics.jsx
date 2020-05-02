@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+//COLORS CHARTS
+export const colorsGender = ["#2D9AA6", "#F2A950"];
+export const colorsAge = ["rgb(45,79,108,1)", "rgb(45,79,108,0.9)", "rgb(45,79,108,0.8)", "rgb(45,79,108,0.7)", "rgb(45,79,108,0.6)",
+					"rgb(45,79,108,0.5)", "rgb(45,79,108,0.4)", "rgb(45,79,108,0.3)", "rgb(45,79,108,0.2)"];
 
 export const PositionStyle = styled.div`
 	height: 89vh;

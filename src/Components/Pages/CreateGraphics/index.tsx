@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { GraphicsStyle, ButtonsTopStyle, PositionStyle, CheckBoxStyle, BottomPositionStyle } from '../../Assets/styled-components/StylesCreateGraphics';
+import { colorsGender, colorsAge, GraphicsStyle, ButtonsTopStyle, PositionStyle, CheckBoxStyle, BottomPositionStyle } from '../../Assets/styled-components/StylesCreateGraphics';
 import { ButtonStyle } from '../../Assets/styled-components/StylesCreateReportComponent';
 import {BarChart,XAxis,YAxis,Tooltip,Legend,Bar,PieChart,Pie, Cell, LineChart} from 'recharts'
 import Radio from '@material-ui/core/Radio';
@@ -12,9 +12,7 @@ import { renderActiveShape } from './activeShapeGraphic'
 //https://recharts.org/en-US/examples/CustomActiveShapePieChart
 //json-server --watch public/data/db.json
 
-
-function CreateGraphics () {
-	//ja tava	
+function CreateGraphics () {	
 	const [graphic, setgraphic] = useState("1")
 	
 	function handleClick(e){
@@ -28,11 +26,24 @@ function CreateGraphics () {
 			document.getElementById("2").classList.remove('activeBtn')
 		}
 	}
+
+	//CHART
+	const [state, setState] = useState(0);
+	
+	const onPieEnter = (data, index) => {
+		setState(index);
+	};
+
+	//RADIO FILTER
+	const [value, setValue] = React.useState('sexo');
+
+	const handleChange = (event) => {
+	  setValue(event.target.value);
+	};
 	
 
 
-	console.log(graphic)
-
+	//DATA QUE VIRÁ DA API
 	//Graphic 1
 	const data = [
 		{
@@ -128,27 +139,8 @@ function CreateGraphics () {
 		{ group: 'Idade: 73-83', amountPeople: 20 },
 		{ group: 'Idade: 83-93', amountPeople: 10 },
 		{ group: 'Idade: 93+', amountPeople: 0 },
-	  ];
-	  
-	const [state, setState] = useState(0);
+	];
 	
-	const onPieEnter = (data, index) => {
-		setState(index);
-	};
-
-	//RADIO
-	const [value, setValue] = React.useState('sexo');
-
-	const handleChange = (event) => {
-	  setValue(event.target.value);
-	};
-
-	//COLORS CHART
-	const colorsGender = ["#2D9AA6", "#F2A950"];
-	const colorsAge = ["rgb(45,79,108,1)", "rgb(45,79,108,0.9)", "rgb(45,79,108,0.8)", "rgb(45,79,108,0.7)", "rgb(45,79,108,0.6)",
-						"rgb(45,79,108,0.5)", "rgb(45,79,108,0.4)", "rgb(45,79,108,0.3)", "rgb(45,79,108,0.2)"];
-
-
 	return (
       <div>
           <PositionStyle>
