@@ -9,6 +9,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { renderActiveShape } from './activeShapeGraphic'
 
+
 //https://recharts.org/en-US/examples/CustomActiveShapePieChart
 //json-server --watch public/data/db.json
 
@@ -19,8 +20,18 @@ function CreateGraphics () {
 	
 	function handleClick(e){
 		setgraphic(e.target.id);
+
+		if (document.getElementById("1").classList.contains('activeBtn')) {
+			document.getElementById("1").classList.remove('activeBtn')
+			document.getElementById("2").classList.add('activeBtn')
+		} else {
+			document.getElementById("1").classList.add('activeBtn')
+			document.getElementById("2").classList.remove('activeBtn')
+		}
 	}
 	
+
+
 	console.log(graphic)
 
 	//Graphic 1
@@ -137,12 +148,12 @@ function CreateGraphics () {
       <div>
           <PositionStyle>
         		<ButtonsTopStyle>
-					<button id = "1" onClick = {handleClick}>Contas</button>
-					<button id = "2" onClick = {handleClick}>Clientes</button>
+					<button id="1" className="activeBtn" onClick={handleClick}>Contas</button>
+					<button id="2" onClick={handleClick}>Clientes</button>
 				</ButtonsTopStyle>
 				<GraphicsStyle>
-					{graphic === "1"?
-					<BarChart width={730} height={250} fontSize={"1.5em"} data={data}>
+					{graphic === "1" &&
+					<BarChart className="BarChart" width={690} height={300} fontSize={"1.3em"} data={data}>
 						<XAxis dataKey="name"  />
 						<YAxis />
 						<Tooltip />
@@ -150,11 +161,11 @@ function CreateGraphics () {
 						<Bar dataKey="pagas" fill="#A7E4F2" />
 						<Bar dataKey="pendentes" fill="#ff1d92" />
 						<Bar dataKey="vencidas" fill="#2D9AA6" />
-					</BarChart>: undefined 
+					</BarChart>
 					}
 
 
-					{graphic === "2" && value === "idade"? 
+					{graphic === "2" && value === "idade" &&
 					<PieChart width={600} height={400}>
 					<Pie
 					  activeIndex={state}
@@ -169,10 +180,9 @@ function CreateGraphics () {
 					  onMouseEnter={onPieEnter}
 					/>
 					</PieChart>
-					:undefined
 					}
 
-					{graphic === "2" && value === "localidade"? //pie 1 = meio, pie 2 = fora
+					{graphic === "2" && value === "localidade" && //pie 1 = meio, pie 2 = fora
 					<PieChart width={600} height={400}>
 					<Pie
 						activeIndex={state}
@@ -187,10 +197,9 @@ function CreateGraphics () {
 						onMouseEnter={onPieEnter}
 					/>
 					</PieChart>
-					:undefined
 					}
 
-					{graphic === "2" && value === "sexo"?
+					{graphic === "2" && value === "sexo" &&
 					<PieChart width={600} height={400}>
 					<Pie
 						activeIndex={state}
@@ -205,12 +214,11 @@ function CreateGraphics () {
 						onMouseEnter={onPieEnter}
 					/>
 					</PieChart>
-					:undefined
 					}
 				</GraphicsStyle>	
 					
 				<BottomPositionStyle>	
-				{graphic === "2"?
+				{graphic === "2" &&
 					<CheckBoxStyle>
 						<FormControl component="fieldset">
 						<FormLabel component="legend">Filtro</FormLabel>
@@ -221,7 +229,6 @@ function CreateGraphics () {
 						</RadioGroup>
 						</FormControl>
 					</CheckBoxStyle>
-				:undefined
 				}
 					<ButtonStyle>
 						<button>Salvar</button>

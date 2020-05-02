@@ -11,34 +11,39 @@ export const PositionStyle = styled.div`
 export const ButtonsTopStyle = styled.div`
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	align-self: flex-start;
 	width: 100vw;
 	height: 11vh;
   
 	button {
 		background-color: transparent;
 		border: none;
-		margin: 15px;
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-bottom: 1%;
+		margin-top: 1%;
 		font-size: 1.8em;
 		color: #F2A950;
 		cursor: pointer;
 		transition: all 0.2s ease-out;	
+		outline: 0;
 
 		:hover {
 			opacity: 0.6;
 			border-bottom: 3px solid #F2A950;
 		}
+	}
 
-		:focus, :active {
-			outline: 0;
-			border-bottom: 3px solid #F2A950;
-		}
-	} 
+	.activeBtn {
+		border-bottom: 3px solid #F2A950;
+	}
 
 	@media only screen and (max-width: 1200px) {
 		button {
 			width: auto;
+			margin-left: 5%;
+			margin-right: 5%;
+			margin-bottom: 4%;
+			margin-top: 5%;
 		}
 	}
 	
@@ -47,11 +52,12 @@ export const ButtonsTopStyle = styled.div`
 export const GraphicsStyle = styled.div`
 	display: flex;
 	align-items: center;
-	height: 52vh;
+	height: 60vh;
 	width: 56vw;
 	border: 1px solid #CCC;
 	border-radius: 15px;
 	font-size: .8em;
+	place-content: center;
 	
 	@media only screen and (max-width: 1200px) {
 		width: 75vw;
