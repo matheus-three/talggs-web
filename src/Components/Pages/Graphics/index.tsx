@@ -4,8 +4,6 @@ import { AppContext } from '../../ContextApi/Context';
 import {Link} from 'react-router-dom'
 import SavedGraphics from './SavedGraphics';
 
-
-
 function Graphics () {
  const {report} = useContext(AppContext)
  const length = report.length; 
@@ -18,7 +16,7 @@ function Graphics () {
          
       <MainStyle>
         {length === 0?
-            <span> Não há Gráficos disponiveis</span>
+            <span> Não há Gráficos disponíveis</span>
           :
             report.map((report) => {
               return <SavedGraphics/>

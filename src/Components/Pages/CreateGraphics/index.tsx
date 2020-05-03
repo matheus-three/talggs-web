@@ -239,7 +239,7 @@ function CreateGraphics () {
 					</CheckBoxStyle>
 				}
 					<ButtonStyle>
-						<button>Salvar</button>
+						<button onClick={handleClick}>Salvar</button>
 					</ButtonStyle>		
 				</BottomPositionStyle>
 			</PositionStyle>

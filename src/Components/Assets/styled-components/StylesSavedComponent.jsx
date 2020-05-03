@@ -47,8 +47,12 @@ export const HeaderStyle = styled.div`
 		transition: .3s all;
 	}
 
-	li:hover,
-	li:active {
+	li:hover {
+		color: #A7E4F2;
+    	text-decoration: underline;
+	}
+
+	.activeBtn {
 		color: #A7E4F2;
     	text-decoration: underline;
 	}

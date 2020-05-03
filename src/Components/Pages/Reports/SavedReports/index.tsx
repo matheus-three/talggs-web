@@ -3,7 +3,6 @@ import { SaveReportsStyle,ButtonSaveReport, ShowReportStyle } from '../../../Ass
 import { SaveReportBehind, StatsStyle} from '../../../Assets/styled-components/StylesCreateReportComponent'
 import { AppContext } from '../../../ContextApi/Context';
 
-
 interface Iprops {
 		name: string;
 		id: string

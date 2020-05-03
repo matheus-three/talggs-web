@@ -23,7 +23,7 @@ function Reports() {
          
       <MainStyle>
         {length === 0?
-            <span>Não há relatórios disponíveis</span>
+            <span>Não há Relatórios disponíveis</span>
           :
             report.map((report) => {
               return <SavedReports key = {report.id} name = {report.name} id = {report.id}/>

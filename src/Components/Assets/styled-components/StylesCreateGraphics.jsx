@@ -31,7 +31,7 @@ export const ButtonsTopStyle = styled.div`
 		transition: all 0.2s ease-out;	
 		outline: 0;
 
-		:hover {
+		:hover, :active {
 			opacity: 0.6;
 			border-bottom: 3px solid #F2A950;
 		}
