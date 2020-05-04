@@ -5,6 +5,7 @@ export const GraphicContext = createContext();
 
 const GraphicsProvider = ({ children }) => {
 
+	// A intencao é, passar esse array por context para Graphic->index, e lá, usar para cada gráfico, seu endpoint
 	//ARRAY MINIMIZADO PARA TESTE
 		const [graphic, setGraphicData] = useState(
 			{			

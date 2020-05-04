@@ -12,12 +12,13 @@ import  GraphicsProvider, { GraphicContext } from '../../../ContextApi/ContextGr
 
 
 const Graphics = () => {
+    //ISSO SÃO FUNCOES DOS GRAFICOS NAO ESTA RELACIONADO ---------------------------------------
     const [graphicType, setgraphicType] = useState("1")
 	
 	function handleClick(e){
 		setgraphicType(e.target.id);
 
-		if (document.getElementById("1").classList.contains		('activeBtn')) {
+		if (document.getElementById("1").classList.contains('activeBtn')) {
 			document.getElementById("1").classList.remove('activeBtn')
 			document.getElementById("2").classList.add('activeBtn')
 		} else {
@@ -40,12 +41,17 @@ const Graphics = () => {
 	  setValue(event.target.value);    
     };
     
-    //context
+    // FIM  ---------------------------------------
+
+
+
+    //AQUI É O CONTEXT 
     const context = useContext(GraphicContext);
-   const data = JSON.parse(JSON.stringify(context))
+    const data = JSON.parse(JSON.stringify(context))
     console.log("data: " + data )
 
 
+    //E AQUI É UM EXEMPLO MINIMIZADO PARA O GRAFICO Q ESTA ENTRE <GRAPHICSSTYLE>
 	const dataAccounts = [
 		{
 			"name": "Janeiro",
