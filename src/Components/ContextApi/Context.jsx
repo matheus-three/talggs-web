@@ -9,7 +9,8 @@ const AppContextProvider = ({ children }) => {
 	const[api,setApi] = useState([])
 	const [showDetails,setShowDetails] = useState(false)
 	const [saveNameReportState,setSaveNameReportState] = useState(false);
-	console.log("api",api)
+	//console.log("api",api)
+
 	const saveReport = save => {
 		const newReport = {
 				id: report.length+ 1,
