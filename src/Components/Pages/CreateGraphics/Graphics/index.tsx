@@ -43,12 +43,23 @@ const Graphics = () => {
     
     // FIM  ---------------------------------------
 
+    interface IGraphicContext {
+        graphic: IGraphic;
+    }
+
+    interface IGraphic {
+        dataAccounts: Array<any>
+        dataAge: Array<any>
+        dataGender: Array<any>
+        dataLocation: Array<any>
+    }
 
 
     //AQUI É O CONTEXT 
-    const context = useContext(GraphicContext);
-    const data = JSON.parse(JSON.stringify(context))
-    console.log("data: " + data )
+    const context: IGraphicContext = useContext(GraphicContext);
+    const { graphic } = context;
+    console.log(graphic);
+    console.log(graphic.dataAccounts);
 
 
     //E AQUI É UM EXEMPLO MINIMIZADO PARA O GRAFICO Q ESTA ENTRE <GRAPHICSSTYLE>

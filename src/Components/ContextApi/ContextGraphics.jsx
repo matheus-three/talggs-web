@@ -7,7 +7,7 @@ const GraphicsProvider = ({ children }) => {
 
 	// A intencao é, passar esse array por context para Graphic->index, e lá, usar para cada gráfico, seu endpoint
 	//ARRAY MINIMIZADO PARA TESTE
-		const [graphic, setGraphicData] = useState(
+		const [graphic] = useState(
 			{			
 				dataAccounts: [
 					{
@@ -35,11 +35,8 @@ const GraphicsProvider = ({ children }) => {
 			}
 		);
 
-	
-		 console.log("data no provider: " + graphic )
-
 		return (
-			<GraphicContext.Provider value={{ graphic}}>
+			<GraphicContext.Provider value={{ graphic }}>
 				{children}
 			</GraphicContext.Provider>
 		)	
