@@ -1,19 +1,6 @@
-/*
-import React, { useState, useContext, useEffect } from 'react'
-import { colorsGender, colorsAge, GraphicsStyle, ButtonsTopStyle, PositionStyle, CheckBoxStyle, BottomPositionStyle } from '../../Assets/styled-components/StylesCreateGraphics';
-import { ButtonStyle } from '../../Assets/styled-components/StylesCreateReportComponent';
-import {BarChart,XAxis,YAxis,Tooltip,Legend,Bar,PieChart,Pie, Cell, LineChart} from 'recharts'
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
-*/
-
 import React from 'react'
-import  GraphicsProvider from '../../ContextApi/ContextGraphics';
+import GraphicsProvider from '../../ContextApi/ContextGraphics';
 import Graphics from './Graphics/index'
-
 
 function CreateGraphics () {	
 	
