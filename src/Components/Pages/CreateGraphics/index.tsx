@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react'
 import { colorsGender, colorsAge, GraphicsStyle, ButtonsTopStyle, PositionStyle, CheckBoxStyle, BottomPositionStyle } from '../../Assets/styled-components/StylesCreateGraphics';
 import { ButtonStyle } from '../../Assets/styled-components/StylesCreateReportComponent';
-import {BarChart,XAxis,YAxis,Tooltip,Legend,Bar,PieChart,Pie, Cell, LineChart} from 'recharts'
+import {BarChart,XAxis,YAxis,Tooltip,Legend,Bar,PieChart,Pie, Cell } from 'recharts'
+import {Link} from 'react-router-dom'
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -161,6 +162,10 @@ const Graphics = () => {
             <ButtonStyle>
                 <button onClick={saveGraphic}>Salvar</button>
             </ButtonStyle>		
+
+            <ButtonStyle>
+                <Link to='/savedGraphics' style = {{textDecoration: 'none'}}><button>Voltar</button></Link>
+            </ButtonStyle>	
 
             <SaveGraphic graphicType={graphicType} filter={value}></SaveGraphic>
 
