@@ -9,26 +9,32 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { renderActiveShape } from './activeShapeGraphic'
 import { GraphicContext } from '../../../ContextApi/ContextGraphics';
+import SaveGraphic from './SaveGraphic'
+
+interface IGraphicContext {
+    graphic: IGraphic;
+}
+
+interface IGraphic {
+    dataAccounts: Array<any>
+    dataAge: Array<any>
+    dataGender: Array<any>
+    dataLocation: Array<any>
+}
 
 const Graphics = () => {
-    interface IGraphicContext {
-        graphic: IGraphic;
-    }
-
-    interface IGraphic {
-        dataAccounts: Array<any>
-        dataAge: Array<any>
-        dataGender: Array<any>
-        dataLocation: Array<any>
-    }
-
     //context
     const context: IGraphicContext = useContext(GraphicContext);
     const { graphic } = context;
+    console.log("graphic no GRAPHICS \n");
     console.log(graphic);
+    console.log("dataAccount no GRAPHICS \n");
     console.log(graphic.dataAccounts);
+ 
+    //save
+    const { setSaveNameGraphicState } = useContext(GraphicContext);
 
-    //Which graphic
+    //GRAPHIC TYPE
     const [graphicType, setgraphicType] = useState("1")
 	
 	//CHART
@@ -53,8 +59,11 @@ const Graphics = () => {
 			document.getElementById("1").classList.add('activeBtn')
 			document.getElementById("2").classList.remove('activeBtn')
 		}
+    }
+    
+	function saveGraphic() {
+        setSaveNameGraphicState(true)
 	}
-
 
     return (
     <PositionStyle>
@@ -64,7 +73,7 @@ const Graphics = () => {
         </ButtonsTopStyle>
 
         <GraphicsStyle>
-            {graphicType === "1" &&
+            {graphicType === "1" && 
                 <BarChart className="BarChart" width={690} height={300} fontSize={"1.3em"} data={graphic.dataAccounts}>
                     <XAxis dataKey="name"/>
                     <YAxis />
@@ -154,8 +163,11 @@ const Graphics = () => {
         }
 
             <ButtonStyle>
-                <button onClick={handleClick}>Salvar</button>
+                <button onClick={saveGraphic}>Salvar</button>
             </ButtonStyle>		
+
+            <SaveGraphic graphicType={graphicType} filter={value}></SaveGraphic>
+
         </BottomPositionStyle>
     </PositionStyle>
     )

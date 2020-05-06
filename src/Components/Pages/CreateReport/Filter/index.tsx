@@ -2,8 +2,6 @@ import React, { useContext } from "react"
 import { FilterStyle, OptionFilterStatusStyle, FilterStatusStyle } from "../../../Assets/styled-components/StylesCreateReportComponent";
 import { FilterContext } from "../../../ContextApi/ContextFilterState";
 
-
-
 function Filter() {
 	const {nameStatus,filterStatus,cpfStatus,dateLaunchStatus,dateDueStatus} = useContext(FilterContext)
 	const {filterState,filterValues,values} = useContext(FilterContext)

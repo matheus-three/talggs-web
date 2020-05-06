@@ -3,8 +3,6 @@ import {Container } from '../../Assets/styled-components/StylesCreateReportCompo
 import Filter from './Filter';
 import Stats from './Stats';
 
-
-
 function CreateReport() {
     return (
         <Fragment>

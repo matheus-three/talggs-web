@@ -10,7 +10,7 @@ interface Iprops {
 
 function SavedReports (props: Iprops) {
     const [showReport,setShowReport] = useState(false);
-		const {report} = useContext(AppContext)
+	const {report} = useContext(AppContext)
 	
     function handleClick () {
         showReport?

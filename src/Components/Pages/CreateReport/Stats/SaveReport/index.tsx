@@ -10,9 +10,7 @@ function SaveReport(props: Iprops) {
 	const {saveNameReportState,setSaveNameReportState} = useContext(AppContext)
 	const [saveName,setSaveName] = useState("")
 	const {saveReport} = useContext(AppContext)
-	
-	
-
+		
 	function handleSaveClick() {
 		setSaveNameReportState(false)
 		setSaveName("")
@@ -24,10 +22,10 @@ function SaveReport(props: Iprops) {
 		saveReport(array)
 	}
 
-	
 	function handleSave (e) {
 		setSaveName(e.target.value);
 	}
+
 	return (
 		<Fragment>
 			{saveNameReportState ?
