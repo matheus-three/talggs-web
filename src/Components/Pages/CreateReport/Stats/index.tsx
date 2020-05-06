@@ -3,6 +3,7 @@ import { StatsStyle, ButtonStyle, TitleReportStyle, ReportStyle } from '../../..
 import { AppContext } from '../../../ContextApi/Context';
 import SaveReport from './SaveReport';
 import { FilterContext } from '../../../ContextApi/ContextFilterState';
+import {Link} from 'react-router-dom'
 
 function Stats() {
 
@@ -83,6 +84,7 @@ function Stats() {
 				<ButtonStyle>
 					<button>Imprimir</button>
 					<button onClick={handleClick}>Salvar</button>
+					<Link to='/savedReports' style = {{textDecoration: 'none'}}><button>Voltar</button></Link>
 				</ButtonStyle>
 
 				<SaveReport reportStats={filterReport}></SaveReport>
