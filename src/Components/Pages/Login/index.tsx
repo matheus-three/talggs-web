@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles'
 import {Field, Form, Formik,ErrorMessage } from 'formik';
 import Logo from '../../Assets/Icons/Logo1V - Web.svg';
-import styles from '../../Assets/useStyles/StylesLogin'
+import style from '../../Assets/useStyles/StylesLogin'
 import { Card, CardContent } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import * as yup from 'yup'
@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(style);
 
 
 function Login () {
@@ -52,7 +52,7 @@ console.log(values)
                 </Form>
             </Formik>
 
-            <Link className='link-register' to='/register'>Ainda não possui uma conta? Cadastre-se!</Link>
+            <Link className='link-register' to='/PreRegister'>Ainda não possui uma conta? Cadastre-se!</Link>
         </CardContent>
     </Card>
 </div>

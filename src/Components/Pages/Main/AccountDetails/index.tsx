@@ -5,7 +5,7 @@ import { AppContext } from '../../../ContextApi/Context';
 import ShowDetails from './ShowDetails';
 import { FilterContext } from '../../../ContextApi/ContextFilterState';
 import { useEffect } from 'react';
-import { parseISO, isAfter, format } from 'date-fns';
+import { format } from 'date-fns';
 
 
 
