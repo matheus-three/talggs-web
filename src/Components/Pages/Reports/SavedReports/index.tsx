@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useContext } from 'react';
-import { SaveReportsStyle,ButtonSaveReport, ShowReportStyle } from '../../../Assets/styled-components/StylesSavedComponent';
+import { SaveReportsStyle,ButtonSaveReport, ShowSavedStyle } from '../../../Assets/styled-components/StylesSavedComponent';
 import { SaveReportBehind, StatsStyle} from '../../../Assets/styled-components/StylesCreateReportComponent'
 import { AppContext } from '../../../ContextApi/Context';
 
@@ -31,8 +31,8 @@ function SavedReports (props: Iprops) {
 	
 			{showReport?
 			<SaveReportBehind top = {"72px"} left = {"0px"} height = {"89vh"} back = {"rgba(0,0,0,0.8)"}>
-				<ShowReportStyle>
-					<span>{props.name}</span>
+				<ShowSavedStyle>
+					<span className="saveTitle">{props.name}</span>
 					<StatsStyle width = {"70%"}>
 						<table >
 							<thead>
@@ -75,7 +75,7 @@ function SavedReports (props: Iprops) {
 						<button onClick = {handleClick}>Voltar</button>
 					</ButtonSaveReport>
 					
-				</ShowReportStyle>
+				</ShowSavedStyle>
 			</SaveReportBehind>
 			:
 			undefined

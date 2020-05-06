@@ -270,7 +270,7 @@ export const ButtonCreateReport = styled.button`
 `
 
 //Tela para visualização do relatório salvo.
-export const ShowReportStyle = styled.div`
+export const ShowSavedStyle = styled.div`
 	width: 100%;
 	height: 100%;
 	background-color: #f7f6ee;
@@ -280,10 +280,28 @@ export const ShowReportStyle = styled.div`
 	align-items: center;
 	flex-direction: column;
 
+	.saveTitle {
+		color: #232f40;
+		margin: 0px auto;
+		font-size: 2.6em;	
+		margin-bottom: 20px;	
+	}
+
 	span {
 		color: #232f40;
 		margin: 0px auto;
-		font-size: 3.2em;
+		font-size: 1.1em;
+	}
+
+	@media only screen and (max-width: 1200px) {
+		.saveTitle {
+			font-size: 3.2em;	
+			margin-bottom: 50px;	
+		}
+
+		span {
+			font-size: 1.5em;
+		}
 	}
 `
 

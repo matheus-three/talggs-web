@@ -60,7 +60,7 @@ export const GraphicsStyle = styled.div`
 	width: 56vw;
 	border: 1px solid #CCC;
 	border-radius: 15px;
-	font-size: .8em;
+	font-size: 1em;
 	place-content: center;
 	
 	@media only screen and (max-width: 1200px) {
@@ -71,8 +71,28 @@ export const GraphicsStyle = styled.div`
 	@media only screen and (max-width: 850px) {
 		width: 88vw;
 	}
-
 `
+
+export const GraphicsSaveStyle = styled.div`
+	display: flex;
+	align-items: center;
+	height: 60vh;
+	width: 56vw;
+	border: 1px solid #CCC;
+	border-radius: 15px;
+	color: "#2D9AA6";
+	place-content: center;
+	
+	@media only screen and (max-width: 1200px) {
+		width: 75vw;
+		border: 2px solid #CCC;
+	}
+
+	@media only screen and (max-width: 850px) {
+		width: 88vw;
+	}
+`
+
 export const BottomPositionStyle = styled.div`
 	display: flex;
 	justify-content: center;

@@ -25,8 +25,8 @@ function SaveGraphic(props : Iprops) {
 
 	const context: IGraphicContext = useContext(GraphicContext);
 	const { graphic } = context;
-	console.log("lenght do arraySavedGraphics NO SaveGRAPHIC: \n");
-	console.log(arraySavedGraphics.length);
+	//console.log("lenght do arraySavedGraphics NO SaveGRAPHIC: \n");
+	//console.log(arraySavedGraphics.length);
 	//console.log("dataAccounts no SAVEGRAPHICS: \n");
     //console.log(graphic.dataAccounts);
 
