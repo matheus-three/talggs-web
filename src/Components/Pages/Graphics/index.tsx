@@ -3,13 +3,16 @@ import { TitleMainStyle, MainStyle, ButtonCreateStyle, ButtonCreateReport } from
 import { AppContext } from '../../ContextApi/Context';
 import {Link} from 'react-router-dom'
 import SavedGraphics from './SavedGraphics';
+import { GraphicContext } from '../../ContextApi/ContextGraphics';
 
 function Graphics () {
- const {report} = useContext(AppContext)
- const length = report.length; 
+ const {arraySavedGraphics} = useContext(GraphicContext)
+ const length = arraySavedGraphics.length; 
+
+ console.log("length é: " + length)
  
  return (
-        <Fragment>
+    <Fragment>
          <TitleMainStyle>
           <span>Gráficos da Empresa</span>
          </TitleMainStyle>
@@ -18,8 +21,8 @@ function Graphics () {
         {length === 0?
             <span> Não há Gráficos disponíveis</span>
           :
-            report.map((report) => {
-              return <SavedGraphics/>
+          arraySavedGraphics.map((arraySavedGraphics) => {
+              return <SavedGraphics key = {arraySavedGraphics.id} name = {arraySavedGraphics.name} id = {arraySavedGraphics.id} graphicType = {arraySavedGraphics.graphicType} filter = {arraySavedGraphics.filter} saved = {arraySavedGraphics.saved}/>
             })
         }
       </MainStyle>

@@ -25,10 +25,10 @@ function SaveGraphic(props : Iprops) {
 
 	const context: IGraphicContext = useContext(GraphicContext);
 	const { graphic } = context;
-	console.log("GRAPHIC: \n");
-	console.log(graphic);
-	console.log("dataAccounts no SAVEGRAPHICS: \n");
-    console.log(graphic.dataAccounts);
+	console.log("lenght do arraySavedGraphics NO SaveGRAPHIC: \n");
+	console.log(arraySavedGraphics.length);
+	//console.log("dataAccounts no SAVEGRAPHICS: \n");
+    //console.log(graphic.dataAccounts);
 
 	function handleSaveClick() {
 		setSaveNameGraphicState(false)
@@ -37,6 +37,8 @@ function SaveGraphic(props : Iprops) {
 		if (props.graphicType === "1") {
 			const array = {
 				name: saveName,
+				graphicType: props.graphicType,
+				filter: "",
 				saved: graphic.dataAccounts
 			}
 			saveGraphic(array)
@@ -45,18 +47,24 @@ function SaveGraphic(props : Iprops) {
 		} else if (props.filter === "localidade") {
 			const array = {
 				name: saveName,
+				graphicType: props.graphicType,
+				filter: props.filter,
 				saved: graphic.dataLocation
 			}
 			saveGraphic(array)
 		} else if (props.filter === "idade") {
 			const array = {
 				name: saveName,
+				graphicType: props.graphicType,
+				filter: props.filter,
 				saved: graphic.dataAge
 			}
 			saveGraphic(array)
 		} else if (props.filter === "sexo") {
 			const array = {
 				name: saveName,
+				graphicType: props.graphicType,
+				filter: props.filter,
 				saved: graphic.dataGender
 			}
 			saveGraphic(array)

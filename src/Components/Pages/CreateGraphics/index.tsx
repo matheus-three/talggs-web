@@ -5,9 +5,9 @@ import Graphics from './Graphics/index'
 function CreateGraphics () {	
 	
 	return (
-		<GraphicsProvider>
+		
           <Graphics></Graphics>
-		</GraphicsProvider>
+		
     )
 }
 

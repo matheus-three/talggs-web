@@ -26,10 +26,10 @@ const Graphics = () => {
     //context
     const context: IGraphicContext = useContext(GraphicContext);
     const { graphic } = context;
-    console.log("graphic no GRAPHICS \n");
-    console.log(graphic);
-    console.log("dataAccount no GRAPHICS \n");
-    console.log(graphic.dataAccounts);
+    //console.log("graphic no GRAPHICS \n");
+    //console.log(graphic);
+    //console.log("dataAccount no GRAPHICS \n");
+    //console.log(graphic.dataAccounts);
  
     //save
     const { setSaveNameGraphicState } = useContext(GraphicContext);

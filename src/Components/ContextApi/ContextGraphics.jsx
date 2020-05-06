@@ -107,6 +107,8 @@ const GraphicsProvider = ({ children }) => {
 		const newGraphic = {
 			id: arraySavedGraphics.length + 1,
 			name: save.name,
+			graphicType: save.graphicType,
+			filter: save.filter,
 			saved: save.saved
 		}
 		setSavedGraphic([...arraySavedGraphics, newGraphic]);
