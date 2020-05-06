@@ -6,7 +6,6 @@ function Filter() {
 	const {nameStatus,filterStatus,cpfStatus,dateLaunchStatus,dateDueStatus} = useContext(FilterContext)
 	const {filterState,filterValues,values} = useContext(FilterContext)
 	
-
 	function handleClick (e) {
 		filterState(e.target.id)
 		console.log("a",e.target.id)

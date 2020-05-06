@@ -8,10 +8,7 @@ import { Link } from 'react-router-dom';
 import * as yup from 'yup'
 import { useState } from 'react';
 
-
-
 const useStyles = makeStyles(styles);
-
 
 function Login () {
   const classes = useStyles();
@@ -46,7 +43,6 @@ console.log(values)
                     <ErrorMessage className = 'form-error' component = "span" name = 'user'/>
                     <Field className='input' type='password' name='password' placeholder='Senha'/>
                     <ErrorMessage className = 'form-error' component = "span" name = 'password'/>
-
 
                     <button className='button' type='submit'>Acessar</button>
                 </Form>

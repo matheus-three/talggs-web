@@ -13,23 +13,23 @@ function Graphics () {
  return (
     <Fragment>
          <TitleMainStyle>
-          <span>Gráficos da Empresa</span>
+         	<span>Gráficos da Empresa</span>
          </TitleMainStyle>
          
-      <MainStyle>
-        {length === 0?
-            <span> Não há Gráficos disponíveis</span>
-          :
-          arraySavedGraphics.map((arraySavedGraphics) => {
-              return <SavedGraphics key = {arraySavedGraphics.id} name = {arraySavedGraphics.name} id = {arraySavedGraphics.id} graphicType = {arraySavedGraphics.graphicType} filter = {arraySavedGraphics.filter} saved = {arraySavedGraphics.saved}/>
-            })
-        }
-      </MainStyle>
+		<MainStyle>
+			{length === 0?
+				<span> Não há Gráficos disponíveis</span>
+			:
+				arraySavedGraphics.map((arraySavedGraphics) => {
+					return <SavedGraphics key = {arraySavedGraphics.id} name = {arraySavedGraphics.name} id = {arraySavedGraphics.id} graphicType = {arraySavedGraphics.graphicType} filter = {arraySavedGraphics.filter} saved = {arraySavedGraphics.saved}/>
+				})
+			}
+		</MainStyle>
 
-      <ButtonCreateStyle>
-        <span>Criar Gráfico</span>
-        <Link to='/CreateGraphics' style = {{textDecoration: 'none'} }><ButtonCreateReport>+</ButtonCreateReport></Link>
-      </ButtonCreateStyle>
+		<ButtonCreateStyle>
+			<span>Criar Gráfico</span>
+			<Link to='/CreateGraphics' style = {{textDecoration: 'none'} }><ButtonCreateReport>+</ButtonCreateReport></Link>
+		</ButtonCreateStyle>
 
     </Fragment>
     )
