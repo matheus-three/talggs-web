@@ -164,10 +164,11 @@ export const TitleMainStyle = styled.div`
 `
 //Estilo de cada relatório salvo.
 export const SaveReportsStyle = styled.button`
-	background-color: #8abecb52;
+	background-color: #232F40;
     width: 22vw;
-    height: 13vh;
-    color: #232f40;
+    height: 15vh;
+    color: #F7F6EE;
+	justify-content: center;
     font-size: 1.8em;
     border: 1px solid #232f40;
     border-radius: 20px;
@@ -178,13 +179,13 @@ export const SaveReportsStyle = styled.button`
     cursor: pointer;
     display: flex;
     align-items: flex-start;
-    justify-content: left;
-	
+	text-overflow: "…";
 	
 	@media only screen and (max-width: 1200px) {
 		width: 38vw;
-		height: 9vh;
+		height: 11vh;
 		margin-left: 32px;
+		justify-content: center;
 		margin-bottom: 70px;
 		font-size: 2em;
 

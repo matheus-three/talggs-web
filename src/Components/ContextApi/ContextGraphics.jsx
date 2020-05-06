@@ -115,6 +115,8 @@ const GraphicsProvider = ({ children }) => {
 
 		console.log("arraySavedGraphics NO CONTEXT: ")
 		console.log(arraySavedGraphics)
+		console.log("length é: " )
+		console.log(arraySavedGraphics.length)
 	}
 	
 	return (

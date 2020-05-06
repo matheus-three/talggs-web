@@ -15,7 +15,6 @@ interface Iprops {
 }
 
 function SavedGraphics (props : Iprops) {
-    console.log("Aqui pega?")
     const [showGraphic,setShowGraphic] = useState(false);
 	const {arraySavedGraphics} = useContext(GraphicContext)
     
@@ -26,7 +25,6 @@ function SavedGraphics (props : Iprops) {
 	};
 
     function handleClick () {
-        console.log("pego")
         showGraphic?
             setShowGraphic(false)
             :
@@ -34,14 +32,13 @@ function SavedGraphics (props : Iprops) {
     }
 
     const remove = () => {
-        console.log("prop", props.id)
-        arraySavedGraphics.splice(arraySavedGraphics.indexOf(props.id),1)
+        arraySavedGraphics.splice(arraySavedGraphics.indexOf(props.id), 1)
         handleClick();
     }
 
     return(
         <Fragment>
-        	<SaveReportsStyle onClick = {handleClick}>{props.name} </SaveReportsStyle>
+        	<SaveReportsStyle onClick = {handleClick}>{props.name}</SaveReportsStyle>
 
             {showGraphic?
                 <SaveReportBehind top = {"72px"} left = {"0px"} height = {"89vh"} back = {"rgba(0,0,0,0.8)"}>

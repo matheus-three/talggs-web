@@ -7,8 +7,6 @@ import { GraphicContext } from '../../ContextApi/ContextGraphics';
 function Graphics () {
  const {arraySavedGraphics} = useContext(GraphicContext)
  const length = arraySavedGraphics.length; 
-
- console.log("length é: " + length)
  
  return (
     <Fragment>
@@ -28,11 +26,11 @@ function Graphics () {
 
 		<ButtonCreateStyle>
 			<span>Criar Gráfico</span>
-			<Link to='/CreateGraphics' style = {{textDecoration: 'none'} }><ButtonCreateReport>+</ButtonCreateReport></Link>
+			<Link to='/CreateGraphics' style = {{textDecoration: 'none'}}><ButtonCreateReport>+</ButtonCreateReport></Link>
 		</ButtonCreateStyle>
 
     </Fragment>
-    )
+	)
 }
 
 export default Graphics;
