@@ -10,7 +10,7 @@ interface Iprops {
 
 function SavedReports (props: Iprops) {
     const [showReport,setShowReport] = useState(false);
-	const {report} = useContext(AppContext)
+	const {report, removeReport} = useContext(AppContext)
 	
     function handleClick () {
         showReport?
@@ -19,10 +19,8 @@ function SavedReports (props: Iprops) {
 			setShowReport(true)
 		}
 
-
 		const remove = () => {
-			console.log("prop",props.id)
-			report.splice(report.indexOf(props.id),1)
+			removeReport(props);
 			handleClick();
 		}
     	return (
@@ -71,8 +69,8 @@ function SavedReports (props: Iprops) {
 						</table>
 					</StatsStyle>
 					<ButtonSaveReport>
-						<button onClick = {remove}>Excluir</button>
 						<button onClick = {handleClick}>Voltar</button>
+						<button onClick = {remove}>Excluir</button>
 					</ButtonSaveReport>
 					
 				</ShowSavedStyle>

@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react'
+import { uniqueId } from '../Consts/UniqueId'
 
 export const GraphicContext = createContext();
 
@@ -105,22 +106,21 @@ const GraphicsProvider = ({ children }) => {
 
 	const saveGraphic = save => {
 		const newGraphic = {
-			id: arraySavedGraphics.length + 1,
+			id: uniqueId('id'),
 			name: save.name,
 			graphicType: save.graphicType,
 			filter: save.filter,
 			saved: save.saved
 		}
 		setSavedGraphic([...arraySavedGraphics, newGraphic]);
+	}
 
-		console.log("arraySavedGraphics NO CONTEXT: ")
-		console.log(arraySavedGraphics)
-		console.log("length é: " )
-		console.log(arraySavedGraphics.length)
+	const removeGraphic = save => {
+		setSavedGraphic(arraySavedGraphics.filter(item => item.id !== save.id));
 	}
 	
 	return (
-		<GraphicContext.Provider value={{ graphic, saveGraphic, saveNameGraphicState, setSaveNameGraphicState, arraySavedGraphics }}>
+		<GraphicContext.Provider value={{ graphic, saveGraphic, saveNameGraphicState, setSaveNameGraphicState, arraySavedGraphics, removeGraphic }}>
 			{children}
 		</GraphicContext.Provider>
 	)	

@@ -1,4 +1,5 @@
 import React, { createContext, useState} from 'react'
+import { uniqueId } from '../Consts/UniqueId'
 
 export const AppContext = createContext();
 
@@ -10,23 +11,27 @@ const AppContextProvider = ({ children }) => {
 
 	const saveReport = save => {
 		const newReport = {
-			id: report.length+ 1,
+			id: uniqueId('id'),
 			name: save.name,
 			stats: save.stats
 		}
 		setReport([...report,newReport]);
 	}
 
-   async function getReportStats() {
+  	async function getReportStats() {
 		const response = await fetch('http://localhost:3000/reportStats');
 		const api = await response.json();
 		
 		setApi(api)
 	}
 
+	const removeReport = save => {
+		setReport(report.filter(item => item.id !== save.id));
+	}
+
 	return (
-		<AppContext.Provider value={{ report, saveReport,saveNameReportState,
-		setSaveNameReportState,getReportStats,api,setShowDetails,showDetails}}>
+		<AppContext.Provider value={{ report, saveReport, saveNameReportState,
+		setSaveNameReportState, getReportStats, api, setShowDetails, showDetails, removeReport}}>
 			{children}
 		</AppContext.Provider>
 	)

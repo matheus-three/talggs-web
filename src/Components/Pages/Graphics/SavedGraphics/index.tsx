@@ -16,7 +16,7 @@ interface Iprops {
 
 function SavedGraphics (props : Iprops) {
     const [showGraphic,setShowGraphic] = useState(false);
-	const {arraySavedGraphics} = useContext(GraphicContext)
+	const {arraySavedGraphics, removeGraphic} = useContext(GraphicContext)
     
     //CHART
 	const [state, setState] = useState(0);
@@ -32,7 +32,8 @@ function SavedGraphics (props : Iprops) {
     }
 
     const remove = () => {
-        arraySavedGraphics.splice(arraySavedGraphics.indexOf(props.id), 1)
+        removeGraphic(props);
+        console.log(arraySavedGraphics)
         handleClick();
     }
 
@@ -123,8 +124,8 @@ function SavedGraphics (props : Iprops) {
                     </GraphicsSaveStyle>
 
                     <ButtonSaveReport>
-                        <button onClick={remove}>Excluir</button>
                         <button onClick={handleClick}>Voltar</button>
+                        <button onClick={remove}>Excluir</button>
                     </ButtonSaveReport>
                         
                     </ShowSavedStyle>

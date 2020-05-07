@@ -82,9 +82,9 @@ function Stats() {
 					</table>
 				</StatsStyle>
 				<ButtonStyle>
-					<button>Imprimir</button>
-					<button onClick={handleClick}>Salvar</button>
 					<Link to='/savedReports' style = {{textDecoration: 'none'}}><button>Voltar</button></Link>
+					<button onClick={handleClick}>Salvar</button>
+					<button>Imprimir</button>
 				</ButtonStyle>
 
 				<SaveReport reportStats={filterReport}></SaveReport>
