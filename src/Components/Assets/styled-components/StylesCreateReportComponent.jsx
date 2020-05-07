@@ -347,12 +347,19 @@ export const SaveNameReportStyle = styled.div`
 		color: #2D4F6C;
 		border: none;
 		border-bottom: 1px solid #A4A4A7;
-		margin-bottom: 20px;
 		padding: 10px;
 
 		:focus {
 			outline: 0;
 		}
+	}
+
+	.validateInput {
+		color: red;
+		font-Size: 1em;
+		align-Self: start; 
+		margin-Left: 2.5em; 
+		margin-Top: 10px;
 	}
 
 	button {

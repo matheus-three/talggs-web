@@ -10,6 +10,7 @@ interface Iprops {
 function SaveReport(props: Iprops) {
 	const {saveNameReportState, setSaveNameReportState} = useContext(AppContext)
 	const [saveName, setSaveName] = useState("")
+	const [validation, setValidation] = useState(false)
 	const {saveReport} = useContext(AppContext)
 		
 	//input
@@ -29,10 +30,20 @@ function SaveReport(props: Iprops) {
 			name: saveName,
 			stats: props.reportStats
 		}
-		saveReport(array)
+
+		if (saveName !== "") {
+			setValidation(false);
+			saveReport(array)
+		} else {
+			setValidation(true);
+			setSaveNameReportState(true)
+		}
 	}
 
 	function handleSave (e) {
+		if (e.target.value !== "") {
+			setValidation(false);
+		}
 		setSaveName(e.target.value);
 	}
 
@@ -44,8 +55,14 @@ function SaveReport(props: Iprops) {
 						<span>Nome do Relatório:</span>
 						<input type="text" ref={inputRef} placeholder="Digite o nome do Relatório" onChange={handleSave} />
 
+						{
+							validation ?
+							<p className="validateInput">*É necessário inserir um Título</p>
+							:undefined
+						}
+
 						<ButtonSaveStyle>
-							<button onClick={() => setSaveNameReportState(false)}>Cancelar</button>
+							<button onClick={() => [setSaveNameReportState(false), setValidation(false)]}>Cancelar</button>
 							<button onClick={handleSaveClick}>Salvar</button>
 						</ButtonSaveStyle>
 					</SaveNameReportStyle>
