@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useContext } from 'react';
-import { SaveReportsStyle,ButtonSaveReport, ShowSavedStyle } from '../../../Assets/styled-components/StylesSavedComponent';
+import { SaveReportsStyle,ButtonSaveStyle, ShowSavedStyle } from '../../../Assets/styled-components/StylesSavedComponent';
 import { SaveReportBehind, StatsStyle} from '../../../Assets/styled-components/StylesCreateReportComponent'
 import { AppContext } from '../../../ContextApi/Context';
 
@@ -68,10 +68,10 @@ function SavedReports (props: Iprops) {
 							})}
 						</table>
 					</StatsStyle>
-					<ButtonSaveReport>
+					<ButtonSaveStyle>
 						<button onClick = {handleClick}>Voltar</button>
 						<button onClick = {remove}>Excluir</button>
-					</ButtonSaveReport>
+					</ButtonSaveStyle>
 					
 				</ShowSavedStyle>
 			</SaveReportBehind>

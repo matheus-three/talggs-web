@@ -306,7 +306,7 @@ export const ShowSavedStyle = styled.div`
 	}
 `
 
-export const ButtonSaveReport = styled.div`
+export const ButtonSaveStyle = styled.div`
 	display: flex;
 	margin-top: 50px;
 

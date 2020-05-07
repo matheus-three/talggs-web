@@ -1,7 +1,7 @@
 import React, { useState, useContext, Fragment } from 'react'
 import { GraphicContext } from '../../../ContextApi/ContextGraphics';
 import { SaveReportBehind } from '../../../Assets/styled-components/StylesCreateReportComponent';
-import { SaveReportsStyle, ShowSavedStyle, ButtonSaveReport } from '../../../Assets/styled-components/StylesSavedComponent';
+import { SaveReportsStyle, ShowSavedStyle, ButtonSaveStyle } from '../../../Assets/styled-components/StylesSavedComponent';
 import { colorsGender, colorsAge, GraphicsSaveStyle } from '../../../Assets/styled-components/StylesCreateGraphics';
 import { renderActiveShape } from '../../CreateGraphics/Graphics/activeShapeGraphic'
 import { BarChart, XAxis, YAxis, Tooltip, Legend, Bar, PieChart, Pie, Cell } from 'recharts'
@@ -123,10 +123,10 @@ function SavedGraphics (props : Iprops) {
                         }
                     </GraphicsSaveStyle>
 
-                    <ButtonSaveReport>
+                    <ButtonSaveStyle>
                         <button onClick={handleClick}>Voltar</button>
                         <button onClick={remove}>Excluir</button>
-                    </ButtonSaveReport>
+                    </ButtonSaveStyle>
                         
                     </ShowSavedStyle>
                 </SaveReportBehind>

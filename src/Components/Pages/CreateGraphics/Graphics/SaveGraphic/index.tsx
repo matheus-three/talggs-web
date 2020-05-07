@@ -1,6 +1,7 @@
-import React, { Fragment, useContext, useState } from 'react'
+import React, { Fragment, useContext, useState, useEffect, useRef } from 'react'
 import { SaveReportBehind, SaveNameReportStyle } from '../../../../Assets/styled-components/StylesCreateReportComponent';
 import { GraphicContext } from '../../../../ContextApi/ContextGraphics';
+import { ButtonSaveStyle } from '../../../../Assets/styled-components/StylesSavedComponent';
 
 interface IGraphicContext {
     graphic: IGraphic;
@@ -25,6 +26,14 @@ function SaveGraphic(props : Iprops) {
 
 	const context: IGraphicContext = useContext(GraphicContext);
 	const { graphic } = context;
+
+	//input
+	const inputRef = useRef(null);
+  	useEffect(() => {
+	  if (saveNameGraphicState) {
+		inputRef.current.focus();
+	  }
+	}, [saveNameGraphicState]);
 
 
 	function handleSaveClick() {
@@ -72,14 +81,19 @@ function SaveGraphic(props : Iprops) {
 		setSaveName(e.target.value);
 	}
 
+
 	return (
 		<Fragment>
-			{saveNameGraphicState ?
+			{saveNameGraphicState  ?
 				<SaveReportBehind top={"0px"} left={"0px"} height={"100%"} back = {"rgba(0,0,0,0.8)"}>
 					<SaveNameReportStyle>
 						<span>Nome do Gráfico:</span>
-						<input type="text" placeholder="Digite o nome do Gráfico" onChange={handleSave} />
-						<button onClick={handleSaveClick}>Salvar</button>
+						<input type="text" ref={inputRef} placeholder="Digite o nome do Gráfico" onChange={handleSave} />
+
+						<ButtonSaveStyle>
+							<button onClick={() => setSaveNameGraphicState(false)}>Cancelar</button>
+							<button onClick={handleSaveClick}>Salvar</button>
+						</ButtonSaveStyle>
 					</SaveNameReportStyle>
 				</SaveReportBehind>
 				:
