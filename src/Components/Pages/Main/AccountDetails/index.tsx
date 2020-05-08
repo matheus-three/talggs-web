@@ -7,6 +7,8 @@ import { FilterContext } from '../../../ContextApi/ContextFilterState';
 import { useEffect } from 'react';
 import { format } from 'date-fns';
 
+
+
 function AccountDetails () {
 	const {api, setShowDetails, showDetails} = useContext(AppContext)
 	const {mainFilter} = useContext(FilterContext)
