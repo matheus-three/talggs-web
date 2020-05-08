@@ -8,10 +8,7 @@ import { Card, CardContent } from '@material-ui/core';
 import * as yup from 'yup'
 import { useState } from 'react';
 
-
-
 const useStyle = makeStyles(StylesPreRegister);
-
 
 function PreRegister () {
   const classes = useStyle();
