@@ -6,8 +6,6 @@ const Register = {
         display:'flex',
         alignItems: 'center',
         justifyContent:'center',
-        position: 'absolute',
-        top: 0,
                                 
         '& .card': {
             width: '30%',
@@ -77,6 +75,7 @@ const Register = {
                 width: '100%',
                 height: 'auto',
                 marginLeft: '0%',
+                paddingTop: 0,
                 border: 'none',
 
                 '& label': {

@@ -10,11 +10,11 @@ const GlobalStyle = createGlobalStyle`
 
   body{
 		width: 100vw;
-		height: 89vh;
+		height: 100vh;
 		background: #F7F6EE;
 		font-family: Helvetica, sans-serif;
 		font-size: 14px;
-		padding-top: 11vh;
+		/*padding-top: 11vh;*/
 		overflow-x: hidden;
   }
 `;
@@ -143,7 +143,7 @@ export const MainStyle = styled.div`
 //Posicionamento do Titulo dos relatórios
 export const TitleMainStyle = styled.div`
   height: auto;
-  margin-top: 10vh;
+  margin-top: 21vh;
   margin-left: 6vw;
   font-size: 2.3em;
   color: #101D25;

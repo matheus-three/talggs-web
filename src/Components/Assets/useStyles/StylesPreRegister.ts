@@ -5,11 +5,7 @@ const StylesPreRegister = {
         backgroundImage: 'radial-gradient(ellipse at center,#2A384D 10%,#232F40 54%,#1C2633 100%)',
         display:'flex',
         alignItems: 'center',
-        justifyContent:'center',
-        position: 'absolute',
-        top: 0,
-        
-        
+        justifyContent:'center',     
 
         '& .card': {
             width: '35%',

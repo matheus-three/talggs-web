@@ -8,6 +8,7 @@ export const TopBarStyle = styled.div`
   width: 100vw;
   height: 22vh;
   border-bottom: 1px solid #CCC;
+  padding-top: 11vh;
     
   label {
     width: 100%;

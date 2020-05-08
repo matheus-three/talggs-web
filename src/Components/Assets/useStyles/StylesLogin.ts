@@ -5,10 +5,7 @@ const style = {
       justifyContent:'center',
       height: '100vh',
       width: '100%',
-      backgroundImage: 'radial-gradient(ellipse at center,#2A384D 10%,#232F40 54%,#1C2633 100%)',
-      position: 'fixed',
-      top: 0,
-  
+      backgroundImage: 'radial-gradient(ellipse at center,#2A384D 10%,#232F40 54%,#1C2633 100%)',  
 
       '& .card': {
           width: '35%',
