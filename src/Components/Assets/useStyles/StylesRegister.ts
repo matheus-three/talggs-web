@@ -8,16 +8,14 @@ const Register = {
         justifyContent:'center',
         position: 'absolute',
         top: 0,
-        
-        
-        
+                                
         '& .card': {
             width: '30%',
             backgroundColor: '#F7F6EE',
             borderRadius: '10px',
             boxShadow: '1px 1px 10px #1b1b1be3',
             display: 'flex',
-            justifyContent: 'space-evenly',
+            justifyContent: 'space-evenly',            
         },
 
         '& .container': {
@@ -28,7 +26,7 @@ const Register = {
         '& .img': {
             width: '120px',
             display: 'block',
-            margin: 'auto',
+            margin: 'auto',            
         },
 
         '& .form': {
@@ -83,10 +81,14 @@ const Register = {
 
                 '& label': {
                     color: '#757575',
+                    width: 'auto',
+                    margin: '0px 5px',
                 },
 
-                '& select': {
+                '& .select': {
+                    backgroundColor: '#F7F6EE',
                     width: '5vw',
+                    color: '#2D4F6C',
                 },
             },
 
@@ -116,9 +118,26 @@ const Register = {
             textAlign: 'justify',
             marginTop: 'none'
             
+        },
+
+        '@media screen and (max-width: 1200px)' : {
+            height: '100vh',
+
+            '& .card': {
+                width: '50%',
+            },
+
+            '& .img': {
+                width: '120px',          
+            },
+
+            '& .TopBar': {
+                '& label': {
+                    fontSize: '16px',
+                },
+            },
         }
     }
-
 }
 
 export default Register;

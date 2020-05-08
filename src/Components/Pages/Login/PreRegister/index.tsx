@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import {Field, Form, Formik,ErrorMessage } from 'formik';
 import Logo from '../../../Assets/Icons/Logo1V - Web.svg';
 import StylesPreRegister from '../../../Assets/useStyles/StylesPreRegister';
-
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@material-ui/core';
 import * as yup from 'yup'
 import { useState } from 'react';
@@ -50,6 +50,8 @@ console.log(values)
               <button className='button' type='submit'>Cadastrar</button>
             </Form>
           </Formik>
+
+          <Link className='link-register' to='../Register'>Já recebeu a confirmação do pré-cadastro?</Link>
 
           <p className='infoText'>
               *Ao clicar em Pré-Cadastrar, receberemos uma solicitação para a 

@@ -6,6 +6,8 @@ const StylesPreRegister = {
         display:'flex',
         alignItems: 'center',
         justifyContent:'center',
+        position: 'absolute',
+        top: 0,
         
         
 
@@ -65,16 +67,34 @@ const StylesPreRegister = {
             },
         },
 
+        '& .link-register': {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#2D9AA6',
+            textDecoration: 'none',
+            fontWeight: 500,
+            marginBottom: '20px',
+          },
+
         '& .infoText': {
             fontSize: '15px',
             color: '#A4A4A7',
             margin: '1% 10%',
             textAlign: 'justify',
             marginTop: 'none'
-            
+        },
+
+        '@media screen and (max-width: 1200px)' : {
+            '& .card': {
+                width: '50%',
+            },
+
+            '& .img': {
+                width: '150px',          
+            },
         }
     }
-
 }
 
 export default StylesPreRegister;
