@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useContext } from 'react';
 import { PositionStyle, FormContainer, LogoStyle } from '../../Assets/styled-components/StylesEditPerfil';
-import logo from '../../Assets/Icons/Logo1V - Web.svg'
+import logo from '../../Assets/Icons/Logo1V - mobile.svg'
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import Select from 'react-select';
 import { TopBarStyle } from '../../Assets/styled-components/StylesMainHistory';

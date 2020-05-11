@@ -9,8 +9,9 @@ export const PositionStyle = styled.div`
 `
 
 export const LogoStyle = styled.div`
-    width: 30%;
+    width: 25%;
     margin-top: 100px;
+    margin-right: 7%;
 
     img {
         height: 400px;
@@ -18,7 +19,7 @@ export const LogoStyle = styled.div`
     }
 
     @media only screen and (max-width: 1200px) {
-        width: 40%;
+        width: 30%;
             img {
                 margin-left: 0px;
             }
@@ -26,7 +27,7 @@ export const LogoStyle = styled.div`
 `
 
 export const FormContainer = styled.div `
-    width: 70%;
+    width: 75%;
     flex-direction: column; 
     justify-content: center;
     
