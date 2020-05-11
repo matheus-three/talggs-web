@@ -16,7 +16,7 @@ import EditCupons from './Pages/editCupons';
 import Login from './Pages/Login';
 import PreRegister from './Pages/Login/PreRegister';
 import Register from './Pages/Login/Register';
-
+import Perfil from './Pages/editPerfil';
 
 function Routes() {
 	
@@ -56,7 +56,10 @@ function Routes() {
                     <Header/>
                     <EditCupons/>
                 </Route>
-
+                <Route path = "/editPerfil">
+                    <Header/>
+                    <Perfil/>
+                </Route>
             </Switch>
         </BrowserRouter>
     );
