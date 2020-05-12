@@ -92,19 +92,24 @@ export const HeaderStyle = styled.div`
 
 //Icone no menu superior do Header para abrir as opções de editar
 export const IconEdit = styled.div`
-  background-color: #F7F6EE;
-  border-radius: 100%;
   height: 60px;
   width: 60px;
   margin-right: 3vw;
   top: 10vh;
   color: #101D25;
 
-  button {
-	width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    padding: 0;
+  	button {
+		width: 100%;
+    	height: 100%;
+    	padding: 0;
+  	}
+	
+	span {
+		width: 100%;
+		height: 100%;		
+		display: flex;
+		flex-direction: column;
+	}
   }
 
   @media only screen and (max-width: 1200px){
@@ -117,6 +122,13 @@ export const IconEdit = styled.div`
 	height: 45px;
     width: 45px;
   }
+`
+
+export const HamburgerIcon = styled.div`
+	width: 75%;
+	height: 2px;
+	background-color: #F7F6EE;
+	margin: 5px 0px;
 `
 
 //Tela de Relatórios Salvos.

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { HeaderStyle, IconEdit } from '../../Assets/styled-components/StylesSavedComponent';
+import { HeaderStyle, IconEdit, HamburgerIcon } from '../../Assets/styled-components/StylesSavedComponent';
 import logo from '../../Assets/Icons/Logo1V.svg'
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -25,9 +25,13 @@ function Header() {
 					<Link to='/home' style={{ textDecoration: 'none', color: 'white' }}><li id="historic">Histórico</li></Link>
 					<Link to='/savedReports' style={{ textDecoration: 'none', color: 'white' }}><li id="report">Relatórios</li></Link>
 					<Link to='/savedGraphics' style={{ textDecoration: 'none', color: 'white' }}><li id="graphic">Gráficos</li></Link>
+					<Link to='/editCupons' style={{ textDecoration: 'none', color: 'white' }}><li id="graphic">Cupons</li></Link>
 				</ul>
 				<IconEdit>
 					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+						<HamburgerIcon />
+						<HamburgerIcon />
+						<HamburgerIcon />
 					</Button>
 					<Menu
 					id="simple-menu"
@@ -41,9 +45,6 @@ function Header() {
 					<MenuItem onClick={handleClose}>21212121221</MenuItem>
 					<Link to = '/editPerfil' style = {{ textDecoration: 'none', color: 'black'}}>
 						<MenuItem onClick={handleClose}>Editar Perfil</MenuItem>
-					</Link>	
-					<Link to = '/editCupons' style = {{ textDecoration: 'none', color: 'black'}}>
-						<MenuItem onClick={handleClose}>Editar Cupons</MenuItem>
 					</Link>	
 					<MenuItem onClick={handleClose}>Sair</MenuItem>
 				</Menu>
