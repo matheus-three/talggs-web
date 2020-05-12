@@ -35,7 +35,7 @@ export const CreatePromoStyle = styled.div`
     font-size: 2.3em;
     color: #101D25;
     letter-spacing: 2px;
-    font-weight: 900;
+    font-weight: bold;
   }
 
   form {
