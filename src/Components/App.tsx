@@ -4,6 +4,7 @@ import Routes from './Routes';
 import AppContextProvider from './ContextApi/Context'
 import FilterContextProvider from './ContextApi/ContextFilterState'
 import GraphicsProvider from './ContextApi/ContextGraphics';
+import RegisterContextProvider from './ContextApi/ContextRegister';
 
 function App() {
   return (
@@ -11,8 +12,10 @@ function App() {
       <FilterContextProvider>
       <AppContextProvider>
       <GraphicsProvider>
+      <RegisterContextProvider>
         <GlobalStyle/>
         <Routes/>
+      </RegisterContextProvider>
       </GraphicsProvider>
       </AppContextProvider>
       </FilterContextProvider>

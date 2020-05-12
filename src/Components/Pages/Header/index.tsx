@@ -39,6 +39,9 @@ function Header() {
 				>
 					<MenuItem onClick={handleClose}>Empresa Tal</MenuItem>
 					<MenuItem onClick={handleClose}>21212121221</MenuItem>
+					<Link to = '/editPerfil' style = {{ textDecoration: 'none', color: 'black'}}>
+						<MenuItem onClick={handleClose}>Editar Perfil</MenuItem>
+					</Link>	
 					<Link to = '/editCupons' style = {{ textDecoration: 'none', color: 'black'}}>
 						<MenuItem onClick={handleClose}>Editar Cupons</MenuItem>
 					</Link>	
