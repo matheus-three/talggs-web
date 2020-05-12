@@ -82,7 +82,7 @@ function Stats() {
 					</table>
 				</StatsStyle>
 				<ButtonStyle>
-					<Link to='/savedReports' style = {{textDecoration: 'none'}}><button>Voltar</button></Link>
+					<button><Link to='/savedReports' style = {{textDecoration: 'none'}} />Voltar</button>
 					<button onClick={handleClick}>Salvar</button>
 					<button>Imprimir</button>
 				</ButtonStyle>

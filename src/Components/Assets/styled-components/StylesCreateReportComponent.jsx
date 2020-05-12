@@ -295,6 +295,7 @@ export const ButtonStyle = styled.div`
 	}
 
 	@media only screen and (max-width: 850px){
+
 		button{
 			width: 18vw;
 			font-size: 1.5em;

@@ -156,7 +156,6 @@ export const TitleMainStyle = styled.div`
 
 	@media only screen and (max-width: 1200px) {
 		font-size: 2.5em;
-		margin-top: 5vh;
 	}
 
 	@media only screen and (max-width: 850px) {
@@ -183,8 +182,8 @@ export const SaveReportsStyle = styled.button`
 	text-overflow: "…";
 	
 	@media only screen and (max-width: 1200px) {
-		width: 38vw;
-		height: 11vh;
+		width: 40vw;
+		height: 9vh;
 		margin-left: 32px;
 		justify-content: center;
 		margin-bottom: 70px;

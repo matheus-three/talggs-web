@@ -160,7 +160,7 @@ const Graphics = () => {
         }
 
             <ButtonStyle>
-                <Link to='/savedGraphics' style = {{textDecoration: 'none'}}><button>Voltar</button></Link>
+                <button><Link to='/savedGraphics' style = {{textDecoration: 'none'}} />Voltar</button>
                 <button onClick={saveGraphic}>Salvar</button>
             </ButtonStyle>		
 

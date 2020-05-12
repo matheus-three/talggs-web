@@ -12,7 +12,7 @@ import CreateReport from './Pages/CreateReport';
 import Header from './Pages/Header';
 import Graphics from './Pages/Graphics';
 import CreateGraphics from './Pages/CreateGraphics';
-import EditCupons from './Pages/editCupons';
+import EditCoupon from './Pages/EditCoupon';
 import Login from './Pages/Login';
 import PreRegister from './Pages/Login/PreRegister';
 import Register from './Pages/Login/Register';
@@ -24,37 +24,37 @@ function Routes() {
         <BrowserRouter>
             <Switch>
                 <Route exact = {true} path ='/'>
-                    <Login/>
+                    <Login />
                 </Route>
                 <Route path = '/preRegister'>
-                    <PreRegister/>
+                    <PreRegister />
                 </Route>
                 <Route path = '/register'>
                     <Register/>
                 </Route>
                 <Route path='/Home'>
-                    <Header/>
-                    <Main/>
+                    <Header />
+                    <Main />
                 </Route>
                 <Route path='/savedReports'>
-                    <Header/>
-                    <Reports/>
+                    <Header />
+                    <Reports />
                  </Route>   
                 <Route path="/createReport" >
-                    <Header/>
-                    <CreateReport/>
+                    <Header />
+                    <CreateReport />
                 </Route>
                 <Route path = "/savedGraphics">
-                    <Header/>
-                    <Graphics/>
+                    <Header />
+                    <Graphics />
                 </Route>  
                 <Route path = "/createGraphics">
-                    <Header/>  
-                    <CreateGraphics/>  
+                    <Header />  
+                    <CreateGraphics />  
                 </Route>  
                 <Route path = "/editCupons">
-                    <Header/>
-                    <EditCupons/>
+                    <Header />
+                    <EditCoupon />
                 </Route>
 
             </Switch>
