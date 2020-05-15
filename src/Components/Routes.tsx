@@ -36,7 +36,7 @@ function Routes() {
                     <Header />
                     <Main />
                 </Route>
-                <Route path='/savedReports'>
+                <Route path="/savedReports">
                     <Header />
                     <Reports />
                  </Route>   

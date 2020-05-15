@@ -28,7 +28,7 @@ function SavedReports (props: Iprops) {
 			<SaveReportsStyle onClick = {handleClick}>{props.name} </SaveReportsStyle>
 	
 			{showReport?
-			<SaveReportBehind top = {"72px"} left = {"0px"} height = {"89vh"} back = {"rgba(0,0,0,0.8)"}>
+			<SaveReportBehind top = {"72px"} left = {"0px"} height = {"20vh"} back = {"rgba(0,0,0,0.8)"}>
 				<ShowSavedStyle>
 					<span className="saveTitle">{props.name}</span>
 					<StatsStyle width = {"70%"}>

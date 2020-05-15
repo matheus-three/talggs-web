@@ -229,7 +229,7 @@ export const StatsStyle = styled.div`
 	td { 
 		padding: 15px 8px;
 		color: #232F40;
-    	text-align: justify;			
+    	text-align: left;			
   }
 
 	@media only screen and (max-width: 850px){
@@ -306,7 +306,7 @@ export const ButtonStyle = styled.div`
 //Fundo cinza do pop-up para salvar o relatório.
 export const SaveReportBehind = styled.div`
 	width: 100vw;
-	height:${props => props.height};
+	height:95vh;
 	background-color:${props => props.back};
 	position: fixed;
 	left:${props => props.left};

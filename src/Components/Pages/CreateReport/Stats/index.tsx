@@ -82,9 +82,10 @@ function Stats() {
 					</table>
 				</StatsStyle>
 				<ButtonStyle>
-					<button><Link to='/savedReports' style = {{textDecoration: 'none'}} />Voltar</button>
+					
+					<Link to='/savedReports' style={{ textDecoration: 'none', color: 'white' }}><button> Voltar</button></Link>
 					<button onClick={handleClick}>Salvar</button>
-					<button>Imprimir</button>
+					<button  onClick={() => console.log("clico")}>Imprimir</button>
 				</ButtonStyle>
 
 				<SaveReport reportStats={filterReport}></SaveReport>
