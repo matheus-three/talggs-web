@@ -116,17 +116,19 @@ export const HistoryStyle = styled.div`
 
 `
 
-
 export const ShowDetailsStyle = styled.div`
   position:relative;
-  top:-40px;
-  width:60%;
-  height: 60vh;
+  width: 60%;
+  height: 62vh;
   background-color: #fff;
-  margin-bottom:50px;
   box-shadow: 2px 1px 2px 1px  #ccc;
-`
 
+  @media only screen and (max-width: 1200px) {
+    width: 80%;
+    height: 70vh;
+    box-shadow: 2px 2px 2px 2px #ccc;
+  }
+`
 
 export const CardDetailsStyle = styled.div`
   display: flex;
@@ -134,68 +136,94 @@ export const CardDetailsStyle = styled.div`
   font-size: 1.5em;
  
   img {
-    height: 80px;
-    width: 80px;
+    width: 100px;
+    margin-left: 10px;
+  } 
+
+  .value {
+    margin: 20px 40px 0px 0px;
+    align-self: flex-end;
   }
 
- 
+  @media only screen and (max-width: 1200px) {
+    img {
+      margin: 27px 0 0 20px;
+  } 
+  }
 `
 export const TitleStyle = styled.div `
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  .value {
-   align-self: flex-end;
-  }
 `
 export const NameStyle = styled.div`
   display: flex;
-  width: 300px;
+  width: 60%;
   flex-direction: column;
   justify-content: center;
   margin-right: 200px;
+
+  @media only screen and (max-width: 1200px) {
+    margin: 27px 25px 0px 0px;
+  }
 `
 
 export const DateStyle = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 50px;
    
-   span {
-     margin: 10px;
-   }
 `
 
 export const DatePositionStyle = styled.div`
   display: flex;
+  width: 40%;
   flex-direction: column;
   align-items: center;
+  margin: 0px 40px 0px 0px;
+
+  label {
+    width: 100%;
+    font-size: 0.8em;
+    align-items: center;
+    text-align:center;
+  }
+
+  span {
+    font-size: 0.7em;
+    margin: 5px;
+    text-align:center;
+  }
 `
 
 export const DetailsStyle = styled.div`
   padding: 10px;
-  font-size: 0.8em;
+  font-size: 1.0em;
   width: 90%;
-  height: 200px;
-  margin-left: 50px;
+  height: 180px;
+  margin-left: 32px;
   display: flex;
   justify-content: center;
   margin-top: 30px;
-  overflow: scroll;
+  overflow: auto;
   cursor: pointer;
 	
 	::-webkit-scrollbar-track {
-			background-color: #f7f6ee;
+			background-color: #F7F6EE;
 	}
 
+  ::-webkit-scrollbar-thumb:hover {
+    background: #232F40; 
+  }
+
 	::-webkit-scrollbar {
-			width: 6px;
-			background: #f7f6ee;
+			width: 10px;
+      height: 10px;
+			background: #F7F6EE;
 	}
 
 	::-webkit-scrollbar-thumb {
-			background: #f7f6ee;
+			background: #707070;
 	}
 
   table {
@@ -216,5 +244,10 @@ export const DetailsStyle = styled.div`
 
   .descr {
     max-width: 120px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    height: 470px;
+    font-size: 1.2em;
   }
 `

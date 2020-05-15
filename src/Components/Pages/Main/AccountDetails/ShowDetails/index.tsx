@@ -3,6 +3,7 @@ import { ShowDetailsStyle, CardDetailsStyle, TitleStyle, DateStyle,	NameStyle, D
 import { SaveReportBehind } from "../../../../Assets/styled-components/StylesCreateReportComponent";
 import { AppContext } from "../../../../ContextApi/Context";
 import Logo from "../../../../Assets/Icons/Logo1V - Web.svg";
+import { ButtonSaveStyle } from "../../../../Assets/styled-components/StylesSavedComponent";
 
 interface Iprops {
 	id: string;
@@ -19,8 +20,8 @@ function ShowDetails(props: Iprops) {
 	console.log("api", api);
 
 	return (
-		<SaveReportBehind top={"80px"} left={"0px"} height={"90%"} back={"#f7f6ee"}>
-			<button onClick={handleClick}>Voltar</button>
+		<SaveReportBehind top={"80px"} left={"0px"} height={"90%"} back={"#f7f6ee"} style={{flexDirection: 'column'}}>
+			
 			<ShowDetailsStyle>
 				{api.map((stats,index) => {
 
@@ -33,19 +34,20 @@ function ShowDetails(props: Iprops) {
 										<span>{stats.name}</span>
 										<span>{stats.cpf}</span>
 									</NameStyle>
-									<div className="value">{stats.value}</div>
-								</TitleStyle>
-								<DateStyle>
-									<DatePositionStyle>
-										<label> Data de Compra</label>
-										<span>{stats.dateLaunch}</span>
-									</DatePositionStyle>
+									<DateStyle>
+										<DatePositionStyle>
+											<label>Compra</label>
+											<span>{stats.dateLaunch}</span>
+										</DatePositionStyle>
 
-									<DatePositionStyle>
-										<label> Data de Vencimento</label>
-										<span>{stats.dateDue}</span>
-									</DatePositionStyle>
-								</DateStyle>
+										<DatePositionStyle>
+											<label>Vencimento</label>
+											<span>{stats.dateDue}</span>
+										</DatePositionStyle>
+									</DateStyle>
+								</TitleStyle>
+
+								<div className="value">Total: {stats.value}</div>
 
 							<DetailsStyle>
 								<table>
@@ -83,6 +85,9 @@ function ShowDetails(props: Iprops) {
 					}
 				})}
 			</ShowDetailsStyle>
+			<ButtonSaveStyle style={{marginBottom: "0px"}}>
+				<button onClick={handleClick}>Voltar</button>
+			</ButtonSaveStyle>
 		</SaveReportBehind>
 	);
 }
