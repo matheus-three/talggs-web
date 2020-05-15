@@ -125,7 +125,6 @@ export const ShowDetailsStyle = styled.div`
   background-color: #fff;
   margin-bottom:50px;
   box-shadow: 2px 1px 2px 1px  #ccc;
-
 `
 
 

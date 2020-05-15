@@ -229,7 +229,8 @@ export const StatsStyle = styled.div`
 	td { 
 		padding: 15px 8px;
 		color: #232F40;
-    	text-align: left;			
+    	text-align: left;		
+		cursor: pointer;	
   }
 
 	@media only screen and (max-width: 850px){
