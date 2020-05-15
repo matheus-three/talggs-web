@@ -206,14 +206,13 @@ export const DetailsStyle = styled.div`
   justify-content: center;
   margin-top: 30px;
   overflow: auto;
-  cursor: pointer;
 	
 	::-webkit-scrollbar-track {
 			background-color: #F7F6EE;
 	}
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #232F40; 
+    background: #707070; 
   }
 
 	::-webkit-scrollbar {
@@ -223,7 +222,7 @@ export const DetailsStyle = styled.div`
 	}
 
 	::-webkit-scrollbar-thumb {
-			background: #707070;
+			background: #ccc;
 	}
 
   table {

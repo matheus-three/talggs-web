@@ -60,7 +60,7 @@ function AccountDetails () {
 					{api.map((stats) => {
 						return (
 							<tbody key={stats.id}>
-								<tr onClick = {handleClick}>
+								<tr className="line" onClick = {handleClick}>
 									<td id = {stats.id}>{stats.cpf}</td>
 									<td id = {stats.id}>{stats.name}</td>
 									<td id = {stats.id}>{stats.accountNumber}</td>

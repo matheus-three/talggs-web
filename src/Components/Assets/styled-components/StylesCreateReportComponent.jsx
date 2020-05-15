@@ -193,13 +193,19 @@ export const StatsStyle = styled.div`
 	box-shadow: 0px 0px 1px;
 	font-size: 1.5em;
 	
+
 	::-webkit-scrollbar-track {
-		background-color: #f7f6ee;
+		background-color: #F7F6EE;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #707070; 
 	}
 
 	::-webkit-scrollbar {
-		width: 6px;
-		background: #f7f6ee;
+		width: 10px;
+      	height: 10px;
+		background: #F7F6EE;
 	}
 
 	::-webkit-scrollbar-thumb {
@@ -216,22 +222,26 @@ export const StatsStyle = styled.div`
 
  	th {
 		border-bottom: 1px solid #ccc;
-		min-width: 160px;
-		text-align: justify;
+		min-width: 170px;
+		text-align: left;
 		padding: 5px;
 		color: #BEBCBC;
 	}
 
 	th.nome {
     	min-width: 250px;
-	}
-				
+	}		
+
 	td { 
 		padding: 15px 8px;
 		color: #232F40;
     	text-align: left;		
 		cursor: pointer;	
-  }
+	}
+
+	tr.line:hover { 
+		background: #ccc;	
+	}
 
 	@media only screen and (max-width: 850px){
 		margin-right: 15px;
