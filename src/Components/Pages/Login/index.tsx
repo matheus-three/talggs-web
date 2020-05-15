@@ -20,7 +20,7 @@ function Login () {
     user: yup.string().email().required(),
     password: yup.string().min(8).required()
 })
-  
+
 console.log(values)
   return(
     <div className={classes.root}>
@@ -42,9 +42,12 @@ console.log(values)
             >
                 <Form className='form'>
                     <Field className='input' type='text' name='user' placeholder='Usuário' />
-                    <ErrorMessage className = 'form-error' component = "span" name = 'user'/>
+                    <ErrorMessage className = 'form-error' name = 'user'>
+                      {msg => <div style = {{color: 'red',marginLeft: '52px'}}>{"Usuário inválido "}</div>}
+                    </ErrorMessage>
                     <Field className='input' type='password' name='password' placeholder='Senha'/>
-                    <ErrorMessage className = 'form-error' component = "span" name = 'password'/>
+                    <ErrorMessage className = 'form-error'   name = 'password' 
+                      render={msg => <span style = {{color: 'red',marginLeft: '52px'}}>{"Senha inválida"}</span>}/>
 
                     <button className='button' type='submit'>Acessar</button>
                 </Form>
