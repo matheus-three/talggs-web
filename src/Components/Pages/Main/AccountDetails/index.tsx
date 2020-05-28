@@ -5,37 +5,60 @@ import { AppContext } from '../../../ContextApi/Context';
 import ShowDetails from './ShowDetails';
 import { FilterContext } from '../../../ContextApi/ContextFilterState';
 import { useEffect } from 'react';
-import { format } from 'date-fns';
 
 
 
 function AccountDetails () {
 	const {api, setShowDetails, showDetails} = useContext(AppContext)
-	const {mainFilter} = useContext(FilterContext)
+	const {mainFilter,CompareData} = useContext(FilterContext)
 	const [id,setId] = useState();
 	const [apiFilter, setApiFilter] = useState(api);
 	
-	const datazo = mainFilter.launch.init;
-
-	console.log("datazo",datazo);
-	const data = format(10-15-2020, 'dd/MM/yyyy')
-
-	console.log("data",data)
 	function handleClick (element) {
+		console.log("id",element.target.id)
 		setId(element.target.id)
 		setShowDetails(true);
 	}
-	
-	useEffect(() => {
-		if(mainFilter !== "" && mainFilter.state !== "todas"){
-			const apiFilter = api.filter((ap) => {
-				return mainFilter.state === ap.state
-			})
 
+
+	useEffect (() => {
+		setApiFilter(api)
+	},[api])
+	
+
+	useEffect(() => {
+
+		console.log("main",mainFilter)
+		if(mainFilter !== ""){
+			const state = api.filter((ap) => {
+				if(mainFilter.state === 'Todas'){
+					return api
+				}else {
+					return mainFilter.state === ap.state
+				}	
+			})
 			
-			setApiFilter(apiFilter)
+			if(mainFilter.launch.launchInit !== "" && mainFilter.launch.launchFinal !== "" && mainFilter.launch.launchInit !== 'Invalid date'){
+
+			const dataLaunch = state.filter((ap) => {
+					const data = CompareData(ap.dateLaunch,mainFilter.launch.launchInit,mainFilter.launch.launchFinal);
+				return data
+			})
+			setApiFilter(dataLaunch)
+		}else {
+			if(mainFilter.due.dueInit !== "" && mainFilter.due.dueFinal !== "" && mainFilter.due.dueInit !== 'Invalid date'){
+				const dataDue = state.filter((ap) => {
+					const data = CompareData(ap.dateDue,mainFilter.due.dueInit,mainFilter.due.dueFinal)
+					return data
+				})
+			
+			setApiFilter(dataDue)
+		}	else{
+			setApiFilter(state)
+		}
+		}
 		}else{
-			setApiFilter(api);
+			setApiFilter(api)
 		}
 	},[mainFilter])
  
@@ -57,18 +80,18 @@ function AccountDetails () {
 							<th className="status">Status</th>
 						</tr>
 					</thead>
-					{api.map((stats) => {
+					{apiFilter.map((stats) => {
 						return (
-							<tbody key={stats.id}>
+							<tbody key={stats.accountNumber}>
 								<tr className="line" onClick = {handleClick}>
-									<td id = {stats.id}>{stats.cpf}</td>
-									<td id = {stats.id}>{stats.name}</td>
-									<td id = {stats.id}>{stats.accountNumber}</td>
-									<td id = {stats.id}>{stats.fiscalNote}</td>
-									<td id = {stats.id}>{stats.dateDue}</td>
-									<td id = {stats.id}>{stats.dateLaunch}</td>
-									<td id = {stats.id}>{stats.value}</td>
-									<td id = {stats.id}>{stats.state}</td>
+									<td id = {stats.accountNumber}>{stats.cpf}</td>
+									<td id = {stats.accountNumber}>{stats.name}</td>
+									<td id = {stats.accountNumber}>{stats.accountNumber}</td>
+									<td id = {stats.accountNumber}>{stats.fiscalNote}</td>
+									<td id = {stats.accountNumber}>{stats.dateDue}</td>
+									<td id = {stats.accountNumber}>{stats.dateLaunch}</td>
+									<td id = {stats.accountNumber}>{stats.value}</td>
+									<td id = {stats.accountNumber}>{stats.state}</td>
 								</tr>
 							</tbody>
 						)

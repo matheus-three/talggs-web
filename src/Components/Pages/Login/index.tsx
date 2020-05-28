@@ -43,11 +43,11 @@ console.log(values)
                 <Form className='form'>
                     <Field className='input' type='text' name='user' placeholder='Usuário' />
                     <ErrorMessage className = 'form-error' name = 'user'>
-                      {msg => <div style = {{color: 'red',marginLeft: '52px'}}>{"Usuário inválido "}</div>}
+                      {msg => <div style = {{color: 'red',marginLeft: '65px'}}>{"Usuário inválido "}</div>}
                     </ErrorMessage>
                     <Field className='input' type='password' name='password' placeholder='Senha'/>
                     <ErrorMessage className = 'form-error'   name = 'password' 
-                      render={msg => <span style = {{color: 'red',marginLeft: '52px'}}>{"Senha inválida"}</span>}/>
+                      render={msg => <span style = {{color: 'red',marginLeft: '65px'}}>{"Senha inválida"}</span>}/>
 
                     <button className='button' type='submit'>Acessar</button>
                 </Form>

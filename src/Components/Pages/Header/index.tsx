@@ -1,13 +1,15 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { HeaderStyle, IconEdit, HamburgerIcon } from '../../Assets/styled-components/StylesSavedComponent';
 import logo from '../../Assets/Icons/Logo1V.svg'
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import { AppContext } from '../../ContextApi/Context';
 
 function Header() {
 	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+	const {setShowDetails } = useContext(AppContext);
 
 	const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
 		setAnchorEl(event.currentTarget);
@@ -17,12 +19,16 @@ function Header() {
 		setAnchorEl(null);
 	};
 
+	const destroyPage = () => {
+		setShowDetails(false)
+	}
+
 	return (
 		<Fragment>
 			<HeaderStyle>
 				<img src={logo} alt={"logo"}></img>
 				<ul>
-					<Link to='/home' style={{ textDecoration: 'none', color: 'white' }}><li id="historic">Histórico</li></Link>
+					<Link  onClick = {destroyPage} to='/home' style={{ textDecoration: 'none', color: 'white' }}><li id="historic">Histórico</li></Link>
 					<Link to='/savedReports' style={{ textDecoration: 'none', color: 'white' }}><li id="report">Relatórios</li></Link>
 					<Link to='/savedGraphics' style={{ textDecoration: 'none', color: 'white' }}><li id="graphic">Gráficos</li></Link>
 					<Link to='/editCupons' style={{ textDecoration: 'none', color: 'white' }}><li id="graphic">Cupons</li></Link>

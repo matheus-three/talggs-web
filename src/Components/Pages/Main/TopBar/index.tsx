@@ -3,32 +3,36 @@ import { TopBarStyle, InputDateStyle } from '../../../Assets/styled-components/S
 import 'date-fns';
 import { useContext } from 'react';
 import { FilterContext } from '../../../ContextApi/ContextFilterState';
-import { useStyles } from '../../../Assets/useStyles/StylesTopBar';
+import moment from 'moment';
 
 
-{/*import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import TextField from '@material-ui/core/TextField';*/}
+// {/*import InputLabel from '@material-ui/core/InputLabel';
+// import MenuItem from '@material-ui/core/MenuItem';
+// import FormControl from '@material-ui/core/FormControl';
+// import Select from '@material-ui/core/Select';
+// import TextField from '@material-ui/core/TextField';*/}
 
 function TopBar () {
-  const classes = useStyles();
   const {filterMain,mainFilter} = useContext(FilterContext)
   
-  {/*const handleChange = (e) => {
-      filterMain(e.target.value,e.target.name)
-  };*/}
-
-  
+  const handleChange = (e) => {
+      if(e.target.name !== "1"){
+        const data = moment(e.target.value).format('DD/MM/YYYY')
+        filterMain(data,e.target.name)
+      }else {
+        filterMain(e.target.value,e.target.name)
+    }
+      }
+      
   return (
       <Fragment>
    
         <TopBarStyle>
           <div>
             <label>Status:</label>
-              <select>
-                <option>Status</option>
+              <select name = "1" onChange = {handleChange}>
+                <option>Todas</option>
+                <option>Vencido</option>
                 <option>Pendente</option>
                 <option>Pago</option>
               </select>
@@ -38,15 +42,15 @@ function TopBar () {
         <InputDateStyle>
           <div>
             <label>Lançamento</label>
-            <input type = "date"></input>
+            <input name = "2" onChange = {handleChange} type = "date" max = {moment(mainFilter.launch.launchFinal).format('YYYY-DD-MM')}></input>
             <label>até</label>
-            <input type = "date"></input>
+            <input name = "3" onChange = {handleChange} type = "date" min = {moment(mainFilter.launch.launchInit).format('YYYY-DD-MM')}></input>
           </div>
           <div>
             <label>Vencimento</label>
-            <input type = "date"></input>
+            <input name = "4" onChange = {handleChange}  type = "date"></input>
             <label>até</label>
-            <input type = "date"></input>
+            <input name = "5" onChange = {handleChange} type = "date"></input>
           </div>
           </InputDateStyle>
         </TopBarStyle> 

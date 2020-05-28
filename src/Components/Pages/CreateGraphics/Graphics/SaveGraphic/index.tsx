@@ -23,7 +23,7 @@ function SaveGraphic(props : Iprops) {
 	const {saveNameGraphicState, setSaveNameGraphicState} = useContext(GraphicContext)
 	const [saveName, setSaveName] = useState("")
 	const [validation, setValidation] = useState(false)
-	const {saveGraphic, arraySavedGraphics} = useContext(GraphicContext)		
+	const {saveGraphic} = useContext(GraphicContext)		
 
 	const context: IGraphicContext = useContext(GraphicContext);
 	const { graphic } = context;
@@ -96,6 +96,10 @@ function SaveGraphic(props : Iprops) {
 		setSaveName(e.target.value);
 	}
 
+	function handleCancellClick(){
+		setSaveNameGraphicState(false)
+		setValidation(false)
+	}
 
 	return (
 		<Fragment>
@@ -112,7 +116,7 @@ function SaveGraphic(props : Iprops) {
 						}
 
 						<ButtonSaveStyle>
-							<button onClick={() => [setSaveNameGraphicState(false), setValidation(false)]}>Cancelar</button>
+							<button onClick={handleCancellClick}>Cancelar</button>
 							<button onClick={handleSaveClick}>Salvar</button>
 						</ButtonSaveStyle>
 					</SaveNameReportStyle>

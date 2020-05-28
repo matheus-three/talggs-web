@@ -4,6 +4,8 @@ import Filter from './Filter';
 import Stats from './Stats';
 
 function CreateReport() {
+
+	
 	return (
 		<Fragment>
 			<Container>

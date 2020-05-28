@@ -1,4 +1,3 @@
-import React from 'react'
 
 export let uniqueId = (function () {
     let c = 0,

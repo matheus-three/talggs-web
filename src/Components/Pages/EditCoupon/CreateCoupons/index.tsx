@@ -1,10 +1,9 @@
-import React, { Fragment, useContext, useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { CreatePromoStyle } from '../../../Assets/styled-components/StylesEditCupons';
 import { PositionStyle } from '../../../Assets/styled-components/StylesEditCupons';
 import TextField from '@material-ui/core/TextField';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
-import { AppContext } from '../../../ContextApi/Context';
 
 import { ButtonSaveStyle } from '../../../Assets/styled-components/StylesSavedComponent';
 

@@ -26,8 +26,18 @@ export const FilterStyle = styled.div`
 	font-size: 1.9em;
 	color: #BEBCBC;
 	font-weight: 700;
+	padding: 5px;
   }
 
+	select{
+		width: 100%;
+		height:34px;
+		border-radius: 7px;
+		border: 1px solid #CCC;
+		font-size: 1.3em;
+		color: #2D4F6C;
+		cursor: pointer;
+	}
   button {
     width: 100%;
     margin: 15px 0px;

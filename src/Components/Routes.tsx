@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import Reports from './Pages/Reports'
 import Main from './Pages/Main'
 
@@ -17,9 +17,15 @@ import Login from './Pages/Login';
 import PreRegister from './Pages/Login/PreRegister';
 import Register from './Pages/Login/Register';
 import Perfil from './Pages/editPerfil';
+import { AppContext } from './ContextApi/Context';
 
 function Routes() {
 	
+    const {getReportStats} = useContext(AppContext)
+  
+    useEffect (() =>  {
+      getReportStats();
+    },[])
 	return (
         <BrowserRouter>
             <Switch>

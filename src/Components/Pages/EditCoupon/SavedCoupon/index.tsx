@@ -1,9 +1,7 @@
-import React, { useState, Fragment, useContext } from 'react';
+import React from 'react';
 import trash from '../../../Assets/Icons/lixo.svg'
-import { CreatePromoStyle, ListPromoStyle, ItemPromoStyle, PositionItemStyle, ButtonPromoStyle } from '../../../Assets/styled-components/StylesEditCupons';
-import TextField from '@material-ui/core/TextField';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { AppContext } from '../../../ContextApi/Context';
+import {  ListPromoStyle, ItemPromoStyle, PositionItemStyle, ButtonPromoStyle } from '../../../Assets/styled-components/StylesEditCupons';
+
 
 interface Iprops {
     discount: number;

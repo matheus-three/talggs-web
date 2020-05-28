@@ -1,15 +1,9 @@
-import React,{Fragment, useContext, useEffect} from 'react'
-import { AppContext } from '../../ContextApi/Context';
+import React,{Fragment} from 'react'
 import AccountDetails from './AccountDetails';
 import TopBar from './TopBar';
 
 
 function Main () {
-  const {getReportStats} = useContext(AppContext)
-  
-  useEffect (() =>  {
-    getReportStats();
-  },[])
 
   return(
     <Fragment>

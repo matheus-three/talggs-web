@@ -1,13 +1,16 @@
 import React, { createContext, useState} from 'react'
 import { uniqueId } from '../Consts/UniqueId'
+import * as firebase from 'firebase';
 
 export const AppContext = createContext();
+
 
 const AppContextProvider = ({ children }) => {
 	const [report, setReport] = useState([]);
 	const [api,setApi] = useState([])
 	const [showDetails,setShowDetails] = useState(false)
 	const [saveNameReportState,setSaveNameReportState] = useState(false);
+
 
 	const saveReport = save => {
 		const newReport = {
@@ -19,10 +22,14 @@ const AppContextProvider = ({ children }) => {
 	}
 
   	async function getReportStats() {
-		const response = await fetch('http://localhost:3000/reportStats');
-		const api = await response.json();
-		
-		setApi(api)
+			const dbh = firebase.firestore();
+			const reportRef = dbh.collection("billets-web").doc("L7ilYKFF8lDYNvwIZg2Z");
+			
+			reportRef.get().then(report => {
+				console.log("rep",report.data())
+				const {reports} = report.data()
+				setApi(reports)
+			});
 	}
 
 	const removeReport = save => {

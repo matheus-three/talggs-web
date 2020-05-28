@@ -16,16 +16,13 @@ function ShowDetails(props: Iprops) {
 		setShowDetails(false);
 	}
 
-	console.log("id", props.id);
-	console.log("api", api);
-
 	return (
 		<SaveReportBehind top={"80px"} left={"0px"} height={"90%"} back={"#f7f6ee"} style={{flexDirection: 'column'}}>
 			
 			<ShowDetailsStyle>
 				{api.map((stats,index) => {
 
-					if (stats.id === Number(props.id)) {
+					if (stats.accountNumber === props.id) {
 						return (
 							<CardDetailsStyle key = {index}>
 								<TitleStyle>
@@ -60,7 +57,7 @@ function ShowDetails(props: Iprops) {
 												<th>ValTotal</th>
 											</tr>
 										</thead>
-										{stats.Details.map((prod) => {
+										{stats.details.map((prod) => {
 											return ( 
 											<tbody key = {prod.id}>
 												<tr>

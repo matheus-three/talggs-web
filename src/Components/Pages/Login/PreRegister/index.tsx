@@ -12,13 +12,13 @@ const useStyle = makeStyles(StylesPreRegister);
 
 function PreRegister () {
   const classes = useStyle();
-  const [values,setValue] = useState({})
+  const [values] = useState({})
 
-  const validations = yup.object().shape({
-    companyName: yup.string().required(),
-    CNPJ: yup.number().min(11).required(),
-    email: yup.string().email().required(),
-})
+//   const validations = yup.object().shape({
+//     companyName: yup.string().required(),
+//     CNPJ: yup.number().min(11).required(),
+//     email: yup.string().email().required(),
+// })
 
 console.log(values)
   return (

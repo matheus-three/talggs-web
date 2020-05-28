@@ -200,7 +200,7 @@ export const DetailsStyle = styled.div`
   padding: 10px;
   font-size: 1.0em;
   width: 90%;
-  height: 180px;
+  height: 35vh;
   margin-left: 32px;
   display: flex;
   justify-content: center;
