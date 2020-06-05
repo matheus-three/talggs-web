@@ -110,7 +110,7 @@ export const IconEdit = styled.div`
 		display: flex;
 		flex-direction: column;
 	}
-  }
+  
 
   @media only screen and (max-width: 1200px){
     height: 60px;
@@ -137,7 +137,7 @@ export const HamburgerIcon = styled.div`
 export const MainStyle = styled.div`
     display: flex;
     flex-wrap: wrap;
-	margin-top: 50px;
+		margin-top: 50px;
   	
 		span {
 			margin-left: 15%;
@@ -149,10 +149,6 @@ export const MainStyle = styled.div`
 	@media only screen and (max-width: 1200px) {
 		align-content: space-around;
 		justify-content: space-evenly;
-	}
-
-	@media only screen and (max-width: 600px) {
-
 	}
 
 `
@@ -180,7 +176,7 @@ export const SaveReportsStyle = styled.button`
     width: 22vw;
     height: 15vh;
     color: #F7F6EE;
-	justify-content: center;
+		justify-content: center;
     font-size: 1.8em;
     border: 1px solid #232f40;
     border-radius: 20px;
@@ -190,7 +186,7 @@ export const SaveReportsStyle = styled.button`
     margin-bottom: 65px;
     cursor: pointer;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 	text-overflow: "…";
 	
 	@media only screen and (max-width: 1200px) {
@@ -327,7 +323,6 @@ export const ButtonSaveStyle = styled.div`
 		width: 12vw;
 		height: 7.5vh;
 		border: none;
-		margin: 0px 30px;
 		border-radius: 50px;
 		color: #f7f6ee;
 		opacity: 0.8;

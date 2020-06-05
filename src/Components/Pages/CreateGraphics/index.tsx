@@ -76,9 +76,9 @@ const Graphics = () => {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="pagas" fill="#2D9AA6" />
-                    <Bar dataKey="pendentes" fill="#F2A950" />
-                    <Bar dataKey="vencidas" fill="#FF6347" />
+                    <Bar dataKey="Pagas" fill="#2D9AA6" />
+                    <Bar dataKey="Pendentes" fill="#F2A950" />
+                    <Bar dataKey="Vencidas" fill="#FF6347" />
                 </BarChart>
             }
 

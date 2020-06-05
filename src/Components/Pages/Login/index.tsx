@@ -7,21 +7,30 @@ import { Card, CardContent } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import * as yup from 'yup'
 import { useState } from 'react';
-
+import firebase from 'firebase';
+import {Redirect} from 'react-router-dom'
 
 
 const useStyles = makeStyles(style);
 
 function Login () {
   const classes = useStyles();
-  const [values,setValue] = useState({})
+  const [isLogged,setIsLogged] = useState(false)
 
   const validations = yup.object().shape({
     user: yup.string().email().required(),
     password: yup.string().min(8).required()
 })
 
-console.log(values)
+const loginAutenticate= (email,senha) => {
+  firebase.auth().signInWithEmailAndPassword(email,senha)
+  .then((user) => {
+    alert("Logado com sucesso!");
+    setIsLogged(true)
+  }).catch((err) => {
+    alert("Falha no Login, usuário ou senha não encontrados!")
+  })
+}
   return(
     <div className={classes.root}>
     <Card className='card'>
@@ -32,11 +41,17 @@ console.log(values)
             <Formik
                 initialValues={{user: '', password: ''}}
                 onSubmit={(values, actions) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        actions.setSubmitting(false);
-                        setValue(JSON.stringify(values,null,2))
-                    }, 2000);
+                      const data = JSON.stringify(values)
+                      const obj = JSON.parse(data)
+                      
+                      console.log("data",obj)
+                      const value = {
+                        user: obj.user,
+                        password: obj.password
+                      } 
+                      loginAutenticate(value.user,values.password)
+                      actions.setSubmitting(false);
+
                 }}
                 validationSchema={validations}
             >
@@ -52,6 +67,7 @@ console.log(values)
                     <button className='button' type='submit'>Acessar</button>
                 </Form>
             </Formik>
+            {isLogged? <Redirect to="/home" />: <Redirect to="/"/>}
 
             <Link className='link-register' to='/PreRegister'>Ainda não possui uma conta? Cadastre-se!</Link>
         </CardContent>

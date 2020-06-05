@@ -52,7 +52,10 @@ function Header() {
 					<Link to = '/editPerfil' style = {{ textDecoration: 'none', color: 'black'}}>
 						<MenuItem onClick={handleClose}>Editar Perfil</MenuItem>
 					</Link>	
-					<MenuItem onClick={handleClose}>Sair</MenuItem>
+					<Link to = '/' style = {{textDecoration: 'none', color: 'black'}}>
+						<MenuItem onClick={handleClose}>Sair</MenuItem>
+					</Link>
+					
 				</Menu>
 				</IconEdit>
 

@@ -5,6 +5,7 @@ import { AppContext } from '../../../ContextApi/Context';
 import ShowDetails from './ShowDetails';
 import { FilterContext } from '../../../ContextApi/ContextFilterState';
 import { useEffect } from 'react';
+import { currencyFormatter } from '../../../util/currencyFormatter';
 
 
 
@@ -15,7 +16,6 @@ function AccountDetails () {
 	const [apiFilter, setApiFilter] = useState(api);
 	
 	function handleClick (element) {
-		console.log("id",element.target.id)
 		setId(element.target.id)
 		setShowDetails(true);
 	}
@@ -27,8 +27,6 @@ function AccountDetails () {
 	
 
 	useEffect(() => {
-
-		console.log("main",mainFilter)
 		if(mainFilter !== ""){
 			const state = api.filter((ap) => {
 				if(mainFilter.state === 'Todas'){
@@ -90,7 +88,7 @@ function AccountDetails () {
 									<td id = {stats.accountNumber}>{stats.fiscalNote}</td>
 									<td id = {stats.accountNumber}>{stats.dateDue}</td>
 									<td id = {stats.accountNumber}>{stats.dateLaunch}</td>
-									<td id = {stats.accountNumber}>{stats.value}</td>
+									<td id = {stats.accountNumber}>{currencyFormatter(stats.value)}</td>
 									<td id = {stats.accountNumber}>{stats.state}</td>
 								</tr>
 							</tbody>
@@ -99,7 +97,7 @@ function AccountDetails () {
 				</table>
 			</StatsStyle>
 
-	{showDetails? <ShowDetails id = {id}/> : undefined}
+	{showDetails && <ShowDetails id = {id}/>}
 	</HistoryStyle>
 	);
 }

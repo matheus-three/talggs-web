@@ -1,10 +1,20 @@
 import React, { Fragment, useContext, useState, useEffect } from 'react'
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+import {Link} from 'react-router-dom'
+import moment from 'moment';
+import autoTable from 'jspdf-autotable'
+
+
+
 import { StatsStyle, ButtonStyle, TitleReportStyle, ReportStyle } from '../../../Assets/styled-components/StylesCreateReportComponent';
 import { AppContext } from '../../../ContextApi/Context';
 import SaveReport from './SaveReport';
 import { FilterContext } from '../../../ContextApi/ContextFilterState';
-import {Link} from 'react-router-dom'
-import moment from 'moment';
+import { currencyFormatter } from '../../../util/currencyFormatter';
+import { getMonthDate } from '../../../util/getMonthDate';
+import { compareDatas } from '../../../util/compareDates';
+
 
 function Stats() {
 
@@ -15,31 +25,18 @@ function Stats() {
 	
 	function handleClick() {
 		setSaveNameReportState(true)
+	}		 
+
+	function generatePdf () {
+		const doc = new jsPDF('l','cm','a3')
+		autoTable(doc, { html: '#table', body: [
+			[{ content: 'Text', colSpan: 4, rowSpan: 4, styles: { halign: 'center'} }],
+		], })
+		doc.save('table.pdf')
 	}
 
-	function compareDatas (data1,data2) {
-		const split1 = data1.split('/')
-		const split2 = data2.split('/')
-
-		const split1Transform = +new Date(split1[2], split1[1] - 1, split1[0]);
-		const split2transform = +new Date(split2[2], split2[1] - 1, split2[0]);
-			
-			return split1Transform === split2transform
-
-	}
-
-	 function getMonthDate (data) {
-		const split = data.split('/')
-	
-		const splitTransform = new Date(split[2], split[1] - 1, split[0]);
-
-		return splitTransform.getMonth()
-	 }
-
-	 
 	useEffect(() => {
-			if (values !== "") {
-			
+			if (values !== "") {	
 		let reportName = api.filter((report) => {
 				return report.cpf.substr(0, values.cpf.length) === values.cpf &&
 					report.name.substr(0, values.name.length).toLowerCase() === values.name.toLowerCase()
@@ -71,7 +68,7 @@ function Stats() {
 			}
 		}
 
-			if(values.month !== ""){
+			if(values.month !== "" && values.month !== "12"){
 				const reportMonth = reportName.filter((report) => {
 					const monthDue = getMonthDate(report.dateDue);
 					return Number(values.month) === monthDue
@@ -89,6 +86,7 @@ function Stats() {
 				})
 
 				setFilterReport(reportStatus)
+
 			} else {
 				setFilterReport(api)
 			}
@@ -104,7 +102,7 @@ function Stats() {
 				</TitleReportStyle>
 
 				<StatsStyle width={"100%"}>
-					<table>
+					<table id = "table">
 						<thead>
 							<tr>
 								<th className="cpf">CPF</th>
@@ -128,7 +126,7 @@ function Stats() {
 										<td>{stats.fiscalNote}</td>
 										<td>{stats.dateDue}</td>
 										<td>{stats.dateLaunch}</td>
-										<td>{stats.value}</td>
+										<td>{currencyFormatter(stats.value)}</td>
 										<td>{stats.state}</td>
 									</tr>
 								</tbody>
@@ -141,7 +139,7 @@ function Stats() {
 					
 					<Link to='/savedReports' style={{ textDecoration: 'none', color: 'white' }}><button> Voltar</button></Link>
 					<button onClick={handleClick}>Salvar</button>
-					<button >Imprimir</button>
+					<button onClick={generatePdf}>Gerar pdf</button>
 				</ButtonStyle>
 
 				<SaveReport reportStats={filterReport}></SaveReport>

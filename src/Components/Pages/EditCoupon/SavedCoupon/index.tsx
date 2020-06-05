@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import trash from '../../../Assets/Icons/lixo.svg'
 import {  ListPromoStyle, ItemPromoStyle, PositionItemStyle, ButtonPromoStyle } from '../../../Assets/styled-components/StylesEditCupons';
+import firebase from 'firebase';
+import moment from 'moment';
+import { addDaysinTheDate } from '../../../util/AddDaysInTheDate';
 
 
 interface Iprops {
@@ -11,44 +14,46 @@ interface Iprops {
 
 function SavedCoupon () {
 
-
+    const [coupons,setCoupons] = useState([])
     
+    const getCoupons = () => {
+        const dbh = firebase.firestore();
+        const data = dbh.collection('coupons-web').get()
+        .then((res) => {
+            let array = []
+           res.forEach((doc) => {
+                array.push(doc.data())
+                console.log(array)
+                setCoupons(array)
+            })
+
+        })
+   
+    }
+    
+useEffect(() => {
+    getCoupons()
+
+},[])
+
+
+
     return (
         <ListPromoStyle>
-            <p>Promoções Disponíveis</p>
-            <ItemPromoStyle>
-
+            <p>Promoções Disponíveis</p>    
+        {coupons.map((cup) => {
+            const data = addDaysinTheDate(cup.dataLaunch,cup.discountDuration)
+               return <ItemPromoStyle>
                 <PositionItemStyle>                
-                <p>10% de desconto na próxima compra</p>
-                <p>Cód do Cupom: K26LAL4S2</p>
-                <p>Pontuação: 500 <span>Até: 25/03/2020</span></p>  
+                <p>{`${cup.discount}% de desconto na próxima compra`}</p>
+                <p>{`Cód do Cupom: ${cup.discountCode}`}</p>
+                <p>{`Pontuação: ${cup.points}`} <span>{`Até: ${moment(data).format('DD/MM/YYYY')}`}</span></p>  
                 </PositionItemStyle>
                 <ButtonPromoStyle>
                     <img src={trash} alt={"botão excluir"}></img>
                 </ButtonPromoStyle>
-            </ItemPromoStyle>
-
-            <ItemPromoStyle>
-                <PositionItemStyle>
-                <p>25% de desconto na próxima compra</p>
-                <p>Cód do Cupom: W4KANDAFR</p>
-                <p>Pontuação: 1250 <span>Até: 09/05/2020</span></p>  
-                </PositionItemStyle>
-                <ButtonPromoStyle>
-                    <img src={trash} alt={"botão excluir"}></img>
-                </ButtonPromoStyle>
-            </ItemPromoStyle>
-            
-            <ItemPromoStyle>
-                <PositionItemStyle>
-                <p>50% de desconto na próxima compra</p>
-                <p>Cód do Cupom: BLOGAYRINHA50</p>
-                <p>Pontuação: 5000 <span>Até: 14/06/2020</span></p>  
-                </PositionItemStyle>
-                <ButtonPromoStyle>
-                    <img src={trash} alt={"botão excluir"}></img>
-                </ButtonPromoStyle>
-            </ItemPromoStyle>
+                </ItemPromoStyle>
+        })}
 
 		</ListPromoStyle>
     )

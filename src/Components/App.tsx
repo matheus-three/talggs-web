@@ -6,6 +6,8 @@ import FilterContextProvider from './ContextApi/ContextFilterState'
 import GraphicsProvider from './ContextApi/ContextGraphics';
 import RegisterContextProvider from './ContextApi/ContextRegister';
 import * as firebase from 'firebase'
+import ContextCouponsProvider from './ContextApi/ContextCoupons';
+
 // Initialize Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyDD8ft7kCn5S1VVRaKdR5ltlZrN221ywRs",
@@ -24,6 +26,7 @@ function App() {
   
   return (
     <div>
+      <ContextCouponsProvider>
       <FilterContextProvider>
       <AppContextProvider>
       <GraphicsProvider>
@@ -34,6 +37,7 @@ function App() {
       </GraphicsProvider>
       </AppContextProvider>
       </FilterContextProvider>
+      </ContextCouponsProvider>
       
     </div>
   );

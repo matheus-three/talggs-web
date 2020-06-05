@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles'
 import {Field, Form, Formik,ErrorMessage } from 'formik';
 import Logo from '../../../Assets/Icons/Logo1V - Web.svg';
@@ -7,20 +7,41 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@material-ui/core';
 import * as yup from 'yup'
 import { useState } from 'react';
+import firebase from 'firebase';
+import { getMaxListeners } from 'cluster';
 
 const useStyle = makeStyles(StylesPreRegister);
 
+interface PreRegisterParams {
+  companyName: string;
+  CNPJ: number;
+  email: string;
+}
+
 function PreRegister () {
   const classes = useStyle();
-  const [values] = useState({})
 
-//   const validations = yup.object().shape({
-//     companyName: yup.string().required(),
-//     CNPJ: yup.number().min(11).required(),
-//     email: yup.string().email().required(),
-// })
+  const validations = yup.object().shape({
+    companyName: yup.string().required('Campo Razão Social é obrigatório'),
+    CNPJ: yup.number().min(11).required('Campo CNPJ é obrigatório'),
+    email: yup.string().email('Email inválido').required('Campo Email é obrigatório'),
+})
 
-console.log(values)
+
+
+const getPreRegister = (values) => {
+  const dbh = firebase.firestore()
+ dbh.collection('pre-register').add({
+    companyName: values.companyName,
+    CNPJ:values.CNPJ,
+    email: values.email
+  }).then(()=>{
+    alert("Acesse o email enviado para usa conta paras os proximos passos")
+  })
+}
+
+
+
   return (
     <div className={classes.root}>
       <Card className='card'>
@@ -30,11 +51,18 @@ console.log(values)
           <Formik
             initialValues={{companyName: '', CNPJ: '', email: ''}}
             onSubmit={(values, actions) => {
-                setTimeout(() => {
-                    alert(JSON.stringify(values, null, 3));
+                    const data = JSON.stringify(values)
+                    const obj = JSON.parse(data)
+                    const value = {
+                      companyName: obj.companyName,
+                      CNPJ: obj.CNPJ,
+                      email: obj.email
+                    };
+                    getPreRegister(value)
                     actions.setSubmitting(false);
-                }, 3000);
-            }}
+                }
+            }
+            validationSchema={validations}
           >
             <Form className='form'>
               <Field className='input' type='text' name='companyName' placeholder='Razão Social' />
@@ -42,7 +70,7 @@ console.log(values)
               <Field className='input' type='number' name='CNPJ' placeholder='CNPJ' />
               <ErrorMessage className = 'form-error' component = "span" name = 'CNPJ'/>
               <Field className='input' type='email' name='email' placeholder='E-mail' />
-              <ErrorMessage className = 'form-error' component = "span" name = 'E-mail'/>
+              <ErrorMessage className = 'form-error' component = "span" name = 'email'/>
 
               <button className='button' type='submit'>Cadastrar</button>
             </Form>

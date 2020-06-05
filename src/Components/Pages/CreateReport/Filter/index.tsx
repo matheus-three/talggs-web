@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { FilterStyle, OptionFilterStatusStyle, FilterStatusStyle } from "../../../Assets/styled-components/StylesCreateReportComponent";
 import { FilterContext } from "../../../ContextApi/ContextFilterState";
+import { months } from "../../../model/months";
 
 function Filter() {
 	const {nameStatus,filterStatus,cpfStatus,dateLaunchStatus,dateDueStatus,monthStatus} = useContext(FilterContext)
@@ -8,7 +9,6 @@ function Filter() {
 	
 	function handleClick (e) {
 		filterState(e.target.id)
-		console.log("a",e.target.id)
 	}
 
 	function handleChange(e) {
@@ -19,57 +19,6 @@ function Filter() {
 			filterValues(e.target.value,e.target.id)
 	}
 
-	const months = [
-	{
-		id: 0,
-		month: 'Janeiro'
-	},
-	{
-		id: 1,
-		month: 'Fevereiro'
-	},
-	{
-		id: 2,
-		month: 'Março'
-	},
-	{
-		id: 3,
-		month: 'Abril'
-	},
-	{
-		id: 4,
-		month: 'Maio'
-	},
-	{
-		id: 5,
-		month: 'Junho'
-	},
-	{
-		id: 6,
-		month: 'Julho'
-	},
-	{
-		id: 7,
-		month: 'Agosto'
-	},
-	{
-		id: 8,
-		month: 'Setembro'
-	},
-	{
-		id: 9,
-		month: 'Outubro'
-	},
-	{
-		id: 10,
-		month: 'Novembro'
-	},
-	{
-		id: 11,
-		month: 'Dezembro'
-	}
-	
-]
 	return (
 		<FilterStyle>
 			<span>Filtrar por:</span>
@@ -85,7 +34,7 @@ function Filter() {
 			<button id = "2" onClick = {handleClick}>Data Vencimento</button>
 			{dateDueStatus && <input type="date" id = "2" onChange = {handleChange}></input>}
 
-			<button id = "6" onClick = {handleClick}>Mês</button>
+			<button id = "6" onClick = {handleClick}>Mês de Vencimento</button>
 			{monthStatus && 
 			<select name="8" id="8" onChange = {handleChange}>
 				{months.map((month) => {

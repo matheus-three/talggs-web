@@ -1,4 +1,4 @@
-import React, { createContext, useState} from 'react'
+import React, { createContext, useState, useEffect} from 'react'
 import { uniqueId } from '../Consts/UniqueId'
 import * as firebase from 'firebase';
 
@@ -6,10 +6,14 @@ export const AppContext = createContext();
 
 
 const AppContextProvider = ({ children }) => {
-	const [report, setReport] = useState([]);
+	const [report, setReport] = useState(() => {
+		const data = localStorage.getItem('reports')
+		return JSON.parse(data)
+	});
 	const [api,setApi] = useState([])
 	const [showDetails,setShowDetails] = useState(false)
 	const [saveNameReportState,setSaveNameReportState] = useState(false);
+
 
 
 	const saveReport = save => {
@@ -18,8 +22,21 @@ const AppContextProvider = ({ children }) => {
 			name: save.name,
 			stats: save.stats
 		}
-		setReport([...report,newReport]);
+		setReport([...report,newReport])	
 	}
+
+	useEffect(() => {
+		setLocalStorage()
+	},[saveReport])
+
+	const setLocalStorage =  (() => {
+		const reports = JSON.stringify(report)
+		localStorage.setItem('reports',[reports])
+	})
+
+
+
+
 
   	async function getReportStats() {
 			const dbh = firebase.firestore();

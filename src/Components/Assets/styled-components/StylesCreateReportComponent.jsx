@@ -327,7 +327,7 @@ export const ButtonStyle = styled.div`
 //Fundo cinza do pop-up para salvar o relatório.
 export const SaveReportBehind = styled.div`
 	width: 100vw;
-	height:95vh;
+	height:100vh;
 	background-color:${props => props.back};
 	position: fixed;
 	left:${props => props.left};

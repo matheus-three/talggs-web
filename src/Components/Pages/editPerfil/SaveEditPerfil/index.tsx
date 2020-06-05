@@ -7,7 +7,7 @@ function SaveEditPerfil() {
     const [popUp, setpopUp] = useState(false);
 
     function updateRegister() {
-        if ("a" === "a") {
+        if (true) {
             setSaveUpdateState(true);
             setpopUp(true);
         } 

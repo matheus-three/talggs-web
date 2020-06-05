@@ -1,6 +1,6 @@
 const Register = {
     root: {
-        height: 'auto',
+        height: '100vh',
         width: '100vw',
         backgroundImage: 'radial-gradient(ellipse at center,#2A384D 10%,#232F40 54%,#1C2633 100%)',
         display:'flex',
@@ -8,7 +8,7 @@ const Register = {
         justifyContent:'center',
                                 
         '& .card': {
-            width: '30%',
+            width: '40%',
             backgroundColor: '#F7F6EE',
             borderRadius: '10px',
             boxShadow: '1px 1px 10px #1b1b1be3',
@@ -18,7 +18,8 @@ const Register = {
 
         '& .container': {
             width: '100%',
-            padding: 0,
+            height: '80vh',
+            overflow: 'scroll'
         },
 
         '& .img': {
@@ -77,16 +78,16 @@ const Register = {
                 marginLeft: '0%',
                 paddingTop: 0,
                 border: 'none',
-
+               
                 '& label': {
                     color: '#757575',
                     width: 'auto',
                     margin: '0px 5px',
                 },
 
-                '& .select': {
+                '& .selectUf': {
                     backgroundColor: '#F7F6EE',
-                    width: '5vw',
+                    width: '50%',
                     color: '#2D4F6C',
                 },
             },

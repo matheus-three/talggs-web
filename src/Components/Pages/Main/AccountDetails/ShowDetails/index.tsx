@@ -21,8 +21,7 @@ function ShowDetails(props: Iprops) {
 			
 			<ShowDetailsStyle>
 				{api.map((stats,index) => {
-
-					if (stats.accountNumber === props.id) {
+					if (Number(stats.accountNumber) === Number(props.id)) {
 						return (
 							<CardDetailsStyle key = {index}>
 								<TitleStyle>

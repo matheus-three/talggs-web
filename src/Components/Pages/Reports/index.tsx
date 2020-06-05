@@ -10,6 +10,7 @@ import AddIcon from '@material-ui/icons/Add';*/}
 function Reports() {
   
   const {report,getReportStats} = useContext(AppContext);
+  const {resetFilter} = useContext(FilterContext)
   const length = report.length;
 
   useEffect (() =>  {
