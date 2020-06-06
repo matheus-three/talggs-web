@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles'
 import {Field, Form, Formik,ErrorMessage } from 'formik';
 import Logo from '../../../Assets/Icons/Logo1V - Web.svg';
 import StylesPreRegister from '../../../Assets/useStyles/StylesPreRegister';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { Card, CardContent } from '@material-ui/core';
 import * as yup from 'yup'
-import { useState } from 'react';
-import firebase from 'firebase';
-import { getMaxListeners } from 'cluster';
+import { SetPreRegister } from '../../../Auth/authGuard';
+import { uniqueId } from '../../../Consts/UniqueId';
+import FormDialog from '../../../DialogComponent';
 
 const useStyle = makeStyles(StylesPreRegister);
 
@@ -20,6 +20,8 @@ interface PreRegisterParams {
 
 function PreRegister () {
   const classes = useStyle();
+  const [dialog,setDialog] = useState(false);
+  const [redirect,setRedirect] = useState(false)
 
   const validations = yup.object().shape({
     companyName: yup.string().required('Campo Razão Social é obrigatório'),
@@ -27,26 +29,15 @@ function PreRegister () {
     email: yup.string().email('Email inválido').required('Campo Email é obrigatório'),
 })
 
-
-
-const getPreRegister = (values) => {
-  const dbh = firebase.firestore()
- dbh.collection('pre-register').add({
-    companyName: values.companyName,
-    CNPJ:values.CNPJ,
-    email: values.email
-  }).then(()=>{
-    alert("Acesse o email enviado para usa conta paras os proximos passos")
-  })
+const openDialog = () => {
+  console.log("clique")
+  setDialog(true)
 }
-
-
 
   return (
     <div className={classes.root}>
       <Card className='card'>
         <img className='img' src={Logo} alt=""/>
-
         <CardContent>
           <Formik
             initialValues={{companyName: '', CNPJ: '', email: ''}}
@@ -56,9 +47,10 @@ const getPreRegister = (values) => {
                     const value = {
                       companyName: obj.companyName,
                       CNPJ: obj.CNPJ,
-                      email: obj.email
+                      email: obj.email,
+                      codeAcess: uniqueId('acess')  
                     };
-                    getPreRegister(value)
+                    SetPreRegister(value)
                     actions.setSubmitting(false);
                 }
             }
@@ -76,7 +68,18 @@ const getPreRegister = (values) => {
             </Form>
           </Formik>
 
-          <Link className='link-register' to='../Register'>Já recebeu a confirmação do pré-cadastro?</Link>
+          <button onClick = {openDialog} className='link-register'>Já recebeu a confirmação do pré-cadastro?</button>
+          
+          {dialog && <FormDialog open {...dialog} close={() => {
+            setDialog(false)
+          }} redirect = {(value) => {
+            if(value === false){
+              alert("Código de acesso não encontrado")
+            }
+            setRedirect(value)
+          }} />}
+         
+         {redirect && <Redirect to = '/register'/>}
 
           <p className='infoText'>
               *Ao clicar em Pré-Cadastrar, receberemos uma solicitação para a 

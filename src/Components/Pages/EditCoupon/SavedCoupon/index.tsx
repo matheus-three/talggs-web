@@ -33,7 +33,6 @@ function SavedCoupon () {
     
 useEffect(() => {
     getCoupons()
-
 },[])
 
 

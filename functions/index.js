@@ -23,16 +23,20 @@ exports.sendEmailNotification=functions.firestore.document('pre-register/{docId}
 console.log("data",data.email)
     AuthData.sendMail({
         from: `${data.email}`,
-        to: `${data.email}`,
-        subject: 'Tallgs - Seu Cadastro foi aceito',
+        to: `talggsltda@gmail.com`,
+        subject: `Solicitação de cadastro para o email ${data.email}`,
         text: 'Bem vindo ao nosso app, complete seu cadastro para fazer o login, senha: 1234, usuário:bla bla',
-        html: `<p>Bem vindo ao nosso app ${data.companyName}</p><p>Complete seu cadastro para fazer o login</p></p>`,
-        attachments:[
-            {
-            "filename":"table.pdf",
-            "path": "./table (8).pdf"
-            }
-        ]
+        html: `<p>Solicitação de cadastro feita para a empresa ${data.companyName}</p>
+               <p><span><strong>CNPJ: <strong/>${data.CNPJ}</span><br/>
+               <span><strong>Razão Social:</strong> ${data.companyName}</span> <br/>
+               <span> <strong>Email: <strong/>${data.email}</p>
+               <span> <strong>Chave de Acesso: <strong/>${data.codeAcess}</p>`,
+        // attachments:[
+        //     {
+        //     "filename":"table.pdf",
+        //     "path": "./table (8).pdf"
+        //     }
+        // ]
     }).then(res => console.log('success')).catch(err => console.log(err));
     
 }) 

@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { AppContext } from '../../ContextApi/Context';
+import { LogOut } from '../../Auth/authGuard';
 
 function Header() {
 	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -17,6 +18,7 @@ function Header() {
 
 	const handleClose = () => {
 		setAnchorEl(null);
+		LogOut()
 	};
 
 	const destroyPage = () => {
@@ -55,7 +57,6 @@ function Header() {
 					<Link to = '/' style = {{textDecoration: 'none', color: 'black'}}>
 						<MenuItem onClick={handleClose}>Sair</MenuItem>
 					</Link>
-					
 				</Menu>
 				</IconEdit>
 

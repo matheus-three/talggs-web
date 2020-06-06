@@ -10,8 +10,8 @@ import * as yup from "yup";
 import { useState } from "react";
 import Select from 'react-select';
 import { uf } from "../../../model/uf";
-import firebase from "firebase";
-import { setupMaster } from "cluster";
+import {Redirect} from 'react-router-dom'
+import { CreateUser, CreateInfoUser } from "../../../Auth/authGuard";
 
 const initialValues = {
       CEP:'',
@@ -42,60 +42,10 @@ const validations = yup.object().shape({
 
 });
 
-interface RegisterParams{
-  cep:string,
-  city: string,
-  cnpj: string,
-  companyId: number,
-  email: string,
-  municipalInscription: number,
-  neighborhood: string,
-  number: string,
-  password:string,
-  stateInscription: number,
-  street: string,
-  trandingName: string
-  uf:string,
-  user:string 
-}
-
 function Register() {
   const classes = useStyle();
+  const [redirect,setRedirect] = useState<boolean>(false)
 
-  const createUser = (email,senha) => {
-    let auth = null;
-    firebase.auth().createUserWithEmailAndPassword(email,senha)
-    .then((user) => {
-      auth = user
-      alert('Cadastrado com Sucesso')
-    })
-    .catch((err) => {
-       alert('falha ao cadastrar')
-       console.log("err",err)
-    })
-
-  }
-
-  const createInfoUser= (values) => {
-    console.log("values",values)
-    const dbh = firebase.firestore();
-      dbh.collection('users-web').add ({
-        cep:values.cep,
-        city: values.city,
-        cnpj: values.cnpj,
-        companyId: 1,
-        email: values.email,
-        municipalInscription: values.municipalInscription,
-        neighborhood: values.neighborhood,
-        number: values.number,
-        password:values.password,
-        stateInscription: values.stateInscription,
-        street: values.street,
-        trandingName: values.trandingName,
-        uf: values.uf,
-        user:values.user       
-      })
-  }
   return (
     <div className={classes.root}>
       <Card className="card">
@@ -125,8 +75,14 @@ function Register() {
                   uf: obj.uf,
                   user:obj.email
                 }
-                 createUser(obj.email,`${obj.companyName}123`)
-                 createInfoUser(value)
+                 CreateUser(obj.email,`${obj.companyName}123`).then((user) => {
+                  alert('Cadastrado com Sucesso')
+                  setRedirect(true)
+                  CreateInfoUser(value)
+                })
+                .catch((err) => {
+                  alert('falha ao cadastrar')
+                })
                  actions.setSubmitting(false);                
             }}
             validationSchema={validations}
@@ -174,6 +130,8 @@ function Register() {
               <button className="button" type="submit">Cadastrar</button>
             </Form>
           </Formik>
+
+          {redirect && <Redirect to = "/"/>}
         </CardContent>
       </Card>
     </div>

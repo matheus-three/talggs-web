@@ -18,7 +18,7 @@ const Register = {
 
         '& .container': {
             width: '100%',
-            height: '80vh',
+            height: '90vh',
             overflow: 'scroll'
         },
 

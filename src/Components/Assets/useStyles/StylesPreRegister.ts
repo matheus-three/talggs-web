@@ -1,6 +1,6 @@
 const StylesPreRegister = {
     root: {
-        height: '100vh',
+        height: '110vh',
         width: '100vw',
         backgroundImage: 'radial-gradient(ellipse at center,#2A384D 10%,#232F40 54%,#1C2633 100%)',
         display:'flex',
@@ -71,6 +71,9 @@ const StylesPreRegister = {
             textDecoration: 'none',
             fontWeight: 500,
             marginBottom: '20px',
+            backgroundColor:'#F7F6EE',
+            border: 'none',
+            marginLeft: '45px'
           },
 
         '& .infoText': {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles'
 import {Field, Form, Formik,ErrorMessage } from 'formik';
 import Logo from '../../Assets/Icons/Logo1V - Web.svg';
@@ -7,8 +7,8 @@ import { Card, CardContent } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import * as yup from 'yup'
 import { useState } from 'react';
-import firebase from 'firebase';
 import {Redirect} from 'react-router-dom'
+import { LoginUser, IsLoggedUser } from '../../Auth/authGuard';
 
 
 const useStyles = makeStyles(style);
@@ -22,21 +22,14 @@ function Login () {
     password: yup.string().min(8).required()
 })
 
-const loginAutenticate= (email,senha) => {
-  firebase.auth().signInWithEmailAndPassword(email,senha)
-  .then((user) => {
-    alert("Logado com sucesso!");
-    setIsLogged(true)
-  }).catch((err) => {
-    alert("Falha no Login, usuário ou senha não encontrados!")
-  })
-}
+useEffect(() => {
+  IsLoggedUser()
+},[])
+
   return(
     <div className={classes.root}>
     <Card className='card'>
-
         <img className='img' src={Logo} alt=""/>
-
         <CardContent>
             <Formik
                 initialValues={{user: '', password: ''}}
@@ -44,12 +37,20 @@ const loginAutenticate= (email,senha) => {
                       const data = JSON.stringify(values)
                       const obj = JSON.parse(data)
                       
-                      console.log("data",obj)
                       const value = {
                         user: obj.user,
                         password: obj.password
-                      } 
-                      loginAutenticate(value.user,values.password)
+                       } 
+                       console.log('va',value)
+                     LoginUser(value.user,value.password)
+                     .then((user) => {
+                      alert("Logado com sucesso!");
+                      setIsLogged(true)
+                    }).catch((we) => {
+                      alert(we)
+                      return false
+                    })
+                       
                       actions.setSubmitting(false);
 
                 }}

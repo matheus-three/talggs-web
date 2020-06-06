@@ -77,7 +77,6 @@ function CreateCoupon(props: any) {
 				dataLaunch: moment(data).format('DD/MM/YYYY'),
 				discountDuration: value.discountDuration
 			})
-
 			alert('cupom criado')
 		}
 	
